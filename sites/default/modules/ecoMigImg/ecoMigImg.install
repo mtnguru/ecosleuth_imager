@@ -1,0 +1,70 @@
+<?php
+
+/**
+ * @file
+ * ecoMigImg.install - Set up the ecoMigImg
+ */
+
+/**
+ * Implements hook_enable().
+ */
+
+$picsdir = '/home/eco/migrate/pic';
+
+function getCsvFiles($path, $spaces="") {
+
+  $ignore = array('images','cgi-bin','.','..'); // Directories to ignore
+  $dh = opendir($path);        // Open the directory to the handle $dh
+
+  $csvfiles = array();
+  while (false !== ($file = readdir($dh))) {
+    if (!in_array($file, $ignore)) {    // Check that this file is not to be ignored
+      if( is_dir("$path/$file")){
+        echo "$spaces <strong>$file</strong><br />\n";
+        $newcsvfiles = getCsvFiles("$path/$file",$spaces . "   ");
+        foreach ($newcsvfiles as $i => $value) { 
+          $csvfiles[] = $value;
+        }
+      } else
+      {
+        if (preg_match('/.*\.csv/i',$file)) {
+          $csvfiles[] = "$path/$file";
+          echo "$spaces Add csv file - $path/$file<br />\n";
+        } else
+        {
+//        echo "$spaces Skip $file<br />\n";
+        }
+      }
+    }
+  }
+  closedir( $dh );
+  return $csvfiles;
+}
+
+function makeMigrateName ($file,$category) {
+   $migrateName = preg_replace('/_csv/','', preg_replace('/_+/', '_', preg_replace('/[^a-z0-9]/', '_', strtolower($file))));
+   $migrateName = $category . $migrateName;
+   return $migrateName;
+}
+
+function ecoMigImg_enable() {
+  $picsdir = "/home/eco/migrate/pic";
+  $csvfiles = getCsvFiles($picsdir);
+  foreach ($csvfiles as $i => $file) {
+    $pieces = explode("/", $file);
+    $migration = makeMigrateName($pieces[5],'pic_');
+    echo "enable -- $migration -- $file -- $pieces[5]<br />\n";
+    Migration::registerMigration('imgMig',$migration,array('source_file' => $file));
+  }
+}
+
+function ecoMigImg_disable() {
+  $picsdir = "/home/eco/migrate/pic";
+  $csvfiles = getCsvFiles($picsdir);
+  foreach ($csvfiles as $i => $file) {
+    $pieces = explode("/", $file);
+    $migration = makeMigrateName($pieces[5],'pic_');
+    echo "disable -- $migration -- $file -- $pieces[5]<br />\n";
+    Migration::deregisterMigration($migration);
+  }
+}

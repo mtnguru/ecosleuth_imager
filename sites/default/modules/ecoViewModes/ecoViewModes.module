@@ -1,0 +1,16 @@
+<?php
+  //Add more view modes for Media formatting.
+  function ecoViewModes_entity_info_alter(&$entity_info) {
+
+  //Not sure if it's still an issue, but a previous commenter noted that Media module only recognizes view modes with the prefix media_. Also, as you can see by the entity type 'file', this is for after the switch-to-file-entity patch.
+  $entity_info['file']['view modes']['media_eco_thumbnail'] = array(
+    'label' => t('Thumbnail'),
+    'custom settings' => TRUE,
+  );
+  $entity_info['file']['view modes']['media_imager'] = array(
+    'label' => t('Imager'),
+    'custom settings' => TRUE,
+  );
+}
+
+?>

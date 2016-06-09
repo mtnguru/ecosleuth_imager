@@ -1,0 +1,461 @@
+<?php
+
+require_once 'casetracker_project.inc';
+require_once 'casetracker_case.inc';
+require_once 'admin/casetracker_project.admin.inc';
+require_once 'admin/casetracker_case.admin.inc';
+
+function casetracker_entity_info() {
+  $return['casetracker_project'] = array(
+    'label' => t('Project'),
+    'entity class' => 'CaseTrackerProject',
+    'controller class' => 'CaseTrackerProjectController',
+    'base table' => 'casetracker_project',
+    'fieldable' => TRUE,
+    'entity keys' => array(
+      'id' => 'pid',
+      'bundle' => 'type',
+    ),
+    'bundles' => array(),
+    'bundle keys' => array(
+      'bundle' => 'type',
+    ),
+    'label callback' => 'entity_class_label',
+    'uri callback' => 'entity_class_uri',
+    'creation callback' => 'casetracker_project_create',
+    'access callback' => 'casetracker_project_access',
+    'module' => 'casetracker',
+    'admin ui' => array(
+      'path' => 'admin/content/casetracker/projects',
+      'file' => 'admin/casetracker_project.admin.inc',
+      'controller class' => 'CaseTrackerProjectUIController',
+      'menu wildcard' => '%casetracker_project',
+    ),
+  );
+  // The entity that holds information about the entity types	  
+  $return['casetracker_project_type'] = array(
+    'label' => t('Project Type'),
+    'entity class' => 'CaseTrackerProjectType',
+    'controller class' => 'CaseTrackerProjectTypeController',
+    'base table' => 'casetracker_project_type',
+    'fieldable' => FALSE,
+    'bundle of' => 'casetracker_project',
+    'exportable' => TRUE,
+    'entity keys' => array(
+      'id' => 'id',
+      'name' => 'type',
+      'label' => 'label',
+    ),
+    'access callback' => 'casetracker_project_type_access',
+    'module' => 'casetracker',
+    // Enable the entity API's admin UI.
+    'admin ui' => array(
+      'path' => 'admin/structure/casetracker/project-types',
+      'file' => 'admin/casetracker_project_type.admin.inc',
+      'controller class' => 'CaseTrackerProjectTypeUIController',
+    ),
+  );
+  $return['casetracker_case'] = array(
+    'label' => t('Case'),
+    'entity class' => 'CaseTrackerCase',
+    'controller class' => 'CaseTrackerCaseController',
+    'base table' => 'casetracker_case',
+    'fieldable' => TRUE,
+    'entity keys' => array(
+      'id' => 'cid',
+      'bundle' => 'type',
+    ),
+    'bundles' => array(),
+    'bundle keys' => array(
+      'bundle' => 'type',
+    ),
+    'label callback' => 'entity_class_label',
+    'uri callback' => 'entity_class_uri',
+    'creation callback' => 'casetracker_case_create',
+    'access callback' => 'casetracker_case_access',
+    'module' => 'casetracker',
+    'admin ui' => array(
+      'path' => 'admin/content/casetracker/cases',
+      'file' => 'admin/casetracker_case.admin.inc',
+      'controller class' => 'CaseTrackerCaseUIController',
+      'menu wildcard' => '%casetracker_case',
+    ),
+  );
+  // The entity that holds information about the entity types	  
+  $return['casetracker_case_type'] = array(
+    'label' => t('Case Type'),
+    'entity class' => 'CaseTrackerCaseType',
+    'controller class' => 'CaseTrackerCaseTypeController',
+    'base table' => 'casetracker_case_type',
+    'fieldable' => FALSE,
+    'bundle of' => 'casetracker_case',
+    'exportable' => TRUE,
+    'entity keys' => array(
+      'id' => 'id',
+      'name' => 'type',
+      'label' => 'label',
+    ),
+    'access callback' => 'casetracker_case_type_access',
+    'module' => 'casetracker',
+    // Enable the entity API's admin UI.
+    'admin ui' => array(
+      'path' => 'admin/structure/casetracker/case-types',
+      'file' => 'admin/casetracker_case_type.admin.inc',
+      'controller class' => 'CaseTrackerCaseTypeUIController',
+    ),
+  );
+
+  return $return;
+}
+
+/**
+ * Implements hook_entity_info_alter().
+ *
+ * Use this hook to specify profile bundles to avoid a recursion, as loading
+ * the profile types needs the entity info too.
+ */
+function casetracker_entity_info_alter(&$entity_info) {
+  foreach (casetracker_case_get_types() as $type => $info) {
+    $entity_info['casetracker_case']['bundles'][$type] = array(
+      'label' => $info->label,
+      'admin' => array(
+        'path' => 'admin/structure/casetracker/case-types/manage/%casetracker_case_type',
+        'real path' => 'admin/structure/casetracker/case-types/manage/' . $type,
+        'bundle argument' => 5,
+        'access arguments' => array('administer casetracker_case types'),
+      ),
+    );
+  }
+  foreach (casetracker_project_get_types() as $type => $info) {
+    $entity_info['casetracker_project']['bundles'][$type] = array(
+      'label' => $info->label,
+      'admin' => array(
+        'path' => 'admin/structure/casetracker/project-types/manage/%casetracker_project_type',
+        'real path' => 'admin/structure/casetracker/project-types/manage/' . $type,
+        'bundle argument' => 5,
+        'access arguments' => array('administer casetracker_project types'),
+      ),
+    );
+  }
+}
+
+/**
+ * Implements hook_permission().
+ */
+function casetracker_permission() {
+  // We set up permisssions to manage entity types, manage all entities and the
+  // permissions for each individual entity
+  $permissions = array(
+    'access case tracker pages' => array(
+      'title' => t('Access and see the content of Case Tracker module'),
+    ),
+    'administer casetracker' => array(
+      'title' => t('Administer Case Tracker module'),
+    ),
+    'administer casetracker_project types' => array(
+      'title' => t('Administer casetracker_project types'),
+      'description' => t('Create and delete fields for casetracker_project types, and set their permissions.'),
+    ),
+    'administer casetracker_projects' => array(
+      'title' => t('Administer casetracker_projects'),
+      'description' => t('Edit and delete all casetracker_projects'),
+    ),
+    'administer casetracker_case types' => array(
+      'title' => t('Administer casetracker_case types'),
+      'description' => t('Create and delete fields for casetracker_case types, and set their permissions.'),
+    ),
+    'administer casetracker_cases' => array(
+      'title' => t('Administer casetracker_cases'),
+      'description' => t('Edit and delete all casetracker_cases'),
+    ),
+  );
+
+  //Generate permissions per casetracker_project 
+  foreach (casetracker_project_get_types() as $type) {
+    $type_name = check_plain($type->type);
+    $permissions += array(
+      "edit any $type_name casetracker_project" => array(
+        'title' => t('%type_name: Edit any casetracker_project', array('%type_name' => $type->label)),
+      ),
+      "view any $type_name casetracker_project" => array(
+        'title' => t('%type_name: View any casetracker_project', array('%type_name' => $type->label)),
+      ),
+    );
+  }
+
+  //Generate permissions per casetracker_case 
+  foreach (casetracker_case_get_types() as $type) {
+    $type_name = check_plain($type->type);
+    $permissions += array(
+      "edit any $type_name casetracker_case" => array(
+        'title' => t('%type_name: Edit any casetracker_case', array('%type_name' => $type->label)),
+      ),
+      "view any $type_name casetracker_case" => array(
+        'title' => t('%type_name: View any casetracker_case', array('%type_name' => $type->label)),
+      ),
+    );
+  }
+
+  return $permissions;
+}
+
+/**
+ * Implements hook_entity_property_info_alter().
+ */
+function casetracker_entity_property_info_alter(&$info) {
+  $case_properties = &$info['casetracker_case']['properties'];
+  $case_properties['created'] = array(
+    'type' => 'date',
+    'label' => t("Creation date"),
+    'description' => t("The date the case was posted."),
+    'setter callback' => 'entity_property_verbatim_set',
+    'setter permission' => 'administer casetracker_case entities',
+    'schema field' => 'created',
+  );
+  $case_properties['changed'] = array(
+    'type' => 'date',
+    'label' => t("Last update"),
+    'description' => t("The date the case was most recently updated."),
+    'schema field' => 'changed',
+  );
+  $case_properties['title'] = array(
+    'label' => t('Title'),
+    'description' => t('Title of the case.'),
+    'type' => 'text',
+    'setter callback' => 'entity_property_verbatim_set',
+    'setter permission' => 'administer casetracker_case entities',
+    'required' => TRUE,
+    'schema field' => 'title',
+  );
+  $case_properties['uid'] = array(
+    'type' => 'user',
+    'label' => t("Author"),
+    'description' => t("The author of the case."),
+    'setter callback' => 'entity_property_verbatim_set',
+    'setter permission' => 'administer casetracker_case entities',
+    'required' => TRUE,
+    'schema field' => 'uid',
+  );
+  $project_properties = &$info['casetracker_project']['properties'];
+  $project_properties['created'] = array(
+    'type' => 'date',
+    'label' => t("Creation date"),
+    'description' => t("The date the project was posted."),
+    'setter callback' => 'entity_property_verbatim_set',
+    'setter permission' => 'administer casetracker_project entities',
+    'schema field' => 'created',
+  );
+  $project_properties['changed'] = array(
+    'type' => 'date',
+    'label' => t("Last update"),
+    'description' => t("The date the project was most recently updated."),
+    'schema field' => 'changed',
+  );
+  $project_properties['title'] = array(
+    'label' => t('Title'),
+    'description' => t('Title of the project.'),
+    'type' => 'text',
+    'setter callback' => 'entity_property_verbatim_set',
+    'setter permission' => 'administer casetracker_project entities',
+    'required' => TRUE,
+    'schema field' => 'title',
+  );
+  $project_properties['uid'] = array(
+    'type' => 'user',
+    'label' => t("Author"),
+    'description' => t("The author of the project."),
+    'setter callback' => 'entity_property_verbatim_set',
+    'setter permission' => 'administer casetracker_project entities',
+    'required' => TRUE,
+    'schema field' => 'uid',
+  );
+}
+
+/**
+ * Implements hook_menu().
+ */
+function casetracker_menu() {
+  $items = array();
+
+  $items['admin/content/casetracker'] = array(
+    'title' => 'Case Tracker',
+    'description' => 'Overview of all created cases.',
+    'page callback' => 'casetracker_overview',
+    'access arguments' => array('administer casetracker'),
+    'file' => 'pages/casetracker.pages.inc',
+  );
+  $items['admin/structure/casetracker'] = array(
+    'title' => 'Case Tracker',
+    'description' => 'Manage project types and case types.',
+    'page callback' => 'casetracker_admin_dashboard',
+    'access arguments' => array('administer casetracker'),
+    'file' => 'pages/casetracker.pages.inc',
+  );
+
+  return $items;
+}
+
+/**
+ * Implements hook_menu_local_tasks_alter().
+ */
+function casetracker_menu_local_tasks_alter(&$data, $router_item, $root_path) {
+  if ($root_path == 'admin/content/casetracker/projects') {
+    $project_types = casetracker_project_get_types();
+    foreach ($project_types as $type) {
+      $item = menu_get_item('admin/content/casetracker/projects/add/' . $type->type);
+      if ($item['access']) {
+        $destination = drupal_get_destination();
+        $item['localized_options']['query'] = array('destination' => $destination['destination']);
+        $data['actions']['output'][] = array(
+          '#theme' => 'menu_local_action',
+          '#link' => $item,
+        );
+      }
+    }
+  }
+  if ($root_path == 'casetracker/project/%') {
+    $item = menu_get_item('casetracker/project/' . arg(2) . '/cases');
+    if ($item['access']) {
+      $data['actions']['output'][] = array(
+        '#theme' => 'menu_local_action',
+        '#link' => $item,
+      );
+    }
+  }
+  if ($root_path == 'casetracker/project/%' || $root_path == 'casetracker/project/%/cases' || $root_path == 'admin/content/casetracker/cases') {
+    $case_types = casetracker_case_get_types();
+    foreach ($case_types as $type) {
+      $item = menu_get_item('admin/content/casetracker/cases/add/' . $type->type . '/' . arg(2));
+      if ($item['access']) {
+        $destination = drupal_get_destination();
+        $item['href'] .= '/' . arg(2);
+        $item['localized_options']['query'] = array('destination' => $destination['destination']);
+        $data['actions']['output'][] = array(
+          '#theme' => 'menu_local_action',
+          '#link' => $item,
+        );
+      }
+    }
+  }
+}
+
+/**
+ * Implements hook_forms().
+ */
+function casetracker_forms() {
+  $forms = array();
+  if ($types = casetracker_case_get_types()) {
+    foreach (array_keys($types) as $type) {
+      $forms[$type . '_casetracker_case_form']['callback'] = 'casetracker_case_form';
+    }
+  }
+  if ($types = casetracker_project_get_types()) {
+    foreach (array_keys($types) as $type) {
+      $forms[$type . '_casetracker_project_form']['callback'] = 'casetracker_project_form';
+    }
+  }
+  return $forms;
+}
+
+/**
+ * Implements hook_views_api().
+ */
+function casetracker_views_api() {
+  return array(
+    'api' => 3,
+    'path' => drupal_get_path('module', 'casetracker') . '/views',
+  );
+}
+
+/**
+ * Implements hook_views_pre_render()
+ */
+function casetracker_views_pre_render(&$view) {
+
+  /**
+   * I wasn't able to make the title came correctly via the Contextual Filter, 
+   * in the Views interface, so i made it here. If you know how to do, you're
+   * welcome to fix it.
+   */
+  if ($view->name == 'casetracker_project_cases') {
+    casetracker_project_set_breadcrumb();
+    $project = casetracker_project_load(arg(2));
+    if (!empty($project)) {
+      if (isset($project->title)) {
+        $view->build_info['title'] = t('@Project (related cases)', array('@Project' => $project->title));
+      }
+    }
+  }
+}
+
+/**
+ * Implements hook_views_data()
+ */
+function casetracker_views_data_alter(&$data) {
+  $data['casetracker_project']['link_casetracker_project'] = array(
+    'field' => array(
+      'title' => t('Link'),
+      'help' => t('Provide a link to the project.'),
+      'handler' => 'casetracker_project_handler_link_field',
+    ),
+  );
+  $data['casetracker_project']['edit_casetracker_project'] = array(
+    'field' => array(
+      'title' => t('Edit Link'),
+      'help' => t('Provide a link to the edit form for the project.'),
+      'handler' => 'casetracker_project_handler_edit_link_field',
+    ),
+  );
+  $data['casetracker_project']['delete_casetracker_project'] = array(
+    'field' => array(
+      'title' => t('Delete Link'),
+      'help' => t('Provide a link to delete the project.'),
+      'handler' => 'casetracker_project_handler_delete_link_field',
+    ),
+  );
+  $data['casetracker_case']['link_casetracker_case'] = array(
+    'field' => array(
+      'title' => t('Link'),
+      'help' => t('Provide a link to the case.'),
+      'handler' => 'casetracker_case_handler_link_field',
+    ),
+  );
+  $data['casetracker_case']['edit_casetracker_case'] = array(
+    'field' => array(
+      'title' => t('Edit Link'),
+      'help' => t('Provide a link to the edit form for the case.'),
+      'handler' => 'casetracker_case_handler_edit_link_field',
+    ),
+  );
+  $data['casetracker_case']['delete_casetracker_case'] = array(
+    'field' => array(
+      'title' => t('Delete Link'),
+      'help' => t('Provide a link to delete the case.'),
+      'handler' => 'casetracker_case_handler_delete_link_field',
+    ),
+  );
+}
+
+/**
+ * Implement hook_theme().
+ */
+function casetracker_theme() {
+  return array(
+//    'casetracker_case' => array(
+//      'render element' => 'elements',
+//      'template' => 'model',
+//    ),
+//    'casetracker_project' => array(
+//      'render element' => 'elements',
+//      'template' => 'model',
+//    ),
+    'casetracker_case_add_list' => array(
+      'variables' => array('content' => array()),
+      'file' => 'admin/casetracker_case.admin.inc',
+    ),
+    'casetracker_project_add_list' => array(
+      'variables' => array('content' => array()),
+      'file' => 'admin/casetracker_project.admin.inc',
+    ),
+  );
+}

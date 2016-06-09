@@ -1,0 +1,263 @@
+//
+// Custom sass variables and mixins
+//
+// Variables
+// -----------------------------------------------------------------------------
+// The variables set here serve only as example of how you can use SASS variables
+// to centralize and control frequently used styles more easily. Here you will
+// find variables for colors, fonts and the global gutter width.
+//
+// Mixins
+// -----------------------------------------------------------------------------
+// To use a mixin in this file, add this line to the top of your .scss file:
+//   @import "base"  (_base.scss imports _custom.scss).
+//
+// Then to use a mixin for a particular rule, add this inside the ruleset's
+// curly brackets:
+//   @include mix-in-name 
+//
+
+//
+// Color Variables
+// Colors used in the sample global.styles. You can use these to recolor many
+// elements such as forms, tables, tabs etc.
+//
+
+// Site theme colors
+//  greys
+$white:        #fff 
+$lightgrey:    #bbb
+$grey:         #888 
+$darkgrey:     #333 
+$darkergrey:   #222 
+$greyblue:     #558
+$darkgreyblue:     #444466 
+$darkergreyblue:   #333355 
+$greypurple:       #858
+$darkgreypurple:   #554466 
+$darkergreypurple: #443355 
+
+$medium_light: #ebebeb     // table row even active
+$medium_dark:  #e5e5e5     // table thead
+//  browns
+$brown:        #6f3d10 
+$lighterbrown: #e1d0c5 
+$lightbrown:   #ede0d2 
+$faintbrown:   #f9f0e7 
+$darkbrown:    #341005 
+//  tans
+$tan:          #f3e49f 
+$yellowtan:    #ffffbb 
+$fainttan:     #fff5cc 
+$lighttan:     #fae9ba   
+//  greens
+$faintgreen:   #dcffdc 
+$lightgreen:   #cfc 
+$green:        #353 
+$darkergreen:  #104010 
+$darkgreen:    #092009 
+//  blues
+$faintblue:    #e6e6f6 
+$darkerblue:   #222244 
+$lightblue:    #ccf 
+$blue:         #225
+$darkblue:     #114 
+$plasmablue:   #daf 
+$cyan:         #3ff 
+//  purples
+$faintpurple:  #f0e0ff      
+$lightpurple:  #f0c0ff      
+$purple:       #351a55
+$darkpurple:   #2a0a5a      
+//  reds
+$darkred:      #330000 
+$red:          #551919 
+$lightred:     #ffaaaa 
+$faintred:     #ffcccc 
+//  oranges
+$darkorange:   #602000 
+$orange:       #aa3a20 
+$lightorange:  #ffc299 
+$faintorange:  #ffeddf 
+//  yellows
+$faintyellow:  #f9e9d9 
+$lightyellow:  #ffffbb 
+$yellow:       #ffff55 
+
+// table rows?
+$medium_light: #ebebeb     // table row even active
+$medium_dark:  #e5e5e5     // table thead
+
+
+$page:        $lightyellow   // to match the page background, default is white
+$body:        $darkpurple 
+$columns:     $darkblue 
+$block-inner: $darkgreen 
+$views-row:   $lighttan 
+$purpleplasma:#aa55dd
+$shadowcolor: #bb55dd
+
+//$page:         #ff00ff   // to match the page background, default is white
+$border:       #000        // all borders set in global.styles - tables, fieldset, primary links
+$highlight:    #c00        // required mark, form error highlight, "new" label on comments
+$ultralight:   #fffff0     // table row even, primary link inactive tabs
+$debug:        rgba(255, 192, 203, 0.5)  // Full width wrapper test
+
+$thead:          $darkbrown 
+$tr_odd:         $faintbrown 
+$tr_even:        $lightbrown 
+$tr_odd_active:  $lightgrey 
+$tr_even_active: $medium_light 
+
+$primary_task:        $ultralight 
+$primary_task_hover:  $lightgrey 
+$primary_task_active: $page 
+
+
+//
+// Font Variables
+// These font stacks are an exact copy of the stacks found in AT Cores
+// theme settings for web safe fonts.
+//
+
+$sans-serif-small:            'Trebuchet MS', 'Helvetica Neue', Arial, Helvetica, sans-serif 
+$sans-serif-large:            Verdana, Geneva, 'DejaVu Sans', Arial, Helvetica, sans-serif 
+$sans-serif-arial-helvetica:  Arial, Helvetica, sans-serif 
+$calibri-candara:             Calibri, Candara, Arial, Helvetica, sans-serif 
+$serif-small:                 Garamond, Perpetua, 'Times New Roman', serif 
+$serif-large:                 Georgia, Baskerville, Palatino, 'Palatino Linotype', 'Book Antiqua', 'Times New Roman', serif 
+$modern-myriad:               'Segoe UI', 'Myriad Pro', Myriad, Arial, Helvetica, sans-serif 
+$lucida:                      'Lucida Sans Unicode', 'Lucida Sans', 'Lucida Grande', Verdana, Geneva, sans-serif 
+$impact:                      Impact, Haettenschweiler, 'Franklin Gothic Bold', Charcoal, 'Helvetica Inserat', 'Bitstream Vera Sans Bold', 'Arial Black', sans-serif 
+$mono:                        Consolas, Monaco, 'Courier New', Courier, monospace, sans-serif 
+
+
+//
+// Gutters
+//
+// Set a variable for the gutters. Adaptivetheme allows you to easly modify the
+// global gutter width for precise control over the design. Panel pages need
+// special gutter wrangling when a Panel is inside #content wrapper, so to ease
+// setting this we use a variable.
+//
+$gutter-width: 5px 
+
+
+@mixin pi-border($radius,$shadow,$color)
+  border: solid 1px lighten(adjust-hue($color,0deg),50%)
+  background-color: $color
+  box-shadow: 0px 0px 4px 3px lighten(adjust-hue($color,20deg),30%), 0px 0px 3px 2px lighten(adjust-hue($color,-20deg),30%) inset
+  border-radius: $radius
+
+@mixin pa-border($radius,$shadow,$color)
+  border: solid 1px darken(adjust-hue($color,0deg),60%)
+  background-color: $color
+  box-shadow: 0px 0px 4px 3px darken(adjust-hue($color,20deg),50%), 0px 0px 3px 2px darken(adjust-hue($color,-20deg),30%) inset
+  border-radius: $radius
+
+
+
+//border: solid 2px lighten(adjust-hue($color,330deg),15%)
+//background-color: $color
+//box-shadow: 0px 0px 6px 3px lighten(adjust-hue($color,300deg),70%)
+//border-radius: $radius
+  
+//
+// Markup free clearing
+// http://www.stubbornella.org/content/2012/05/02/cross-browser-debugging-css/
+//
+
+@mixin cf
+  overflow: hidden    // New formatting context in better browsers
+  *overflow: visible  // Protect IE7 and older from the overflow property
+  *zoom: 1            // Give IE hasLayout, a new formatting context equivalent
+
+
+//
+// Image replacement
+// Kellum Method: http://www.zeldman.com/2012/03/01/replacing-the-9999px-hack-new-image-replacement
+// Additional helpers from http://html5boilerplate.com/docs/css/
+// This is also included as a SASS mixin, see: sass/custom.rb
+//
+
+@mixin ir
+  // Kellum Method
+  display: block !important 
+  text-indent: 100% 
+  white-space: nowrap 
+  overflow: hidden 
+  // Additional helpers
+  border: 0                      // Remove the default border from elements like <button>
+  font: 0/0 a                    // Crush the text down to take up no space
+  text-shadow: none              // Remove any text shadows
+  color: transparent             // Hide any residual text in Safari 4 and any mobile devices that may need it
+  background-color: transparent  // Hide the default background color on elements like <button>
+
+
+//
+// element-invisible improved and more robust
+//
+@mixin element-invisible 
+  border: 0 
+  height: 1px 
+  overflow: hidden 
+  padding: 0 
+  position: absolute !important 
+  width: 1px 
+  clip: rect(1px, 1px, 1px, 1px) 
+
+
+//
+// Turns off the element-invisible effect
+//
+@mixin element-invisible-off 
+  position: static !important 
+  clip: auto 
+  height: auto 
+  width: auto 
+  overflow: auto 
+
+@mixin element-focusable 
+  @include element-invisible 
+
+  &:active,
+  &:focus 
+    @include element-invisible-off 
+
+
+//
+// Shift content offscreen, can be usefull when you reall need to do this
+//
+@mixin offscreen 
+  position: absolute 
+  top: -99999em 
+  width: 1px 
+  height: 1px 
+  overflow: hidden 
+  outline: 0 
+
+
+//
+// Hide content from all users
+//
+@mixin element-hidden 
+  display: none 
+
+
+//
+// The word "Unpublished" displayed underneath unpublished nodes and comments
+//
+@mixin unpublished 
+  color: pink  // target browsers that do not support rgba
+  color: rgba(239, 170, 170, 0.4) 
+  font-family: $impact 
+  font-size: 50px 
+  font-weight: 700 
+  line-height: 1.2 
+  height: 0 
+  margin: 0 
+  padding: 0 
+  overflow: visible 
+  text-align: center 
+  text-transform: uppercase 
+  word-wrap: break-word 

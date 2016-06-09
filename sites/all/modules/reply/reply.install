@@ -1,0 +1,226 @@
+<?php
+
+/**
+ *  _schema
+ */
+function reply_schema() {
+  $schema['reply'] = array(
+    'description' => 'Reply entity.',
+    'fields' => array(
+      'id' => array(
+        'description' => 'Reply ID.',
+        'type' => 'serial',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+      ),
+      'bundle' => array(
+        'description' => 'Bundle.',
+        'type' => 'varchar',
+        'length' => '64',
+        'not null' => TRUE,
+      ),
+      'parent' => array(
+        'description' => 'Parent reply.',
+        'type' => 'int',
+        'length' => 11,
+        'not null' => TRUE,
+        'default' => 0
+      ),
+      'entity_id' => array(
+        'description' => 'Entity id this reply is attached to.',
+        'type' => 'int',
+        'length' => 11,
+        'not null' => TRUE
+      ),
+      'entity_type' => array(
+        'description' => 'Type of entity this reply is attached to.',
+        'type' => 'varchar',
+        'length' => 64,
+        'not null' => TRUE
+      ),
+      'uid' => array(
+        'description' => 'Author user id.',
+        'type' => 'int',
+        'length' => 11,
+        'not null' => TRUE,
+        'default' => 0
+      ),
+      'created' => array(
+        'description' => 'UNIX timestamp of reply creation.',
+        'type' => 'int',
+        'length' => 11,
+        'not null' => TRUE,
+      ),
+      'changed' => array(
+        'description' => 'UNIX timestamp of reply change.',
+        'type' => 'int',
+        'length' => 11,
+        'not null' => TRUE,
+      ),
+      'hostname' => array(
+        'description' => 'Author IP address.',
+        'type' => 'varchar',
+        'length' => 15,
+        'not null' => TRUE
+      ),
+      'status' => array(
+        'description' => 'Reply status.',
+        'type' => 'int',
+        'size' => 'tiny',
+        'length' => 1,
+        'not null' => TRUE,
+        'default' => 1
+      ),
+      'language' => array(
+        'description' => 'Reply language.',
+        'type' => 'varchar',
+        'length' => 12,
+        'not null' => TRUE,
+        'default' => LANGUAGE_NONE
+      ),
+      'depth' => array(
+        'description' => 'The depth reply is in in the three.',
+        'type' => 'int',
+        'size' => 'tiny',
+        'not null' => TRUE,
+        'default' => 0
+      ),
+      'instance_id' => array(
+        'description' => 'Instance id this reply is attached through.',
+        'type' => 'int',
+        'length' => 11,
+        'not null' => TRUE
+      ),
+      'position' => array(
+        'description' => 'Position of this reply in hierarchy of this entity.',
+        'type' => 'int',
+        'length' => 11,
+        'not null' => TRUE
+      ),
+      'deleted' => array(
+        'description' => 'Indicates this reply has been deleted.',
+        'type' => 'int',
+        'size' => 'tiny',
+        'length' => 1,
+        'not null' => TRUE,
+        'default' => '0'
+      )
+    ),
+    'primary key' => array('id'),
+    'indexes' => array(
+      'bundle' => array('bundle'),
+      'parent' => array('parent'),
+      'position' => array('position'),
+      'entity_id' => array('entity_id'),
+      'entity_type' => array('entity_type'),
+      'instance_id' => array('instance_id')
+    )
+  );
+// @todo pridat locked pre programatorov
+  $schema['reply_bundle'] = array(
+    'description' => 'List of defined reply bundles.',
+    'fields' => array(
+      'bundle' => array(
+        'description' => 'The machine name of bundle.',
+        'type' => 'varchar',
+        'length' => 64,
+        'not null' => TRUE
+      ),
+      'name' => array(
+        'description' => 'The human readable name of bundle.',
+        'type' => 'varchar',
+        'length' => 64,
+        'not null' => TRUE
+      ),
+      'access' => array(
+        'description' => 'Access to replies.',
+        'type' => 'int',
+        'size' => 'tiny',
+        'length' => 1,
+        'not null' => TRUE
+      ),
+      'display' => array(
+        'description' => 'Display flat or threaded list.',
+        'type' => 'int',
+        'size' => 'tiny',
+        'length' => 1,
+        'not null' => TRUE
+      ),
+      'description' => array(
+        'description' => 'The description of this bundle.',
+        'type' => 'varchar',
+        'length' => 255,
+        'not null' => FALSE,
+        'default' => NULL
+      ),
+      'form' => array(
+        'description' => 'Position of the reply form.',
+        'type' => 'int',
+        'size' => 'tiny',
+        'length' => 1,
+        'not null' => TRUE,
+        'default' => '1'
+      ),
+      'allow_reply' => array(
+        'description' => 'Allow replying on replies.',
+        'type' => 'int',
+        'size' => 'tiny',
+        'length' => 1,
+        'not null' => TRUE,
+        'default' => '1'
+      ),
+      'locked' => array(
+        'description' => 'Protect this bundle against any changes of settings or fields by locking it.',
+        'type' => 'int',
+        'size' => 'tiny',
+        'length' => 1,
+        'not null' => TRUE,
+        'default' => '0'
+      )
+    ),
+    'primary key' => array('bundle'),
+  );
+
+  return $schema;
+}
+
+
+/**
+ *  _field_schema
+ */
+function reply_field_schema($field) {
+  return array(
+    'columns' => array(
+      'access' => array(
+        'description' => '-1 - global, 0 - disabled, 1 - read, 2 - write',
+        'type' => 'int',
+        'size' => 'tiny',
+        'length' => 1,
+        'not null' => TRUE
+      ),
+      'display' => array(
+        'description' => '-1 - global, 1 - flat list, 2 - threaded list',
+        'type' => 'int',
+        'size' => 'tiny',
+        'length' => 1,
+        'not null' => TRUE
+      ),
+      'form' => array(
+        'description' => 'Position of the reply form. -1 - global, 1 - on the same page, 2 - on custom page.',
+        'type' => 'int',
+        'size' => 'tiny',
+        'length' => 1,
+        'not null' => TRUE,
+        'default' => '1'
+      ),
+      'allow_reply' => array(
+        'description' => 'Allow replying on replies. -1 global, 0 - deny, 1 - allow.',
+        'type' => 'int',
+        'size' => 'tiny',
+        'length' => 1,
+        'not null' => TRUE,
+        'default' => '1'
+      )
+    )
+  );
+}

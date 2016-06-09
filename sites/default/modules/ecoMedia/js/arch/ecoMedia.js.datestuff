@@ -1,0 +1,130 @@
+(function ($) {
+  Drupal.behaviors.ecoMedia = {
+    leadingZero: function (val) {
+      if (val < 10)
+        return '0' + val;
+      return val;
+    },
+    formatDate: function (dateObj) {
+//    alert('dude ' + dateObj);
+//    alert('fart ' + dateObj.getFullYear());
+      return (Drupal.behaviors.ecoMedia.leadingZero(dateObj.getMonth() + 1) + '/' +
+              Drupal.behaviors.ecoMedia.leadingZero(dateObj.getDate()) + '/' +
+              dateObj.getFullYear());
+    },
+    formatTime: function (dateObj) {
+//    alert('dude ' + dateObj);
+//    alert('fart ' + dateObj.getFullYear());
+      return (Drupal.behaviors.ecoMedia.leadingZero(dateObj.getHours()) +':'+ 
+              Drupal.behaviors.ecoMedia.leadingZero(dateObj.getMinutes()));
+    },
+
+    attach: function (context, settings) {
+      $('document').ready(function () {
+        var sbdate = $('input#edit-sch-date-begin-datepicker-popup-0');
+        var sbtime = $('input#edit-sch-date-begin-timeEntry-popup-1');
+        var sedate = $('input#edit-sch-date-end-datepicker-popup-0');
+        var setime = $('input#edit-sch-date-end-timeEntry-popup-1');
+        var abdate = $('input#edit-act-date-begin-datepicker-popup-0');
+        var abtime = $('input#edit-act-date-begin-timeEntry-popup-1');
+        var aedate = $('input#edit-act-date-end-datepicker-popup-0');
+        var aetime = $('input#edit-act-date-end-timeEntry-popup-1');
+        var allday = $('input#edit-all-day');
+        var copy   = $('input#copy');
+        var work   = $('input#work');
+        var plus   = $('input#plus');
+        var minus  = $('input#minus');
+        var dis    = 'disabled';
+
+        // Beginning Date changes
+        $(sbdate).change(function() {
+          var sdate = sbdate.val() + ' ' + sbtime.val();
+          
+          adate = abdate.val() + ' ' + abtime.val();
+          if (sedate.val() == '' || sedate.val() < sbdate.val()) {
+             sedate.val(sbdate.val());
+             if (setime.val() == '') 
+               setime.val(sbtime.val());
+             if (compareDates(sbdate.val(), abdate.val()) > 0) {
+
+             }
+          }
+        });
+        // Beginning time changes
+        $(sbtime).change(function() {
+          if (setime.val() == '' || setime.val() < sbtime.val()) {
+             setime.val(sbtime.val());
+          }
+        });
+
+        // Ending Date changes
+        $(sedate).change(function() {
+          alert('end changed');
+          if (sedate.val() == '' || sedate.val() < sbdate.val()) {
+             sedate.val(sbdate.val());
+          }
+        });
+        // Ending Time changes
+        $(setime).change(function() {
+          if (sedate.val() == '' || sedate.val() < sbdate.val()) {
+             sedate.val(sbdate.val());
+          }
+        });
+
+        $(allday).change(function() {
+          if (allday.attr('checked')) {
+            sbtime.attr(dis,dis);
+            setime.attr(dis,dis);
+            abtime.attr(dis,dis);
+            aetime.attr(dis,dis);
+          } else {
+            sbtime.removeAttr(dis);
+            setime.removeAttr(dis);
+            abtime.removeAttr(dis);
+            aetime.removeAttr(dis);
+          }
+        });
+
+        $(copy).mouseup(function() {
+          abdate.val(sbdate.val());
+          aedate.val(sedate.val());
+          abtime.val(sbtime.val());
+          aetime.val(setime.val());
+        });
+        // Workday button is released
+        $(work).mouseup(function() {
+          sbtime.val("07:30");
+          setime.val("16:30");
+        });
+        // Plus button is released
+        $(plus).mouseup(function() {
+          var sdate = new Date(sedate.val() + ' ' + setime.val());
+          var fdate = new Date(sdate.getTime() + 3600000);
+          sedate.val(Drupal.behaviors.ecoMedia.formatDate(fdate));
+          setime.val(Drupal.behaviors.ecoMedia.formatTime(fdate));
+        });
+        // Plus button is released
+        $(minus).mouseup(function() {
+          var sdate = new Date(sedate.val() + ' ' + setime.val());
+          var fdate = new Date(sdate.getTime() - 3600000);
+          sedate.val(Drupal.behaviors.ecoMedia.formatDate(fdate));
+          setime.val(Drupal.behaviors.ecoMedia.formatTime(fdate));
+        });
+      });
+     
+    // $('input#edit-name').hover(function () {
+    //  alert('fart4');
+    //});
+    // $('input#edit-sch-date-begin-timeEntry-popup-1').hover(function () {
+    //  var date1 = $('input#edit-sch-date-begin-datepicker-popup-0').val();
+    //  var time1 = $('input#edit-sch-date-begin-timeEntry-popup-1').val();
+    //  var date2 = $('input#edit-sch-date-end-datepicker-popup-0').val();
+    //  var time2 = $('input#edit-sch-date-end-timeEntry-popup-1').val();
+    //  if (time2 == '') {
+    //     $('input#edit-sch-date-end-timeEntry-popup-1').val(time1);
+    //  }
+    //  alert('fart5');
+    //});
+    }
+  }
+})(jQuery);

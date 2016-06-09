@@ -1,0 +1,16 @@
+core = "7.x"
+dependencies[] = "file"
+dependencies[] = "media"
+dependencies[] = "migrate"
+description = "Migrate the Media files into Drupal"
+files[] = ecoMigImg.migrate.inc
+name = "+ Images migration"
+desc = "Migrate images into the EcoSleuth website"
+package = "+ EcoSleuth"
+
+; Information added by drupal.org packaging script on 2012-06-02
+version = "7.x-2.4"
+core = "7.x"
+project = "ecosleuth"
+datestamp = "1338662478"
+

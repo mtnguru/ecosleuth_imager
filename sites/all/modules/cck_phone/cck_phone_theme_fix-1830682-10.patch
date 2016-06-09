@@ -1,0 +1,92 @@
+From a0c115b377f0e146298d07d06546f0df85d4aaf5 Mon Sep 17 00:00:00 2001
+From: RoSk0 <roskoliy.kirill@gmail.com>
+Date: Wed, 24 Jul 2013 22:14:56 +0300
+Subject: [PATCH] #1830682 by RoSk0, TuFrac, valthebald: Theme error fix.
+
+---
+ cck_phone.module | 23 ++++++++++++-----------
+ 1 file changed, 12 insertions(+), 11 deletions(-)
+
+diff --git a/cck_phone.module b/cck_phone.module
+index d261f7a..6d40879 100644
+--- a/cck_phone.module
++++ b/cck_phone.module
+@@ -34,7 +34,7 @@ function cck_phone_theme() {
+       'render element' => 'element',
+     ),
+     'phone_number_extension' => array(
+-      'render element' => 'element',
++      'variables' => array('extension' => NULL),
+     ),
+     'cck_phone_formatter_global_phone_number' => array(
+       'variables' => array('element' => NULL),
+@@ -255,8 +255,8 @@ function cck_phone_field_is_empty($item, $field) {
+ /**
+  * Theme function for phone extension.
+  */
+-function theme_phone_number_extension($element = '') {
+-  return t('<em> ext.</em> %extension', array('%extension' => $element['element']));
++function theme_phone_number_extension($variables) {
++  return '<em>' . t('ext.') . '</em> ' . check_plain($variables['extension']);
+ }
+ 
+ /**
+@@ -267,7 +267,7 @@ function theme_cck_phone_formatter_global_phone_number($element) {
+ 
+   // Display a global phone number with country code.
+   if (!empty($element['number']) && !empty($element['country_codes'])) {
+-    // Call country default formatter if exist
++    // Call country default formatter if exists.
+     $custom_cc = _cck_phone_custom_cc();
+     if (isset($custom_cc[$element['country_codes']])) {
+       $function = $element['country_codes'] . '_formatter_default';
+@@ -276,15 +276,16 @@ function theme_cck_phone_formatter_global_phone_number($element) {
+       }
+     }
+ 
+-    // Output a raw value if no custom formatter or formatter return empty
++    // Output a raw value if no custom formatter or formatter returns empty
++    // value.
+     if (empty($phone)) {
+       $cc = cck_phone_countrycodes($element['country_codes']);
+       $phone = $cc['code'] . '-' . $element['number'];
+     }
+ 
+-    // Extension
++    // Extension.
+     if (!empty($element['extension'])) {
+-      $phone = $phone . theme('phone_number_extension', $element['extension']);
++      $phone = $phone . theme('phone_number_extension', $element);
+     }
+   }
+ 
+@@ -299,7 +300,7 @@ function theme_cck_phone_formatter_local_phone_number($element) {
+ 
+   // Display a local phone number without country code.
+   if (!empty($element['number'])) {
+-    // Call country local formatter if exist
++    // Call country local formatter if exists.
+     $custom_cc = _cck_phone_custom_cc();
+     if (isset($custom_cc[$element['country_codes']])) {
+       $function = $element['country_codes'] . '_formatter_local';
+@@ -308,14 +309,14 @@ function theme_cck_phone_formatter_local_phone_number($element) {
+       }
+     }
+ 
+-    // Output a raw value if no custom formatter or formatter return empty
++    // Output a raw value if no custom formatter or formatter return empty.
+     if (empty($phone)) {
+       $phone = $element['number'];
+     }
+ 
+-    // Extension
++    // Extension.
+     if (!empty($element['extension'])) {
+-      $phone = $phone . theme('phone_number_extension', $element['extension']);
++      $phone = $phone . theme('phone_number_extension', $element);
+     }
+   }
+ 
+-- 
+1.8.1.2
+

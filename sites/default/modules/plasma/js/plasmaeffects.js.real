@@ -1,0 +1,44 @@
+(function ($) {
+  Drupal.behaviors.plasma = {
+    attach: function (context, settings) {
+//    $('document').ready(function () {
+        var $header = $('#header');
+        return if (!$header);
+        var $content = $('#content');
+        var shadow = $header.css("boxShadow");
+//      $content.append('<p>shadow1: ' + shadow + '</p>');
+//      var re = /rgb/;
+        var re = /rgb\((\d+), *(\d+), *(\d+)\) +(\d+)px +(\d+)px +(\d+)px +(\d+)px/;
+        var matches = shadow.match(re);
+        if (re.exec(shadow)) {
+          $content.append('<p>match</p>');
+          var dir = 1;
+          var cinc = 10;
+//        var hsl = rgbToHsl(matches[1],matches[2],matches[3]);
+          var blur = matches[6];
+          var spread = matches[7];
+        } else {
+//        $content.append('<p>no match</p>');
+        }
+        setInterval(function () {
+          if (dir > 0) {
+            blur++;
+            dir = (dir > 10) ? dir = -1 : dir + 1;
+//          hsl[0] = (hsl[0] > 360 - cinc) ? hsl[0] + cinc - 360 : hsl[0] + cinc;
+          } else {
+            blur--;
+            dir = (dir < -10) ? dir = 1 : dir - 1;
+//          hsl[0] = (hsl[0] < 0 + cinc) ? hsl[0] - cinc + 360 : hsl[0] - cinc;
+          }
+//        var rgb = hslToRgb(hsl);
+          var nshadow = '0 0 ' + blur + 'px ' + spread + 'px ' +
+                        'rgb(' + rgb[0] + ',' + rgb[1] + ',' + rgb[2] + ')';
+          $content.append('<p>nshadow ' + dir + '  ' + nshadow + '</p>');
+//        $header.css({boxShadow: '0 0 ' + blur + 'px ' + spread + '1px ' +
+//                          border: 'solid 2px #00ff00'});
+          $header.css({boxShadow: nshadow});
+        },75);
+      });
+  //}
+  } 
+})(jQuery);

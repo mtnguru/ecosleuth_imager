@@ -1,0 +1,14 @@
+<?php
+/**
+* Implements hook_disable().
+*
+* the migration module should deregister its migrations
+*/
+function ecoMigBase_disable() {
+  // based on: drupal.org/node/1418350#comment-5557772
+  Migration::deregisterMigration('ecoUser');
+  Migration::deregisterMigration('ecoStatus');
+  Migration::deregisterMigration('ecoWhat');
+  Migration::deregisterMigration('ecoHow');
+}
+?>

@@ -1,0 +1,13 @@
+core = "7.x"
+dependencies[] = "file"
+dependencies[] = "media"
+files[] = ecoViewModes.module
+description = "Add View modes to media, user and nodes"
+name = "+ Add View Modes"
+package = "+ EcoSleuth"
+
+; Information added by drupal.org packaging script on 2012-06-02
+version = "7.x-2.4"
+core = "7.x"
+project = "ecosleuth"
+datestamp = "1338662478"

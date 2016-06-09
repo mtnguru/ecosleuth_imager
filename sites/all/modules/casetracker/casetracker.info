@@ -1,0 +1,29 @@
+name = Case Tracker
+description = "Enables the handling of projects and their cases."
+core = 7.x
+package = "Case Tracker"
+version = 7.x-1.0-dev
+configure = admin/structure/casetracker
+
+dependencies[] = entity
+dependencies[] = views
+dependencies[] = entityreference
+dependencies[] = date
+dependencies[] = date_popup
+dependencies[] = list
+
+files[] = casetracker_project.inc
+files[] = casetracker_case.inc
+files[] = admin/casetracker_project.admin.inc
+files[] = admin/casetracker_case.admin.inc
+files[] = admin/casetracker_project_type.admin.inc
+files[] = admin/casetracker_case_type.admin.inc
+files[] = views/casetracker.views_default.inc
+files[] = views/casetracker_project_handlers.inc
+files[] = views/casetracker_case_handlers.inc
+; Information added by drupal.org packaging script on 2012-07-26
+version = "7.x-2.x-dev"
+core = "7.x"
+project = "casetracker"
+datestamp = "1343261308"
+

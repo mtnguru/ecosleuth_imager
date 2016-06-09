@@ -1,0 +1,54 @@
+<?php
+
+/**
+ * 
+ * @file This file creates one Project Type and one Case Type, with commonly used
+ * fields, so that new users to Case Tracker could start easily.
+ */
+
+/**
+ * Implements hook_install()
+ */
+function casetracker_basic_install() {
+  
+  require_once drupal_get_path('module', 'casetracker') . '/admin/casetracker_case_type.admin.inc';
+  require_once drupal_get_path('module', 'casetracker') . '/admin/casetracker_project_type.admin.inc';
+
+  //  create some basic case types
+  $default_cases = array(
+    array(
+      'type' => 'casetracker_case_basic',
+      'label' => st('Case'),
+      'description' => st('General purpose tasks.'),
+    ),
+  );
+  foreach ($default_cases as $case) {
+    $new_case_type = new CaseTrackerCaseType();
+    $new_case_type->type = $case['type'];
+    $new_case_type->label = $case['label'];
+    $new_case_type->description = $case['description'];
+    $new_case_type->is_new = TRUE;
+    casetracker_case_type_add_default_fields($new_case_type);
+    $new_case_type->save();
+  }
+
+  //  create a basic project type
+  $default_projects = array(
+    array(
+      'type' => 'casetracker_project_basic',
+      'label' => st('Project'),
+      'description' => st('Common project.'),
+    )
+  );
+  foreach ($default_projects as $project) {
+    $new_project_type = new CaseTrackerProjectType();
+    $new_project_type->type = $project['type'];
+    $new_project_type->label = $project['label'];
+    $new_project_type->description = $project['description'];
+    $new_project_type->is_new = TRUE;
+    casetracker_project_type_add_default_fields($new_project_type);
+    $new_project_type->save();
+  }
+  
+  drupal_flush_all_caches();
+}

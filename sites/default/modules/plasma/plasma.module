@@ -1,0 +1,29 @@
+<?php
+
+/**
+ * @file
+ * Module to implement JavaScript/JQuery that 
+ * create Plasma like effects on the screen
+ */  
+
+
+/**
+ * Implement HOOK_init
+ */
+/*
+function plasma_init() {
+  // autocomplete for facility field - Can this be moved to the TicketUIController?
+  $items['facility/autocomplete/dairy'] = array(
+    'title' => 'Autocomplete for Dairies (and DS)',
+    'page callback' => '_plasma_dairy_autocomplete',
+    'access arguments' => array ('use autocomplete'),
+    'type' => MENU_CALLBACK,
+  );
+  $items['people/autocomplete/employee'] = array(
+    'title' => 'Autocomplete for Employee names',
+    'page callback' => '_plasma_employee_autocomplete',
+    'access arguments' => array ('use autocomplete'),
+    'type' => MENU_CALLBACK,
+   );
+  return $items;
+} */

@@ -1,0 +1,15 @@
+core = "7.x"
+dependencies[] = "file"
+dependencies[] = "media"
+description = "Create Search field, file name and copy exif picture date"
+files[] = dsFileUpdate.module
+name = "+ Create Media search field"
+desc = "When storing media - create filename, copy exif create date, and create the field_search_field"
+package = "+ EcoSleuth"
+project = "ecosleuth"
+
+; Information added by drupal.org packaging script on 2012-06-02
+version = "7.x-2.4"
+core = "7.x"
+datestamp = "1338662478"
+

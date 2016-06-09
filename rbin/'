@@ -1,0 +1,351 @@
+#!/usr/bin/php -q
+<?php
+/*
+ * @file
+ * 
+ * Script to automatically load images from Dropbox
+ *
+ * Read in configuration file   DRUPAL_ROOT/sites/cows10/files/dsConf/imageloader.cnf
+ *  - Lists all users with permission to load images into COWS from 
+ *    their Dropbox directory
+ *  - Dropbox directory: /home/cows/Dropbox/$user->name/<new image files>
+ *  foreach user in Dropbox directory
+ *    foreach image in the users directory
+ *     - Extract EXIF GPS and find facility using proximity search
+ *     - Extract EXIF Photo date
+ *     - Check Users tickets, if one was active at the time picture was taken
+ *       and the facility is the same, then add the ticket to the image
+ *     - Set the media_status to New
+ *     - Save the image 
+ * 
+ */
+
+// $drupalRoot = '/var/www/dug';
+// $bootstrap  = '../../includes/bootstrap.inc';
+// $chdir      = '/var/www/dug/sites/dug1';
+
+// error_reporting(E_ALL);
+// ini_set('display_errors', TRUE);
+// ini_set('display_startup_errors', TRUE);
+
+global $php_errormsg;
+
+$drupalRoot = '/home/drupal/drupal-7.21';
+$bootstrap  = 'includes/bootstrap.inc';
+$siteRoot   = '/home/drupal/drupal-7.21/sites/cows9';
+$dropboxDir = '/home/cows/Dropbox';
+$filesDir   = '/home/cows/cows9/files';
+
+$tzoffset = -21600;
+
+print "\n";
+print "drupalRoot: $drupalRoot\n";
+print "siteRoot:   $siteRoot\n";
+print "bootstrap:  $bootstrap\n";
+print "dropboxDir: $dropboxDir\n\n";
+
+chdir($drupalRoot);
+
+// prevent this from running under apache:
+if (array_key_exists('REQUEST_METHOD', $_SERVER)) {
+    echo 'nope.  not executing except from the command line.';
+    exit(1);
+}
+
+// set HTTP_HOST or drupal will refuse to bootstrap
+$_SERVER['HTTP_HOST'] = 'cows9';
+$_SERVER['REMOTE_ADDR'] = '127.0.0.1';
+
+define('DRUPAL_ROOT', $drupalRoot);
+
+include_once $bootstrap;
+drupal_bootstrap(DRUPAL_BOOTSTRAP_FULL);
+print "\n"; // Clear a space output somewhere in drupal_bootstrap
+
+$facilities = _imageloader_getFacilities();
+
+// foreach user in /home/cows/Dropbox/$USERNAME
+
+if (!$userDir = opendir($dropboxDir)) die("Could not open dir $dropboxDir");
+while (($username = readdir($userDir))) {
+  if ($username[0] == '.') continue;
+  $inDir = "$dropboxDir/$username/Camera Uploads";
+  $outDir = "$dropboxDir/$username/Uploaded";
+  if (is_dir($inDir)) {
+    print("User directory found |$username|$inDir\n");
+    // get user id from Directory name
+    $user = user_load_by_name($username);
+    print("User: " . $user->uid . "\n");
+    print("Vardump " . var_dump($user) . "\n");
+    if (!$id = opendir($inDir)) die("Could not open dir $inDir");
+    while (($file = readdir($id))) {
+      if ($file[0] == '.') continue;
+      $srcPath = "$inDir/$file";
+      if (is_file($srcPath)) {
+        print("   File: $file\n");
+      	_imageloader_loadFile($srcPath,$username);
+        `mv "$srcPath" "$outDir"`; 
+      }
+      else {
+        print("  File not loaded: $inDir -- $srcPath\n");
+      }
+    }
+    closedir($id);
+  }
+  else {
+    print("Ignored, not a directory: $inDir\n");
+  }
+}
+closedir($userDir);
+
+
+ /**
+   * Helper function to change GPS co-ords into decimals.
+   */
+function _imageloader_reformat_DMS2D($value, $ref) {
+  if (!is_array($value)) {
+    $value = array($value);
+  }
+  $dec = 0;
+  $granularity = 0;
+  foreach ($value as $element) {
+    $parts = explode('/', $element);
+    $dec += (float) (((float) $parts[0] /  (float) $parts[1]) / pow(60, $granularity));
+    $granularity++;
+  }
+  if ($ref == 'S' || $ref == 'W') {
+    $dec *= -1;
+  }
+  return $dec;
+}
+
+/**
+ * Extract the Exif data from a file
+ *   Date, Longitude, Latitude
+ * @param type $inPath - path of the file to extract data from
+ */
+function _imageloader_extractExif($inPath) {
+  $exifdata = exif_read_data($inPath);
+  $datetime =  $exifdata[FileDateTime];
+  print "      Time: $datetime\n";
+  if (!empty($exifdata[GPSLatitude])) {
+    $latitude  = _imageloader_reformat_DMS2D($exifdata[GPSLatitude],$exifdata[GPSLatitudeRef]);
+    $longitude = _imageloader_reformat_DMS2D($exifdata[GPSLongitude],$exifdata[GPSLongitudeRef]);
+    print("      Location:  $latitude\n");
+    print("      Longitude: $longitude\n");
+  }
+  return array($datetime,$latitude,$longitude);
+}
+
+/**
+ * Given a Source path for the file, make the destination path
+ *
+ **/
+
+function makeFilePath($inPath,$facility,$createDate) {
+  global $filesDir;
+
+  if (preg_match('/\.jpg/i',$inPath)) $suffix = "jpg"; 
+  if (preg_match('/\.png/i',$inPath)) $suffix = "png"; 
+  if (preg_match('/\.jpeg/i',$inPath)) $suffix = "jpeg"; 
+  if (preg_match('/\.gif/i',$inPath)) $suffix = "gif"; 
+  if (!isset($suffix)) die("File has invalid suffix: $inPath\n");
+
+  // Convert anthing that is not a character or number to _, delete duplicated _'s
+  $facility = preg_replace('/_+/','_',preg_replace('/[^A-Za-z0-9]/','_',$facility));
+  $date = substr(format_date($createDate,'custom','Y-m-d'),0,10);
+  $date = preg_replace('?/?','-',$date);
+  $basename = $date . "_" . $facility;
+
+  print("makeFilePath date $date\n");
+
+  // Append number to each file to make it unique
+  $i = 0;
+  do {
+    $filename = sprintf("%s_%g.$s",$basename,$i++,$suffix);
+    $path = "pictures/$date";
+    $tpath = "$filesDir/$path/$filename";
+  } while (file_exists($tpath));
+  return array($path,$filename,$suffix);
+}
+
+
+function _imageloader_loadFile ($inPath,$username) {
+  global $facilities;
+  global $filesDir;
+  $tzoffset = -21600;
+
+  // extract EXIF time, latitude, longitude
+  list($createDate,$latitude,$longitude) = _imageloader_extractExif($inPath);
+
+  // do proximity search on latitude and longitude to find Facility
+  $facility['name'] = "Unknown";
+  if (isset($latitude))
+    $facility = _imageloader_matchFacility($latitude,$longitude,$facilities);
+
+  list($path,$filename,$suffix) = makeFilePath($inPath,$facility['name'],$createDate);
+
+  $ms = reset(taxonomy_get_term_by_name('New','media_status'));
+  $msTid = $ms->tid;
+
+  $user = user_load_by_name($username);
+  $dpath = "$filesDir/$path/$filename";
+  $uri   = "public://$path/$filename";
+
+  // Move Image from Dropbox/Camera Uploads to Dropbox/Uploaded
+  print "Copy image file:\n    $inPath\n -> $dpath\n   $php_errormsg\n";
+  if (!dir("$filesDir/$path")) {
+    `mkdir $filesDir/$path; chmod 777 $filesDir/$path`; 
+  }
+  `cp "$inPath" "$dpath"; chmod 666 $dpath`;
+  //unlink($inPath);
+
+  // Create the $file object and initialize it
+  $file = new StdClass();
+  $file->filemime  = 'image/$suffix';
+  $file->filename  = $filename;
+    
+  $file->status    = '1';
+  $file->timestamp = '';
+  $file->type      = 'image';
+  $file->uid       = $user->uid;
+  $file->uri       = $uri;
+  $file->field_create_date = array(
+      'und'        => array (
+        0             => array (
+          'offset2'     => $tzoffset,
+          'offset'      => $tzoffset,
+          'show_todate' => 0,
+          'timezone'    => 'America/Denver',
+          'value'       => $createDate,
+//        'value2'      => '2010-05-01 06:00:00',
+      ),
+    ),
+  );
+  $file->field_exif_date = array(
+      'und'        => array (
+        0             => array (
+          'offset2'     => $tzoffset,
+          'offset'      => $tzoffset,
+          'show_todate' => 0,
+          'timezone'    => 'America/Denver',
+          'value'       => $createDate,
+//        'value2'      => '2010-05-01 06:00:00',
+      ),
+    ),
+  );
+  $file->field_facility = array(
+      'und'       => array(),
+  );
+  $file->field_media_status = array(
+      'und'     => array (
+        0         => array (
+          'tid'     => $msTid,
+      ),
+    ),
+  );
+//$file->field_image_content = array(
+//    'und'     => array (
+//      0         => array (
+//        'tid'     => $icTid,
+//    ),
+//  ),
+//);
+//$file->field_product_segment = array(
+//    'und'     => array (
+//      0         => array (
+//        'tid'     => $psTid,
+//    ),
+//  ),
+//);
+  $file->field_latitude = array(
+      'und'     => array (
+        0         => array (
+          'value'   => $latitude,
+      ),
+    ),
+  );
+  $file->field_longitude = array(
+      'und'     => array (
+        0         => array (
+          'value'   => $longitude,
+      ),
+    ),
+  );
+  $file->field_name = array(
+      'und'     => array (
+        0         => array (
+          'value'   => '',
+      ),
+    ),
+  );
+  $file->field_search_field = array(
+      'und'     => array (
+        0         => array (
+          'value'   => '',
+      ),
+    ),
+  );
+
+  file_save($file);
+
+  $args = array(
+    '@type' => file_entity_type_get_name($file),
+    '%title' => entity_label('file', $file),
+  );
+  watchdog('file', '@type: updated %title.', $args);
+  drupal_set_message(t('@type %title has been updated.', $args));
+}
+
+/**
+ * Retrieve an array of facilities that have a latitude and longitude
+ */
+function _imageloader_getFacilities () {
+  module_load_include('inc', 'node', 'content_types');
+  drupal_load_module;
+//module_load_include('inc','database','database.inc');
+  $results = db_query('SELECT title,nid,geo.field_geofield_lat,geo.field_geofield_lon 
+                       FROM {node} 
+                       LEFT JOIN {field_data_field_geofield} geo ON nid = geo.entity_id
+                       WHERE type = :type',array(':type' => 'facility'));
+  $facilities = array();
+  foreach ($results as $facility) {
+    if (($ret = strstr($facility->title,'Animal')) == FALSE) {
+//    print "   $ret  No dairy found $facility->title\n";
+    } else {
+      print "   Found a dairy $facility->title\n";
+    }
+    if (!empty($facility->field_geofield_lat)) {
+      $facilities[$facility->title] = array(
+        'nid'       => $facility->nid,
+        'latitude'  => $facility->field_geofield_lat,
+        'longitude' => $facility->field_geofield_lon,
+      );
+    }
+  }
+  return $facilities;
+}
+
+
+function _imageloader_matchFacility($latitude,$longitude) {
+  global $facilities;
+  foreach ($facilities as $facilityname => $facility) {
+    $adistance = abs($latitude  - $facility['latitude']);
+    $odistance = abs($longitude - $facility['longitude']);
+    $distance = abs($latitude  - $facility['latitude']) 
+              + abs($longitude - $facility['longitude']);
+    if (!isset($match)) {
+      $match = $facility;
+      $match['distance']  = $distance;
+    } 
+    else {
+      if ($distance < $match['distance']) {
+        $match = $facility;
+        $match['distance'] = $distance;
+        $match['name'] = $facilityname;
+      }
+    }
+  }
+  print "Facility found - " . $match['name'] . "\n";
+  return $match;
+}

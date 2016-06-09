@@ -1,0 +1,13 @@
+name = Case Tracker basic types
+description = "Enables a basic project type and a basic case type, with commonly used fields."
+core = 7.x
+package = "Case Tracker"
+version = 7.x-1.0-dev
+
+dependencies[] = casetracker
+; Information added by drupal.org packaging script on 2012-07-26
+version = "7.x-2.x-dev"
+core = "7.x"
+project = "casetracker"
+datestamp = "1343261308"
+

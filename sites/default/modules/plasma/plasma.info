@@ -1,0 +1,18 @@
+name = + Plasma Initiative Javascript
+description = Make the screen act like it has live plasma
+core = 7.x
+package = "+ EcoSleuth"
+
+dependencies[] = entity
+dependencies[] = views
+
+files[]  = plasma.module
+scripts[]= js/plasmaeffects.js
+scripts[]= js/color_conversions.js
+
+; Information added by drupal.org packaging script on 2011-07-04
+version = "7.x-1.x-dev"
+core = "7.x"
+project = "ecosleuth"
+datestamp = "1309739296"
+

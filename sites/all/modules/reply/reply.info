@@ -1,0 +1,17 @@
+name = Reply Entity
+description = Reply entity for posting comments on other entities.
+configure = admin/structure/reply
+core = 7.x
+dependencies[] = entity
+
+files[] = views/handlers/views_handler_field_reply_link.inc
+files[] = views/handlers/views_handler_field_reply_link_edit.inc
+files[] = views/handlers/views_handler_field_reply_link_delete.inc
+files[] = views/handlers/views_handler_field_reply_link_reply.inc
+
+; Information added by drupal.org packaging script on 2012-09-14
+version = "7.x-1.x-dev"
+core = "7.x"
+project = "reply"
+datestamp = "1347584662"
+

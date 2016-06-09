@@ -1,0 +1,17 @@
+/*
+ * Target IE 6, 7 and 8 (less than IE9)
+ */
+/*
+ * Assuming a mobile first approach with respond.js OFF, we must reset the font
+ * size for lt IE9
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/eco\/sites\/e1\/themes\/dstheme\/sass\/ie9\.scss}line{font-family:\0000313}}
+html {
+  font-size: 81.3%;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/eco\/sites\/e1\/themes\/dstheme\/sass\/ie9\.scss}line{font-family:\0000320}}
+.ds-images .views-field-views-bulk-operations {
+  left: -15px;
+  top: 135px;
+}

@@ -1,0 +1,97 @@
+<?php
+
+  function addField($field,$str) {
+    return $str;
+  }
+
+  function addTids($tida,&$tids) {
+    foreach ($tida as $value) {
+      $tids[] = $value['tid'];
+    }
+  }
+
+
+  function addTermNames($tids) {
+    $result = db_query('SELECT name,description FROM {taxonomy_term_data} WHERE tid IN(:tids)', array(':tids' => array_values($tids)));
+    foreach ($result as $row) {
+      $terms[] = $row->name;
+//    if (isset($row->description)) {
+//      $terms[] = $row->description;
+//    }
+    }
+    return $terms;
+  }
+
+  // Implement hook_file_presave 
+  function dsFileUpdate_file_presave($file) {
+//  dsm ($file);
+  }
+
+  // Implement hook_entity_presave 
+  function dsFileUpdate_entity_presave($file) {
+//  print "dsFileUpdate entity_presave update\n";
+//  dsm ($file);
+    if ((!isset($file->type)) || (!$file->type == "image")) {
+       return;
+    }
+    if (isset($file->field_exif_date['und'][0]['value'])) {
+      if (!($file->field_exif_date['und'][0]['value'] == "0000-00-00T00:00:00")) {
+        $date = str_replace("T"," ",$file->field_exif_date['und'][0]['value']);
+        $date = gmdate('Y-m-d H:i:s', strtotime($date));
+        $file->field_create_date['und'][0]['value'] = $date;
+        $file->field_create_date['und'][0]['value2'] = $date;
+      }
+//    print "dsFileUpdate entity_presave update\n";
+//    dsm ($file);
+    }
+
+    if (isset($file->field_image_content['und'][0]['tid'])) {
+      addTids($file->field_image_content['und'],$tids);
+    }
+    if (isset($file->field_image_purpose['und'][0]['tid'])) {
+      addTids($file->field_image_purpose['und'],$tids);
+    }
+    if (isset($file->field_vendor_brand['und'][0]['tid'])) {
+      addTids($file->field_vendor_brand['und'],$tids);
+    }
+    if (isset($file->field_product_segment['und'][0]['tid'])) {
+      addTids($file->field_product_segment['und'],$tids);
+    }
+    $out = "";
+    if (isset($tids)) {
+      $terms = addTermNames($tids);
+      if (isset($file->field_name['und'][0]['value'])) {
+        $terms[] = $file->field_name['und'][0]['value'];
+      }
+      $out = implode(' - ',$terms);
+    } else {
+      $out = '';
+    }
+    if (strlen($out) > 256) {
+       $out = substr($out,0,255);
+    }
+    $file->field_search_field['und'][0]['value'] = $out;
+  }
+
+  // Implement hook_file_update 
+  function dsFileUpdate_file_update($file) {
+//  print "dsFileUpdate file_update\n";
+//  dsm ($file);
+  }
+  // Implement hook_entity_update 
+  function dsFileUpdate_entity_update($file) {
+//  print "dsFileUpdate entity_update\n";
+//  dsm ($file);
+  }
+  // Implement hook_file_insert 
+  function dsFileUpdate_file_insert($file) {
+//  print "dsFileUpdate file_insert\n";
+//  dsm ($file);
+  }
+  // Implement hook_entity_insert 
+  function dsFileUpdate_entity_insert($file) {
+//  print "dsFileUpdate entity_insert\n";
+//  dsm ($file);
+  }
+
+?>

@@ -1,0 +1,196 @@
+
+/*
+ * @file
+ * imager.sass
+ */
+// @import "normalize"
+
+@import "custom"
+
+#imager-wrapper
+  table
+    background-color: $greyblue
+    margin-top: 0
+    border: 0px
+    border-radius: 12px
+    border-collapse: separate
+    border-spacing: 3px
+    tr
+      background-color: $greyblue
+    th:first-child 
+      border-radius: 10px 0 0 0
+    th:last-child 
+      border-radius: 0 10px 0 0
+    th:only-child 
+      border-radius: 10px 10px 0 0
+    th
+      text-align: center
+      color: $lightyellow
+      background-color: $darkgreyblue
+#imager-overlay.fullscreen
+  margin: 0
+  box-shadow: none
+  width: 100%
+  padding: 100px
+#imager-overlay
+  background: #555
+  overflow: auto
+  @include pi-border(15px,3px,$darkpurple)
+  margin: 0px 
+  padding: 0px
+  button
+    border-radius: 8px
+    background-color: $faintpurple
+  #imager-canvas-wrapper
+    margin: 3px 3px 0px 1px
+    padding: 0
+    #imager-canvas-org
+      display: hidden
+    #imager-canvas
+      padding: 0
+      margin: 0
+      @include pi-border(12px,3px,#000)
+  #button-wrapper
+    div
+      font-size: 80%
+      text-align: center
+      margin: 2px 0
+      padding: 0
+    .buttons
+      margin: 3px 3px 0
+      color: #000
+      @include pa-border(12px,3px,$lightblue)
+      padding: 5px 2px
+      img
+        display: block
+        margin: 0
+        padding: 2px 4px
+        border-radius: 0
+      .checked
+        background-color: $lightyellow
+      .disabled
+        background-color: $grey
+      .specific
+        background-color: $lightblue
+    #debug-buttons
+      font-size: 70%
+.imgareaselect-outer
+//border-radius: 12px
+
+.imager-buttons
+  @include pa-border(12px,3px,$lightblue)
+  padding: 0 5px
+  img
+    padding: 5px 5px 1px
+
+#imager-status
+  @include pi-border(15px,3px,$darkorange)
+  #imager-status-content
+    padding: 5px
+    text-align: center
+    font-weight: bold
+    font-style: 120%
+  span
+    padding: 5px
+
+#imager-info
+  @include pi-border(15px,3px,$darkpurple)
+  padding: 5px 10px
+  max-width: 600px
+  .title
+    color: $brown 
+    text-align: center
+    font-size: 120%
+    font-weight: bold
+    word-wrap: break-word
+  .filename
+    color: #050
+    font-style: italic
+    font-size: 70%
+    text-align: center
+    margin-bottom: 5px
+  .error
+    background-color: $red
+    color: white
+  #imager-info-content
+    img.imager-info-edit
+      margin: 0 5px 3px 0
+  .imager-buttons
+    img
+      padding: 5px
+
+#imager-edit
+  @include pi-border(15px,3px,$darkgreen)
+  padding: 5px 5px
+   
+  .form-text 
+    max-width: 300px
+
+#imager-confirm
+  @include pi-border(15px,3px,$darkgreen)
+  padding: 5px 10px
+
+#imager-map
+  @include pi-border(15px,3px,$darkred)
+  max-width: 700px
+  padding: 5px 5px
+  .description
+    max-width: 300px
+   
+  .form-text 
+    max-width: 300px
+
+#imager-messages.error
+  color: white
+  font-size: 140%
+  background-color: $red
+  background-image: none
+#imager-messages
+  @include pi-border(15px,3px,$red)
+  .info
+    font-size: 110%
+    font-weight: bold
+  h2
+    margin: 5px 0
+  padding: 10px
+  .error
+    background-color: $red
+
+
+#imager-filesave
+  @include pi-border(15px,3px,$orange)
+  padding: 10px
+  #resolution
+    margin: 0 auto 10px
+  #imager-filesave-messages
+    font-style: italic
+    font-size: 80%
+    word-wrap: break-word
+    text-align: center
+  #imager-filesave-filename-container
+    margin: 10px 0
+  #save-file-title
+    font-size: 140%
+    font-weight: bold
+    margin: 10px
+#imager-brightness,
+#imager-color
+  @include pi-border(15px,3px,$darkgreen)
+  padding: 5px
+
+  .error
+    background-color: $darkred
+  .slider
+    -webkit-appearance: none
+    border-radius: 8px
+ 
+.clicktoexit
+  margin-top: 10px
+  font-size: 70%
+  font-style: italic
+  color: $lightgrey
+
+#imager-busy
+
+
+.field-name-field-detail 

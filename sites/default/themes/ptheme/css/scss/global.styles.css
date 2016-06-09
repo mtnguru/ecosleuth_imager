@@ -1,0 +1,2512 @@
+/*
+ * @file
+ * global.styles
+ *
+ * Styles you add here will load for all device sizes, they are "global", as
+ * opposed to "responsive" styles, which only load for a given breakpoint (media
+ * query) that you set in theme settings. See the README for more details.
+ *
+ *
+ * How to use this file:
+ * --------------------
+ *
+ * There are many empty selectors and some basic styles to act as a guide.
+ * Nothing is set in stone and you can change anything - even delete all of it
+ * and start with your own clean slate.
+ *
+ * To FORCE PRINT all selectors you can search and replace a single { (opening
+ * curly brace) and insert an empty comment. This is very useful in conjuction
+ * with FireSass: https://addons.mozilla.org/en-US/firefox/addon/firesass-for-firebug/
+ *
+ * See global.base also which includes normalize.css and some additional
+ * helper classes and base styles.
+ */
+/* =============================================================================
+ *   Base
+ * ========================================================================== */
+/* 
+ * To preserve theme settings never apply font properties to the HTML element.
+ * This is critically important if you are using the Responsive JavaScript
+ * feature as this relies on being able to set a pseudo font family on the HTML
+ * element. If you need to set default font properties of any kind use the BODY
+ * element as these can be overridden using font theme settings.
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/hannes\/sites\/p1\/themes\/ptheme\/sass\/scss\/global\.styles\.scss}line{font-family:\0000340}}
+html {
+  background: #ffffbb;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/hannes\/sites\/p1\/themes\/ptheme\/sass\/scss\/global\.styles\.scss}line{font-family:\0000345}}
+body {
+  font-family: "Trebuchet MS", "Helvetica Neue", Arial, Helvetica, sans-serif;
+  font-size: 87.5%;
+  background-color: #3a095a;
+}
+
+/* =============================================================================
+ *   HTML Elements
+ * ========================================================================== */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/hannes\/sites\/p1\/themes\/ptheme\/sass\/scss\/global\.styles\.scss}line{font-family:\0000356}}
+h1 {
+  color: #ffff55;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/hannes\/sites\/p1\/themes\/ptheme\/sass\/scss\/global\.styles\.scss}line{font-family:\0000361}}
+h2 {
+  color: #ffff55;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/hannes\/sites\/p1\/themes\/ptheme\/sass\/scss\/global\.styles\.scss}line{font-family:\0000366}}
+h3 {
+  color: #ffff55;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/hannes\/sites\/p1\/themes\/ptheme\/sass\/scss\/global\.styles\.scss}line{font-family:\00003149}}
+pre,
+code,
+tt,
+samp,
+kbd,
+var {
+  font-family: Consolas, Monaco, "Courier New", Courier, monospace, sans-serif;
+}
+
+/* =============================================================================
+ *   Wrappers
+ * ========================================================================== */
+/*
+ * Page wrapper, includes the .container class which sets the overall page or section width
+ * Main wrapper in page.tpl.php, the .container class sets the width of the page, do not add width to it!
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/hannes\/sites\/p1\/themes\/ptheme\/sass\/scss\/global\.styles\.scss}line{font-family:\00003162}}
+#page {
+  max-width: 2100px;
+}
+
+/*
+ * Wraps all header elements - branding and .region-header
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/hannes\/sites\/p1\/themes\/ptheme\/sass\/scss\/global\.styles\.scss}line{font-family:\00003173}}
+#header h2.block-title {
+  font-size: 130%;
+  margin: 0;
+  padding: 0px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/hannes\/sites\/p1\/themes\/ptheme\/sass\/scss\/global\.styles\.scss}line{font-family:\00003178}}
+#header .block-inner {
+  padding: 0 5px;
+}
+
+/*
+ * Wraps the sidebars the content column
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/hannes\/sites\/p1\/themes\/ptheme\/sass\/scss\/global\.styles\.scss}line{font-family:\00003187}}
+#columns {
+  padding: .4em;
+}
+
+/*
+ * Main content column wrapper
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/hannes\/sites\/p1\/themes\/ptheme\/sass\/scss\/global\.styles\.scss}line{font-family:\00003201}}
+.not-logged-in #menu-bar,
+.not-logged-in #main-content {
+  display: none;
+}
+
+/*
+ * Main content column wrapper
+ */
+/*
+ * Wraps the main-content-header, the content region and feed-icons. Use this wrapper to style the entire main content column
+ */
+/*
+ * Wraps the content region, avoid applying styles to this wrapper, its used mainly for position and invisible gutters and can be problematic to style
+ */
+/*
+ * Footer wrapper
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/hannes\/sites\/p1\/themes\/ptheme\/sass\/scss\/global\.styles\.scss}line{font-family:\00003235}}
+#footer {
+  margin: 0 8px;
+  background-color: #006000;
+  border-radius: 8px;
+  box-shadow: 2px 2px 2px 2px black;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/hannes\/sites\/p1\/themes\/ptheme\/sass\/scss\/global\.styles\.scss}line{font-family:\00003240}}
+#footer .block-inner {
+  background-color: inherit;
+  border-radius: 0;
+  box-shadow: none;
+}
+
+/*
+ * Panels may need additional margin wrangling when in the $content region
+ */
+/*
+ * Full Width Wrappers
+ * These are used in the optional page--full-width-wrappers.tpl.php template.
+ * All have internal .container classes. In the full width wrapper template the
+ * .container classes set the width or max-width of the contained element - you
+ * can style this but never add any width/margin/padding/borders etc to .container
+ */
+/*
+ * Wraps #page
+ */
+/*
+ * Wraps the leaderboard
+ */
+/*
+ * Wraps the header
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/hannes\/sites\/p1\/themes\/ptheme\/sass\/scss\/global\.styles\.scss}line{font-family:\00003282}}
+#header-wrapper {
+  /* Debug styles, is this working */
+  background: rgba(255, 192, 203, 0.5);
+}
+
+/*
+ * Wraps the nav elements
+ */
+/*
+ * Wraps breadcrumb
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/hannes\/sites\/p1\/themes\/ptheme\/sass\/scss\/global\.styles\.scss}line{font-family:\00003300}}
+#breadcrumb-wrapper {
+  margin-left: 5px;
+}
+
+/*
+ * Wraps messages and help
+ */
+/*
+ * Wraps the secondary content/preface region
+ */
+/*
+ * Wraps the main content column
+ */
+/*
+ * Wraps the tertiary content/postfix region
+ */
+/*
+ * Footer wrapper
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/hannes\/sites\/p1\/themes\/ptheme\/sass\/scss\/global\.styles\.scss}line{font-family:\00003341}}
+#footer-wrapper {
+  /* Debug styles, is this working? */
+  background: rgba(255, 192, 203, 0.5);
+}
+
+/* =============================================================================
+ *   Branding
+ * ========================================================================== */
+/*
+ * Wraps all the branding elements, logo, name and slogan
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/hannes\/sites\/p1\/themes\/ptheme\/sass\/scss\/global\.styles\.scss}line{font-family:\00003356}}
+#branding {
+  float: left;
+}
+
+/*
+ * Logo
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/hannes\/sites\/p1\/themes\/ptheme\/sass\/scss\/global\.styles\.scss}line{font-family:\00003364}}
+#logo {
+  padding: 0;
+  margin: 0 1em 0 .5em;
+  float: left;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/hannes\/sites\/p1\/themes\/ptheme\/sass\/scss\/global\.styles\.scss}line{font-family:\00003369}}
+#logo img {
+  width: 80px;
+  height: 80px;
+  vertical-align: bottom;
+  border-radius: 12px;
+  border: 3px solid #ddaaff;
+}
+
+/*
+ * Wrapper for the site name and slogan (hgroup)
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/hannes\/sites\/p1\/themes\/ptheme\/sass\/scss\/global\.styles\.scss}line{font-family:\00003387}}
+#name-and-slogan {
+  float: left;
+  line-height: 1;
+  font-family: garamond;
+  margin-top: 10px;
+}
+
+/*
+ * Site name (h1)
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/hannes\/sites\/p1\/themes\/ptheme\/sass\/scss\/global\.styles\.scss}line{font-family:\00003398}}
+#site-name {
+  margin: 0;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/hannes\/sites\/p1\/themes\/ptheme\/sass\/scss\/global\.styles\.scss}line{font-family:\00003400}}
+#site-name a {
+  color: #33ffff;
+  font-size: 130%;
+  text-decoration: none;
+}
+
+/*
+ * Site slogan (h2)
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/hannes\/sites\/p1\/themes\/ptheme\/sass\/scss\/global\.styles\.scss}line{font-family:\00003411}}
+#site-slogan {
+  margin: 0;
+  margin-left: 20px;
+  padding: 0;
+  font-size: 90%;
+  font-weight: 400;
+  font-style: italic;
+  color: #ffc299;
+}
+
+/* =============================================================================
+ *   Page content header
+ * ========================================================================== */
+/*
+ * Main content header wraps the page title, tabs and actions links
+ */
+/*
+ * The main page title (h1)
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/hannes\/sites\/p1\/themes\/ptheme\/sass\/scss\/global\.styles\.scss}line{font-family:\00003435}}
+#page-title {
+  margin: 0;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/hannes\/sites\/p1\/themes\/ptheme\/sass\/scss\/global\.styles\.scss}line{font-family:\00003439}}
+ul.tabs li {
+  border-radius: 6px 6px 0 0;
+}
+
+/* =============================================================================
+ *   Misc Global Styles
+ * ========================================================================== */
+/*
+ * Feed icons
+ */
+/*
+ * Aggregator feed source
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/hannes\/sites\/p1\/themes\/ptheme\/sass\/scss\/global\.styles\.scss}line{font-family:\00003457}}
+#aggregator .feed-source .feed-icon {
+  display: inline;
+  float: none;
+  margin-right: 10px;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/hannes\/sites\/p1\/themes\/ptheme\/sass\/scss\/global\.styles\.scss}line{font-family:\00003465}}
+.feed-details dt,
+.feed-details dd {
+  display: inline;
+  margin: 0;
+}
+
+/*
+ * Generic styles for the more link
+ */
+/*
+ * Generic styles for links. See the ul.links declaration in node and comment stylesheets
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/hannes\/sites\/p1\/themes\/ptheme\/sass\/scss\/global\.styles\.scss}line{font-family:\00003480}}
+ul.links {
+  margin: 0;
+  padding: 0;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/hannes\/sites\/p1\/themes\/ptheme\/sass\/scss\/global\.styles\.scss}line{font-family:\00003484}}
+ul.links.inline {
+  display: block;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/hannes\/sites\/p1\/themes\/ptheme\/sass\/scss\/global\.styles\.scss}line{font-family:\00003488}}
+ul.links li {
+  display: inline;
+  list-style: none;
+  padding: 0 10px 0 0;
+}
+
+/*
+ * Search results are an ordered list so reset the margin
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/hannes\/sites\/p1\/themes\/ptheme\/sass\/scss\/global\.styles\.scss}line{font-family:\00003499}}
+.search-results {
+  margin: 0;
+}
+
+/* =============================================================================
+ *   Regions
+ * ========================================================================== */
+/*
+ * Standard region wrapper, don't add width to any regions, you will bork the layout - no margin, padding or borders etc
+ */
+/*
+ * Regions have an inner div - perfect for adding margin, padding or borders
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/hannes\/sites\/p1\/themes\/ptheme\/sass\/scss\/global\.styles\.scss}line{font-family:\00003518}}
+.region-inner {
+  margin: 2px;
+}
+
+/*
+ * Regions can be nested, such as when using Panels
+ */
+/*
+ * Header region, embedded in the #header
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/hannes\/sites\/p1\/themes\/ptheme\/sass\/scss\/global\.styles\.scss}line{font-family:\00003532}}
+.region-header {
+  float: right;
+  margin: 0;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/hannes\/sites\/p1\/themes\/ptheme\/sass\/scss\/global\.styles\.scss}line{font-family:\00003535}}
+.region-header ul {
+  margin: 0;
+}
+
+/*
+ * Generally used to output Drupals help block, if the help module is enabled
+ */
+/*
+ * Secondary content
+ */
+/*
+ * Sits above the main content header, like a content-top region
+ */
+/*
+ * Sits below the main content, like a content-bottom region
+ */
+/*
+ * Sidebars - targets both
+ */
+/*
+ * First sidebar
+ */
+/*
+ * Second sidebar
+ */
+/*
+ * Tertiary content
+ */
+/*
+ * Footer region
+ */
+/* =============================================================================
+ *   Links
+ * ========================================================================== */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/hannes\/sites\/p1\/themes\/ptheme\/sass\/scss\/global\.styles\.scss}line{font-family:\00003599}}
+a {
+  text-decoration: none;
+  color: #ccccff;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/hannes\/sites\/p1\/themes\/ptheme\/sass\/scss\/global\.styles\.scss}line{font-family:\00003610}}
+a:hover, a:focus {
+  text-decoration: underline;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/hannes\/sites\/p1\/themes\/ptheme\/sass\/scss\/global\.styles\.scss}line{font-family:\00003615}}
+th a {
+  color: #ccccff;
+}
+
+/* =============================================================================
+ *   Primary, Secondary and Menu Bar region menus
+ * ========================================================================== */
+/*
+ * Use one of the following id's for granular control:
+ *  - #menu-bar (menu bar region)
+ *  - #primary-menu (main menu)
+ *  - #secondary-menu (secondary/user menu)
+ * You can target all of these with .nav or div[id$="menu-bar"]
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/hannes\/sites\/p1\/themes\/ptheme\/sass\/scss\/global\.styles\.scss}line{font-family:\00003632}}
+.nav {
+  clear: both;
+  margin: 2px 5px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/hannes\/sites\/p1\/themes\/ptheme\/sass\/scss\/global\.styles\.scss}line{font-family:\00003637}}
+.nav ul,
+.nav ul.menu {
+  margin: 0;
+  padding: 0;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/hannes\/sites\/p1\/themes\/ptheme\/sass\/scss\/global\.styles\.scss}line{font-family:\00003643}}
+.nav li,
+.nav ul.menu li {
+  display: inline;
+  float: left;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/hannes\/sites\/p1\/themes\/ptheme\/sass\/scss\/global\.styles\.scss}line{font-family:\00003652}}
+.nav li a,
+.nav ul.menu li a {
+  display: block;
+  white-space: nowrap;
+  padding: 0 10px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/hannes\/sites\/p1\/themes\/ptheme\/sass\/scss\/global\.styles\.scss}line{font-family:\00003663}}
+.nav .block {
+  margin: 0;
+}
+
+/* =============================================================================
+ *   User Menu in header bar
+ * ========================================================================== */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/hannes\/sites\/p1\/themes\/ptheme\/sass\/scss\/global\.styles\.scss}line{font-family:\00003673}}
+#block-system-user-menu {
+  margin: 5px 5px 0 0;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/hannes\/sites\/p1\/themes\/ptheme\/sass\/scss\/global\.styles\.scss}line{font-family:\00003675}}
+#block-system-user-menu li {
+  list-style: none outside none;
+  margin: 0 .2em;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/hannes\/sites\/p1\/themes\/ptheme\/sass\/scss\/global\.styles\.scss}line{font-family:\00003678}}
+#block-system-user-menu li a {
+  padding: .2em;
+  border-radius: 8px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/hannes\/sites\/p1\/themes\/ptheme\/sass\/scss\/global\.styles\.scss}line{font-family:\00003681}}
+#block-system-user-menu li a:hover {
+  color: #ffff55;
+  background-color: #da4119;
+  text-decoration: none;
+}
+
+/* =============================================================================
+ *   Superfish
+ * ========================================================================== */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/hannes\/sites\/p1\/themes\/ptheme\/sass\/scss\/global\.styles\.scss}line{font-family:\00003697}}
+ul.sf-menu {
+  margin-bottom: 0;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/hannes\/sites\/p1\/themes\/ptheme\/sass\/scss\/global\.styles\.scss}line{font-family:\00003700}}
+ul.sf-menu a {
+  border-left: 0;
+  border-top: 0;
+  padding: 0 10px;
+  text-decoration: none;
+  height: 2.5em;
+  line-height: 2.5em;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/hannes\/sites\/p1\/themes\/ptheme\/sass\/scss\/global\.styles\.scss}line{font-family:\00003714}}
+ul.sf-menu li:hover, ul.sf-menu li.sfHover {
+  outline: 0;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/hannes\/sites\/p1\/themes\/ptheme\/sass\/scss\/global\.styles\.scss}line{font-family:\00003722}}
+ul.sf-menu a:focus, ul.sf-menu a:hover, ul.sf-menu a:active {
+  outline: 0;
+}
+
+/*
+ * Superfish blocks
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/hannes\/sites\/p1\/themes\/ptheme\/sass\/scss\/global\.styles\.scss}line{font-family:\00003736}}
+.block-superfish ul {
+  margin: 0 !important;
+  padding: 0 !important;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/hannes\/sites\/p1\/themes\/ptheme\/sass\/scss\/global\.styles\.scss}line{font-family:\00003747}}
+.block-superfish li {
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+/*
+ * Vertical style
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/hannes\/sites\/p1\/themes\/ptheme\/sass\/scss\/global\.styles\.scss}line{font-family:\00003757}}
+.sf-vertical {
+  width: 100%;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/hannes\/sites\/p1\/themes\/ptheme\/sass\/scss\/global\.styles\.scss}line{font-family:\00003760}}
+.sf-vertical li {
+  width: 100%;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/hannes\/sites\/p1\/themes\/ptheme\/sass\/scss\/global\.styles\.scss}line{font-family:\00003766}}
+.sf-vertical li:hover ul, .sf-vertical li.sfHover ul {
+  left: 100%;
+  top: 0;
+  margin: 0;
+  padding: 0;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/hannes\/sites\/p1\/themes\/ptheme\/sass\/scss\/global\.styles\.scss}line{font-family:\00003773}}
+.sf-vertical li a {
+  padding: 0 10px;
+}
+
+/*
+ * Navbar style
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/hannes\/sites\/p1\/themes\/ptheme\/sass\/scss\/global\.styles\.scss}line{font-family:\00003783}}
+.sf-navbar {
+  padding-bottom: 0 !important;
+}
+
+/*
+ * Sensible padding for the default style
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/hannes\/sites\/p1\/themes\/ptheme\/sass\/scss\/global\.styles\.scss}line{font-family:\00003791}}
+.sf-menu.sf-style-default a {
+  padding: 0 10px;
+}
+
+/* =============================================================================
+ *   Menus, usually blocks
+ * ========================================================================== */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/hannes\/sites\/p1\/themes\/ptheme\/sass\/scss\/global\.styles\.scss}line{font-family:\00003800}}
+ul.menu {
+  padding-left: 15px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/hannes\/sites\/p1\/themes\/ptheme\/sass\/scss\/global\.styles\.scss}line{font-family:\00003803}}
+ul.menu ul {
+  padding-left: 15px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/hannes\/sites\/p1\/themes\/ptheme\/sass\/scss\/global\.styles\.scss}line{font-family:\00003811}}
+ul.menu li {
+  margin: 0;
+}
+
+/* If li.content exists it's a problem, so reset the padding */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/hannes\/sites\/p1\/themes\/ptheme\/sass\/scss\/global\.styles\.scss}line{font-family:\00003840}}
+.block .menu li.content {
+  padding: 0;
+}
+
+/* =============================================================================
+ *   Book navigation menu
+ * ========================================================================== */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/hannes\/sites\/p1\/themes\/ptheme\/sass\/scss\/global\.styles\.scss}line{font-family:\00003857}}
+.book-navigation .page-up {
+  /* Prevent text wrapping to a new line, assumes English "up" is used (two characters) */
+  min-width: 2em;
+  white-space: nowrap;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/hannes\/sites\/p1\/themes\/ptheme\/sass\/scss\/global\.styles\.scss}line{font-family:\00003863}}
+.book-navigation .menu {
+  margin-left: 0;
+}
+
+/* =============================================================================
+ *   Breadcrumbs
+ * ========================================================================== */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/hannes\/sites\/p1\/themes\/ptheme\/sass\/scss\/global\.styles\.scss}line{font-family:\00003873}}
+#breadcrumb {
+  margin: 5px 15px;
+  /* If the label is set to show in theme settings the label class is added */
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/hannes\/sites\/p1\/themes\/ptheme\/sass\/scss\/global\.styles\.scss}line{font-family:\00003877}}
+#breadcrumb .breadcrumb-label {
+  font-size: 1em;
+  display: inline;
+  padding-right: 10px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/hannes\/sites\/p1\/themes\/ptheme\/sass\/scss\/global\.styles\.scss}line{font-family:\00003882}}
+#breadcrumb .breadcrumb-label:after {
+  content: ":";
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/hannes\/sites\/p1\/themes\/ptheme\/sass\/scss\/global\.styles\.scss}line{font-family:\00003887}}
+#breadcrumb ol {
+  margin: 0;
+  padding: 0;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/hannes\/sites\/p1\/themes\/ptheme\/sass\/scss\/global\.styles\.scss}line{font-family:\00003892}}
+#breadcrumb .with-breadcrumb-label ol {
+  display: inline;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/hannes\/sites\/p1\/themes\/ptheme\/sass\/scss\/global\.styles\.scss}line{font-family:\00003896}}
+#breadcrumb li {
+  list-style: none;
+  display: inline;
+}
+
+/* =============================================================================
+ *   Pagers
+ * ========================================================================== */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/hannes\/sites\/p1\/themes\/ptheme\/sass\/scss\/global\.styles\.scss}line{font-family:\00003923}}
+ul.pager {
+  clear: both;
+  margin: 0;
+  text-align: center;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/hannes\/sites\/p1\/themes\/ptheme\/sass\/scss\/global\.styles\.scss}line{font-family:\00003930}}
+.item-list ul.pager li {
+  margin: 0;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/hannes\/sites\/p1\/themes\/ptheme\/sass\/scss\/global\.styles\.scss}line{font-family:\00003935}}
+ul.pager li {
+  background-image: none;
+  display: inline;
+  list-style-type: none;
+  padding: .5em;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/hannes\/sites\/p1\/themes\/ptheme\/sass\/scss\/global\.styles\.scss}line{font-family:\00003941}}
+ul.pager li.pager-current {
+  font-weight: 700;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/hannes\/sites\/p1\/themes\/ptheme\/sass\/scss\/global\.styles\.scss}line{font-family:\00003947}}
+.block ul.pager li {
+  margin: 0;
+}
+
+/*
+ * Theme the various states of pager links
+ */
+/* =============================================================================
+ *   Skip Navigation
+ * ========================================================================== */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/hannes\/sites\/p1\/themes\/ptheme\/sass\/scss\/global\.styles\.scss}line{font-family:\00003984}}
+#skip-link {
+  left: 50%;
+  margin-left: -6.5em;
+  margin-top: 0;
+  padding: 0 0.5em;
+  position: absolute;
+  width: 12em;
+  z-index: 50;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/hannes\/sites\/p1\/themes\/ptheme\/sass\/scss\/global\.styles\.scss}line{font-family:\00003993}}
+#skip-link a {
+  background: #444;
+  background: rgba(0, 0, 0, 0.6);
+  color: #ffffbb;
+  display: block;
+  line-height: 2;
+  padding: 0;
+  text-align: center;
+  text-decoration: none;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/hannes\/sites\/p1\/themes\/ptheme\/sass\/scss\/global\.styles\.scss}line{font-family:\000031004}}
+#skip-link a:link, #skip-link a:visited {
+  background: #444;
+  background: rgba(0, 0, 0, 0.6);
+  color: #ffffbb;
+  display: block;
+  line-height: 2;
+  padding: 0;
+  text-align: center;
+  text-decoration: none;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/hannes\/sites\/p1\/themes\/ptheme\/sass\/scss\/global\.styles\.scss}line{font-family:\000031016}}
+#skip-link a:hover, #skip-link a:focus, #skip-link a:active {
+  outline: 0;
+}
+
+/* =============================================================================
+ *   Tabs (local tasks)
+ * ========================================================================== */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/hannes\/sites\/p1\/themes\/ptheme\/sass\/scss\/global\.styles\.scss}line{font-family:\000031027}}
+#tasks {
+  margin-bottom: 15px;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/hannes\/sites\/p1\/themes\/ptheme\/sass\/scss\/global\.styles\.scss}line{font-family:\000031032}}
+ul.primary {
+  border-bottom-color: black;
+  margin: 10px 0;
+  padding: 0 0 0 5px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/hannes\/sites\/p1\/themes\/ptheme\/sass\/scss\/global\.styles\.scss}line{font-family:\000031037}}
+ul.primary li {
+  display: block;
+  float: left;
+  margin: 0 1px -1px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/hannes\/sites\/p1\/themes\/ptheme\/sass\/scss\/global\.styles\.scss}line{font-family:\000031042}}
+ul.primary li a {
+  background-color: ivory;
+  border-color: black;
+  border-radius: 8px 8px 0 0;
+  margin-right: 2px;
+  padding: 0 10px;
+  display: block;
+  float: left;
+  height: 1.5em;
+  line-height: 1.5em;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/hannes\/sites\/p1\/themes\/ptheme\/sass\/scss\/global\.styles\.scss}line{font-family:\000031054}}
+ul.primary li a:hover, ul.primary li a:focus {
+  background-color: #dddddd;
+  border-color: black;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/hannes\/sites\/p1\/themes\/ptheme\/sass\/scss\/global\.styles\.scss}line{font-family:\000031064}}
+ul.primary li.active a,
+ul.primary li.active a:hover,
+ul.primary li.active a:focus {
+  background-color: #ffffbb;
+  border-bottom-color: #ffffbb;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/hannes\/sites\/p1\/themes\/ptheme\/sass\/scss\/global\.styles\.scss}line{font-family:\000031072}}
+ul.secondary {
+  border-bottom: 1px solid black;
+  margin: 1em 0 0;
+  padding: 0 .3em 1em;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/hannes\/sites\/p1\/themes\/ptheme\/sass\/scss\/global\.styles\.scss}line{font-family:\000031077}}
+ul.secondary li {
+  border-right: 0;
+  list-style: none;
+  padding: 0 10px 0 0;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/hannes\/sites\/p1\/themes\/ptheme\/sass\/scss\/global\.styles\.scss}line{font-family:\000031084}}
+ul.secondary li a:hover, ul.secondary li a.active {
+  border-bottom: none;
+  text-decoration: underline;
+}
+
+/* =============================================================================
+ *   Action links
+ * ========================================================================== */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/hannes\/sites\/p1\/themes\/ptheme\/sass\/scss\/global\.styles\.scss}line{font-family:\000031097}}
+ul.action-links {
+  margin: 20px 0 0;
+  list-style: none;
+}
+
+/* =============================================================================
+ *  Field Styling
+ * ========================================================================== */
+/*
+ * Wrapper for any field
+ */
+/*
+ * Above and inline classes are on the field wrapper
+ */
+/*
+ * When labels are set to inline in field display settings the clearfix class is automatically added
+ */
+/*
+ * Labels are h2 in Adaptivetheme. Use a strong selector to mitigate unwanted ineritance issues
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/hannes\/sites\/p1\/themes\/ptheme\/sass\/scss\/global\.styles\.scss}line{font-family:\000031130}}
+.field-label {
+  color: #006000;
+  font-size: 1em;
+  font-weight: 700;
+  font-family: inherit;
+  line-height: inherit;
+  margin: 0;
+}
+
+/*
+ * Field types (Core)
+ */
+/*
+ * Image fields use the <figure> and <figcaption> elements from HTML5
+ */
+/*
+ * Taxonomy
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/hannes\/sites\/p1\/themes\/ptheme\/sass\/scss\/global\.styles\.scss}line{font-family:\000031160}}
+.field-widget-term-reference-tree .parent-term {
+  font-weight: normal;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/hannes\/sites\/p1\/themes\/ptheme\/sass\/scss\/global\.styles\.scss}line{font-family:\000031163}}
+.field-type-taxonomy-term-reference {
+  /* The same bottom margin as p, blockquote, ul, ol and dl */
+  margin: 0;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/hannes\/sites\/p1\/themes\/ptheme\/sass\/scss\/global\.styles\.scss}line{font-family:\000031168}}
+.field-type-taxonomy-term-reference.field-label-inline .field-items {
+  margin: 0;
+  padding: 0;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/hannes\/sites\/p1\/themes\/ptheme\/sass\/scss\/global\.styles\.scss}line{font-family:\000031173}}
+.field-type-taxonomy-term-reference.field-label-inline .field-item {
+  list-style: none;
+  padding: 0 10px 0 0;
+}
+
+/*
+ * Text
+ */
+/*
+ * Long text
+ */
+/*
+ * Text with summary
+ */
+/*
+ * File
+ */
+/*
+ * Number/Integer
+ */
+/*
+ * Decimal
+ */
+/*
+ * Number float
+ */
+/*
+ * List
+ */
+/*
+ * List boolean
+ */
+/*
+ * List integer
+ */
+/*
+ * List float
+ */
+/*
+ * Field types (Contrib)
+ */
+/*
+ * Named fields
+ */
+/*
+ * Underscores in field name are replaced with dashes
+ */
+/*
+ * Image Alignment Theme Settings - included here so you can easily override 
+ */
+/*
+ * Float none setting
+ */
+/*
+ * Float left setting
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/hannes\/sites\/p1\/themes\/ptheme\/sass\/scss\/global\.styles\.scss}line{font-family:\000031288}}
+.ia-l .field-type-image figure,
+.iat-l .field-type-image figure {
+  margin: 5px 20px 15px 0;
+}
+
+/*
+ * Centered setting
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/hannes\/sites\/p1\/themes\/ptheme\/sass\/scss\/global\.styles\.scss}line{font-family:\000031297}}
+.ia-c .field-type-image figure,
+.iat-c .field-type-image figure {
+  margin: 5px auto 15px;
+}
+
+/*
+ * Float right setting
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/hannes\/sites\/p1\/themes\/ptheme\/sass\/scss\/global\.styles\.scss}line{font-family:\000031306}}
+.ia-r .field-type-image figure,
+.iat-r .field-type-image figure {
+  margin: 5px 0 15px 20px;
+}
+
+/* =============================================================================
+ *   Block Styling
+ * ========================================================================== */
+/*
+ * Main wrapper for most blocks, block_system_main does not have it
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/hannes\/sites\/p1\/themes\/ptheme\/sass\/scss\/global\.styles\.scss}line{font-family:\000031319}}
+.block {
+  margin-bottom: 5px;
+}
+
+/*
+ * Inner wrapper for most blocks, good for margin, padding and borders, block_system_main does not have it
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/hannes\/sites\/p1\/themes\/ptheme\/sass\/scss\/global\.styles\.scss}line{font-family:\000031327}}
+.block-inner {
+  background-color: #000055;
+  border-radius: 8px;
+  box-shadow: 2px 2px 2px 2px black;
+  padding: 5px;
+}
+
+/*
+ * The first block in the region
+ */
+/*
+ * The last block in the region
+ */
+/*
+ * Zebra striping for each block in the region
+ */
+/*
+ * Zebra striping for each block in the region
+ */
+/*
+ * Block title
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/hannes\/sites\/p1\/themes\/ptheme\/sass\/scss\/global\.styles\.scss}line{font-family:\000031361}}
+.block-title {
+  margin: 0;
+}
+
+/*
+ * Block content wrapper
+ */
+/*
+ * Match item list and block menu margin and padding
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/hannes\/sites\/p1\/themes\/ptheme\/sass\/scss\/global\.styles\.scss}line{font-family:\000031378}}
+.block-content ul,
+.block-content ol {
+  margin: 0 0 0 10px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/hannes\/sites\/p1\/themes\/ptheme\/sass\/scss\/global\.styles\.scss}line{font-family:\000031382}}
+.block-content li {
+  margin: 0;
+  padding: 0;
+}
+
+/*
+ * Block for the latest news items in the first category
+ */
+/*
+ * Block for the latest news items in the first feed
+ */
+/*
+ * First block created with "Add block" link
+ */
+/*
+ * "Recent blog posts" block
+ */
+/*
+ * "Book navigation" block for the current book's table of contents
+ */
+/*
+ * "Recent comments" block
+ */
+/*
+ * "Active forum topics" block
+ */
+/*
+ * "New forum topics" block
+ */
+/*
+ * Language switcher block
+ */
+/*
+ * Custom menu block
+ */
+/*
+ * "Recent content" block
+ */
+/*
+ * "Syndicate" block for primary RSS feed; see also page.css's .feed-icon
+ */
+/*
+ * "Most recent poll" block
+ */
+/*
+ * "Author information" block for the profile of the page's author
+ */
+/*
+ * "Search form" block
+ */
+/*
+ * "Shortcuts" block
+ */
+/*
+ * "Popular content" block
+ */
+/*
+ * "Main menu" block
+ */
+/*
+ * "Management" block for Drupal management menu
+ */
+/*
+ * "Navigation" block for Drupal navigation menu
+ */
+/*
+ * "User menu" block for Drupal user menu
+ */
+/*
+ * "System help" block
+ */
+/*
+ * "Main page content" block
+ */
+/*
+ * "Powered by Drupal" block
+ */
+/*
+ * "User login form" block
+ */
+/*
+ * "Who's new" block for a list of the newest users
+ */
+/*
+ * "Who's online" block for a list of the online users
+ */
+/* =============================================================================
+ *   Node Styling
+ * ========================================================================== */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/hannes\/sites\/p1\/themes\/ptheme\/sass\/scss\/global\.styles\.scss}line{font-family:\000031574}}
+.node .node-title {
+  margin: 0;
+}
+
+/*
+ * All nodes are given a node-FOO class that describes the type of content that
+ * it is. If you create a new content type called "my-custom-type", it will
+ * receive a "node-my-custom-type" class.
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/hannes\/sites\/p1\/themes\/ptheme\/sass\/scss\/global\.styles\.scss}line{font-family:\000031625}}
+.node-facility .node-header {
+  display: none;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/hannes\/sites\/p1\/themes\/ptheme\/sass\/scss\/global\.styles\.scss}line{font-family:\000031629}}
+.node-facility .field-name-field-address .field-item {
+  margin-left: 2em;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/hannes\/sites\/p1\/themes\/ptheme\/sass\/scss\/global\.styles\.scss}line{font-family:\000031645}}
+.re
+#comments {
+  margin: 1.5em 0;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/hannes\/sites\/p1\/themes\/ptheme\/sass\/scss\/global\.styles\.scss}line{font-family:\000031649}}
+.re
+#comments h2.comment-title {
+  margin: 0;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/hannes\/sites\/p1\/themes\/ptheme\/sass\/scss\/global\.styles\.scss}line{font-family:\000031653}}
+.re
+#comments h2.comment-form {
+  margin: 0;
+}
+
+/*
+ * Wrapper for a single comment
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/hannes\/sites\/p1\/themes\/ptheme\/sass\/scss\/global\.styles\.scss}line{font-family:\000031663}}
+.comment {
+  margin-bottom: 20px;
+}
+
+/*
+ * Comment title
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/hannes\/sites\/p1\/themes\/ptheme\/sass\/scss\/global\.styles\.scss}line{font-family:\000031694}}
+.comment-title {
+  margin: 0;
+}
+
+/*
+ * Comment states
+ */
+/*
+ * Preview of the comment before submitting new or updated comment
+ */
+/*
+ * "New" marker for comments that are new for the current user
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/hannes\/sites\/p1\/themes\/ptheme\/sass\/scss\/global\.styles\.scss}line{font-family:\000031726}}
+.new {
+  color: #cc0000;
+}
+
+/*
+ * Nested comments are indented
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/hannes\/sites\/p1\/themes\/ptheme\/sass\/scss\/global\.styles\.scss}line{font-family:\000031734}}
+.indented {
+  margin-left: 40px;
+}
+
+/* =============================================================================
+ *   Forms
+ * ========================================================================== */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/hannes\/sites\/p1\/themes\/ptheme\/sass\/scss\/global\.styles\.scss}line{font-family:\000031755}}
+.view .field-name-field-name,
+.view .field-name-field-facility,
+.view .field-name-field-media-status,
+.view .field-name-field-image-content,
+.view .field-name-field-issue-status,
+.view .field-name-field-issue-type,
+.view .field-name-field-department,
+.view .field-name-field-system,
+.view .field-name-field-importance,
+.view .field-name-field-product-segment,
+.view .field-name-field-vendor-brand,
+.view .field-name-field-image-purpose {
+  float: left;
+  border-radius: 8px;
+  box-shadow: 2px 2px 2px 2px black;
+  background-color: #ffffbb;
+  margin: 2px 2px 3px;
+  padding: 5px 10px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/hannes\/sites\/p1\/themes\/ptheme\/sass\/scss\/global\.styles\.scss}line{font-family:\000031763}}
+.view .views-row {
+  padding: 8px;
+  margin: 2px;
+  border-radius: 8px;
+  box-shadow: 2px 2px 2px 2px black;
+  background-color: #f9e9d9;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/hannes\/sites\/p1\/themes\/ptheme\/sass\/scss\/global\.styles\.scss}line{font-family:\000031772}}
+.view #edit-actions,
+.view #edit-bundle-image-actions2,
+.view .field-name-field-vendor-brand {
+  float: left;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/hannes\/sites\/p1\/themes\/ptheme\/sass\/scss\/global\.styles\.scss}line{font-family:\000031775}}
+.view #edit-bundle-image-actions2:after {
+  clear: both;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/hannes\/sites\/p1\/themes\/ptheme\/sass\/scss\/global\.styles\.scss}line{font-family:\000031778}}
+.view #edit-actions2 {
+  weight: 1;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/hannes\/sites\/p1\/themes\/ptheme\/sass\/scss\/global\.styles\.scss}line{font-family:\000031781}}
+.view .field-name-field-name {
+  margin: 2px 2px 1px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/hannes\/sites\/p1\/themes\/ptheme\/sass\/scss\/global\.styles\.scss}line{font-family:\000031784}}
+.view .field-name-field-name textarea {
+  max-width: 300px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/hannes\/sites\/p1\/themes\/ptheme\/sass\/scss\/global\.styles\.scss}line{font-family:\000031787}}
+.view .field-name-field-media-status {
+  clear: both;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/hannes\/sites\/p1\/themes\/ptheme\/sass\/scss\/global\.styles\.scss}line{font-family:\000031790}}
+.view .field-name-field-facility .form-text {
+  width: 18em;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/hannes\/sites\/p1\/themes\/ptheme\/sass\/scss\/global\.styles\.scss}line{font-family:\000031793}}
+.view #edit-bundle-image-center-col {
+  float: left;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/hannes\/sites\/p1\/themes\/ptheme\/sass\/scss\/global\.styles\.scss}line{font-family:\000031796}}
+.view #edit-bundle-image-left-col {
+  clear: both;
+  float: left;
+  line-height: 1.0;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/hannes\/sites\/p1\/themes\/ptheme\/sass\/scss\/global\.styles\.scss}line{font-family:\000031801}}
+.view .description {
+  display: none;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/hannes\/sites\/p1\/themes\/ptheme\/sass\/scss\/global\.styles\.scss}line{font-family:\000031810}}
+.view .views-exposed-widget > label,
+.view .form-type-checkbox-tree > label,
+.view .form-type-textarea > label,
+.view .form-type-textfield > label,
+.view .form-type-radios > label,
+.view .form-type-checkboxes > label,
+.view .form-type-checkbox-tree > label {
+  color: #006000;
+  font-size: 120%;
+  font-style: bold;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/hannes\/sites\/p1\/themes\/ptheme\/sass\/scss\/global\.styles\.scss}line{font-family:\000031817}}
+#views-form-ds-media-media-gallery {
+  height: 25em;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/hannes\/sites\/p1\/themes\/ptheme\/sass\/scss\/global\.styles\.scss}line{font-family:\000031821}}
+.views-table {
+  clear: left;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/hannes\/sites\/p1\/themes\/ptheme\/sass\/scss\/global\.styles\.scss}line{font-family:\000031826}}
+div[class*="show-value"] {
+  float: left;
+  margin-right: 20px;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/hannes\/sites\/p1\/themes\/ptheme\/sass\/scss\/global\.styles\.scss}line{font-family:\000031843}}
+#views-exposed-form-ds-document-summary-owner-cp,
+#views-exposed-form-ds-document-summary-document-content-cp,
+#views-exposed-form-ds-document-summary-vendor-cp,
+#views-exposed-form-ds-document-summary-product-segment-cp,
+#views-exposed-form-ds-document-summary-media-status-cp,
+#views-exposed-form-ds-document-summary-facility-cp,
+#views-exposed-form-ds-document-summary-department-cp,
+#views-exposed-form-media-summary-photographer-cp,
+#views-exposed-form-media-summary-product-segment-cp,
+#views-exposed-form-media-summary-vendor-cp,
+#views-exposed-form-media-summary-media-status-cp,
+#views-exposed-form-media-summary-image-content-cp,
+#views-exposed-form-media-summary-image-purpose-cp,
+#views-exposed-form-media-summary-facility-cp {
+  display: none;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/hannes\/sites\/p1\/themes\/ptheme\/sass\/scss\/global\.styles\.scss}line{font-family:\000031848}}
+.pane-views-panes ul {
+  padding: 0 0 0 .5em;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/hannes\/sites\/p1\/themes\/ptheme\/sass\/scss\/global\.styles\.scss}line{font-family:\000031851}}
+.pane-views-panes ul.bef-tree {
+  margin: 5px 0 0 0;
+  padding: 0 0 0 0;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/hannes\/sites\/p1\/themes\/ptheme\/sass\/scss\/global\.styles\.scss}line{font-family:\000031858}}
+.pane-views-panes li {
+  list-style: none;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/hannes\/sites\/p1\/themes\/ptheme\/sass\/scss\/global\.styles\.scss}line{font-family:\000031865}}
+section.pane-ds-document-summary-exposed-filters-cp .block-inner,
+section.pane-media-summary-exposed-filters-cp .block-inner {
+  background-color: #ffc299;
+}
+
+/*
+ * Wrapper for a form element (or group of form elements) and its label
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/hannes\/sites\/p1\/themes\/ptheme\/sass\/scss\/global\.styles\.scss}line{font-family:\000031876}}
+.form-item input.error,
+.form-item textarea.error,
+.form-item select.error {
+  border: 1px solid #cc0000;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/hannes\/sites\/p1\/themes\/ptheme\/sass\/scss\/global\.styles\.scss}line{font-family:\000031887}}
+.form-item .description {
+  font-size: 0.85em;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/hannes\/sites\/p1\/themes\/ptheme\/sass\/scss\/global\.styles\.scss}line{font-family:\000031897}}
+.field-name-field-geofield,
+.field-name-field-media-status {
+  clear: both;
+}
+
+/*
+ * Highlight marks and form required mark
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/hannes\/sites\/p1\/themes\/ptheme\/sass\/scss\/global\.styles\.scss}line{font-family:\000031906}}
+.marker,
+.form-required {
+  color: #cc0000;
+}
+
+/*
+ * The view, edit, download, email, delete links
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/hannes\/sites\/p1\/themes\/ptheme\/sass\/scss\/global\.styles\.scss}line{font-family:\000031914}}
+.ds-links {
+  margin-top: 5px;
+}
+
+/*
+ * The submit button
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/hannes\/sites\/p1\/themes\/ptheme\/sass\/scss\/global\.styles\.scss}line{font-family:\000031932}}
+.container-inline div,
+.container-inline label {
+  display: inline;
+}
+
+/*
+ * Define consistent borders
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/hannes\/sites\/p1\/themes\/ptheme\/sass\/scss\/global\.styles\.scss}line{font-family:\000031940}}
+fieldset {
+  border: 1px solid black;
+}
+
+/*
+ * Tips for Drupal's input formats
+ */
+/*
+ * Buttons used by contrib modules like Media
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/hannes\/sites\/p1\/themes\/ptheme\/sass\/scss\/global\.styles\.scss}line{font-family:\000031954}}
+a.button {
+  -webkit-appearance: button;
+  -moz-appearance: button;
+  appearance: button;
+}
+
+/*
+ * Password confirmation
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/hannes\/sites\/p1\/themes\/ptheme\/sass\/scss\/global\.styles\.scss}line{font-family:\000031963}}
+.password-parent,
+.confirm-parent {
+  margin: 0;
+}
+
+/**
+ * Hierarchical Tree for selecting Taxonomy
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/hannes\/sites\/p1\/themes\/ptheme\/sass\/scss\/global\.styles\.scss}line{font-family:\000031970}}
+.no-term-reference-tree-button {
+  background-color: #fff5cc;
+}
+
+/* =============================================================================
+ *   Tables
+ * ========================================================================== */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/hannes\/sites\/p1\/themes\/ptheme\/sass\/scss\/global\.styles\.scss}line{font-family:\000031979}}
+table {
+  margin: 10px 0;
+  padding: 0;
+  width: 100%;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/hannes\/sites\/p1\/themes\/ptheme\/sass\/scss\/global\.styles\.scss}line{font-family:\000031984}}
+table.sticky-header {
+  z-index: 10;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/hannes\/sites\/p1\/themes\/ptheme\/sass\/scss\/global\.styles\.scss}line{font-family:\000031995}}
+table,
+thead,
+tbody,
+tr,
+th,
+td {
+  border-color: black;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/hannes\/sites\/p1\/themes\/ptheme\/sass\/scss\/global\.styles\.scss}line{font-family:\000031999}}
+thead {
+  background-color: #ffff55;
+  color: #ffff55;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/hannes\/sites\/p1\/themes\/ptheme\/sass\/scss\/global\.styles\.scss}line{font-family:\000032007}}
+table,
+td,
+th {
+  vertical-align: middle;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/hannes\/sites\/p1\/themes\/ptheme\/sass\/scss\/global\.styles\.scss}line{font-family:\000032014}}
+caption,
+th,
+td {
+  text-align: left;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/hannes\/sites\/p1\/themes\/ptheme\/sass\/scss\/global\.styles\.scss}line{font-family:\000032018}}
+th {
+  background-color: #ffff55;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/hannes\/sites\/p1\/themes\/ptheme\/sass\/scss\/global\.styles\.scss}line{font-family:\000032023}}
+thead tr {
+  font-weight: 700;
+  background-color: #e5e5e5;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/hannes\/sites\/p1\/themes\/ptheme\/sass\/scss\/global\.styles\.scss}line{font-family:\000032030}}
+td,
+th {
+  border-bottom: 0;
+  margin: 0;
+  padding: 2px 4px;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/hannes\/sites\/p1\/themes\/ptheme\/sass\/scss\/global\.styles\.scss}line{font-family:\000032040}}
+tbody tr {
+  border-top: 1px solid black;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/hannes\/sites\/p1\/themes\/ptheme\/sass\/scss\/global\.styles\.scss}line{font-family:\000032045}}
+tr {
+  /* Table row striping */
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/hannes\/sites\/p1\/themes\/ptheme\/sass\/scss\/global\.styles\.scss}line{font-family:\000032047}}
+tr.odd {
+  background-color: #f9f0e7;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/hannes\/sites\/p1\/themes\/ptheme\/sass\/scss\/global\.styles\.scss}line{font-family:\000032054}}
+tr.info, tr.even {
+  border-bottom: 0;
+  background-color: #ede0d2;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/hannes\/sites\/p1\/themes\/ptheme\/sass\/scss\/global\.styles\.scss}line{font-family:\000032064}}
+tr.odd td.active {
+  background-color: #ede0d2;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/hannes\/sites\/p1\/themes\/ptheme\/sass\/scss\/global\.styles\.scss}line{font-family:\000032068}}
+tr.even td.active {
+  background-color: #e1d0c5;
+}
+
+/*
+ * Forum tables
+ * Core sets white-space to nowrap, which makes no sense
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/hannes\/sites\/p1\/themes\/ptheme\/sass\/scss\/global\.styles\.scss}line{font-family:\000032096}}
+#forum td .created,
+#forum td .posts,
+#forum td .topics,
+#forum td .last-reply,
+#forum td .replies,
+#forum td .pager {
+  white-space: normal;
+}
+
+/* =============================================================================
+ *   Messages
+ * ========================================================================== */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/hannes\/sites\/p1\/themes\/ptheme\/sass\/scss\/global\.styles\.scss}line{font-family:\000032107}}
+div.messages {
+  border-radius: 12px;
+  margin: 10px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/hannes\/sites\/p1\/themes\/ptheme\/sass\/scss\/global\.styles\.scss}line{font-family:\000032112}}
+div.messages ul {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/hannes\/sites\/p1\/themes\/ptheme\/sass\/scss\/global\.styles\.scss}line{font-family:\000032130}}
+div.error,
+tr.error {
+  background-color: #ffcccc;
+}
+
+/*
+ * Unpublished nodes
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/hannes\/sites\/p1\/themes\/ptheme\/sass\/scss\/global\.styles\.scss}line{font-family:\000032154}}
+.node-unpublished p.unpublished,
+.comment-unpublished p.unpublished {
+  color: pink;
+  color: rgba(239, 170, 170, 0.4);
+  font-family: Impact, Haettenschweiler, "Franklin Gothic Bold", Charcoal, "Helvetica Inserat", "Bitstream Vera Sans Bold", "Arial Black", sans-serif;
+  font-size: 50px;
+  font-weight: 700;
+  line-height: 1.2;
+  height: 0;
+  margin: 0;
+  padding: 0;
+  overflow: visible;
+  text-align: center;
+  text-transform: uppercase;
+  word-wrap: break-word;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/hannes\/sites\/p1\/themes\/ptheme\/sass\/scss\/_custom\.scss}line{font-family:\00003258}}
+.ie6-7 .node-unpublished p.unpublished > *, .ie6-7
+.comment-unpublished p.unpublished > * {
+  position: relative;
+}
+
+/* =============================================================================
+ *    Maintenance pages
+ * ========================================================================== */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/hannes\/sites\/p1\/themes\/ptheme\/sass\/scss\/global\.styles\.scss}line{font-family:\000032165}}
+.maintenance-page .container {
+  padding: 40px 0;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/hannes\/sites\/p1\/themes\/ptheme\/sass\/scss\/global\.styles\.scss}line{font-family:\000032170}}
+.maintenance-page #site-name,
+.maintenance-page #page-title {
+  margin: 0;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/hannes\/sites\/p1\/themes\/ptheme\/sass\/scss\/global\.styles\.scss}line{font-family:\000032177}}
+.db-offline .container {
+  margin: 0 auto;
+  padding: 40px 0;
+  width: 100%;
+  max-width: 960px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/hannes\/sites\/p1\/themes\/ptheme\/sass\/scss\/global\.styles\.scss}line{font-family:\000032184}}
+.db-offline div.messages {
+  margin: 20px 0 0;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/hannes\/sites\/p1\/themes\/ptheme\/sass\/scss\/global\.styles\.scss}line{font-family:\000032188}}
+.db-offline #content {
+  padding: 20px 0;
+}
+
+/* =============================================================================
+ *   Misc overrides for contrib modules
+ * ========================================================================== */
+/*
+ * Admin menu overrides
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/hannes\/sites\/p1\/themes\/ptheme\/sass\/scss\/global\.styles\.scss}line{font-family:\000032201}}
+#admin-menu {
+  margin: 0;
+  padding: 0;
+}
+
+/*
+ * Devel Module
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/hannes\/sites\/p1\/themes\/ptheme\/sass\/scss\/global\.styles\.scss}line{font-family:\000032210}}
+.dev-query {
+  background: #dddddd;
+  padding: 30px;
+}
+
+/*
+ * Styleguide module tweaks
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/hannes\/sites\/p1\/themes\/ptheme\/sass\/scss\/global\.styles\.scss}line{font-family:\000032219}}
+#styleguide-header {
+  padding: 0 10px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/hannes\/sites\/p1\/themes\/ptheme\/sass\/scss\/global\.styles\.scss}line{font-family:\000032222}}
+#styleguide-header .item-list {
+  font-family: inherit;
+  margin: 0 20px 20px 0;
+  min-height: 260px;
+  width: auto;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/hannes\/sites\/p1\/themes\/ptheme\/sass\/scss\/global\.styles\.scss}line{font-family:\000032230}}
+.ds-Install {
+  color: white !important;
+  background-color: #660066 !important;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/hannes\/sites\/p1\/themes\/ptheme\/sass\/scss\/global\.styles\.scss}line{font-family:\000032231}}
+.ds-Service {
+  color: white !important;
+  background-color: #bb0000 !important;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/hannes\/sites\/p1\/themes\/ptheme\/sass\/scss\/global\.styles\.scss}line{font-family:\000032232}}
+.ds-Routes {
+  color: white !important;
+  background-color: #000088 !important;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/hannes\/sites\/p1\/themes\/ptheme\/sass\/scss\/global\.styles\.scss}line{font-family:\000032233}}
+.ds-Warehouse {
+  color: white !important;
+  background-color: #006666 !important;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/hannes\/sites\/p1\/themes\/ptheme\/sass\/scss\/global\.styles\.scss}line{font-family:\000032234}}
+.ds-Systems {
+  color: white !important;
+  background-color: #4d2519 !important;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/hannes\/sites\/p1\/themes\/ptheme\/sass\/scss\/global\.styles\.scss}line{font-family:\000032235}}
+.ds-Office {
+  color: white !important;
+  background-color: #ffbb33 !important;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/hannes\/sites\/p1\/themes\/ptheme\/sass\/scss\/global\.styles\.scss}line{font-family:\000032236}}
+.ds-Sales {
+  color: white !important;
+  background-color: #007700 !important;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/hannes\/sites\/p1\/themes\/ptheme\/sass\/scss\/global\.styles\.scss}line{font-family:\000032237}}
+.ds-Management {
+  color: white !important;
+  background-color: #444444 !important;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/hannes\/sites\/p1\/themes\/ptheme\/sass\/scss\/global\.styles\.scss}line{font-family:\000032238}}
+.ds-Logistics {
+  color: white !important;
+  background-color: #f06000 !important;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/hannes\/sites\/p1\/themes\/ptheme\/sass\/scss\/global\.styles\.scss}line{font-family:\000032239}}
+.ds-All {
+  color: white !important;
+  background-color: #222222 !important;
+}
+
+/***** Views Filters, Sort By, Items per page and Submit button **********/
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/hannes\/sites\/p1\/themes\/ptheme\/sass\/scss\/global\.styles\.scss}line{font-family:\000032243}}
+.views-ui-display-tab-bucket .even {
+  background-color: #f9f0e7;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/hannes\/sites\/p1\/themes\/ptheme\/sass\/scss\/global\.styles\.scss}line{font-family:\000032246}}
+.views-ui-display-tab-bucket .odd {
+  background-color: #ede0d2;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/hannes\/sites\/p1\/themes\/ptheme\/sass\/scss\/global\.styles\.scss}line{font-family:\000032251}}
+.view-filters .views-exposed-widget {
+  border-radius: 8px;
+  box-shadow: 2px 2px 2px 2px black;
+  padding: 6px 8px;
+  margin: 2px;
+  background-color: #000055;
+  min-height: 5.3em;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/hannes\/sites\/p1\/themes\/ptheme\/sass\/scss\/global\.styles\.scss}line{font-family:\000032259}}
+.view-filters .views-widget-sort-by {
+  background-color: #ccccff;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/hannes\/sites\/p1\/themes\/ptheme\/sass\/scss\/global\.styles\.scss}line{font-family:\000032262}}
+.view-filters .views-widget-sort-order {
+  background-color: #ccccff;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/hannes\/sites\/p1\/themes\/ptheme\/sass\/scss\/global\.styles\.scss}line{font-family:\000032265}}
+.view-filters .views-widget-sort-by {
+  clear: both;
+  background-color: #f0c0ff;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/hannes\/sites\/p1\/themes\/ptheme\/sass\/scss\/global\.styles\.scss}line{font-family:\000032269}}
+.view-filters .views-widget-sort-order {
+  background-color: #f0c0ff;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/hannes\/sites\/p1\/themes\/ptheme\/sass\/scss\/global\.styles\.scss}line{font-family:\000032274}}
+.view-filters .views-widget-offset,
+.view-filters .views-widget-per-page {
+  background-color: #ccccff;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/hannes\/sites\/p1\/themes\/ptheme\/sass\/scss\/global\.styles\.scss}line{font-family:\000032277}}
+.view-filters .views-submit-button {
+  margin-left: 20px;
+  background-color: #c0f0c0;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/hannes\/sites\/p1\/themes\/ptheme\/sass\/scss\/global\.styles\.scss}line{font-family:\000032280}}
+.view-filters .views-submit-button .form-submit {
+  padding: 24px 16px;
+  margin: 2px;
+  border-radius: 6px;
+  font-weight: bold;
+  font-size: 106%;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/hannes\/sites\/p1\/themes\/ptheme\/sass\/scss\/global\.styles\.scss}line{font-family:\000032288}}
+.view-filters .views-reset-button {
+  margin-left: 8px;
+  background-color: #ffffbb;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/hannes\/sites\/p1\/themes\/ptheme\/sass\/scss\/global\.styles\.scss}line{font-family:\000032291}}
+.view-filters .views-reset-button #edit-reset {
+  padding: 24px 16px;
+  margin: 2px;
+  border-radius: 6px;
+  font-weight: bold;
+  font-size: 106%;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/hannes\/sites\/p1\/themes\/ptheme\/sass\/scss\/global\.styles\.scss}line{font-family:\000032300}}
+.view-filters .form-type-textfield input {
+  max-width: 15em;
+}
+
+/******** Images ************************/
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/hannes\/sites\/p1\/themes\/ptheme\/sass\/scss\/global\.styles\.scss}line{font-family:\000032309}}
+.ds-images .vbo-row {
+  width: 150px;
+  height: 150px;
+  padding: 1px;
+  margin: 2px;
+  box-shadow: 2px 2px 2px 2px black;
+  border-radius: 8px;
+  float: left;
+  background-color: #ffffbb;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/hannes\/sites\/p1\/themes\/ptheme\/sass\/scss\/global\.styles\.scss}line{font-family:\000032325}}
+.ds-images .views-row {
+  font-size: 85%;
+  font-stretch: condensed;
+  font-family: "Arial Narrow";
+  line-height: 1;
+  width: 150px;
+  height: 270px;
+  padding: 1px;
+  margin: 2px;
+  box-shadow: 2px 2px 2px 2px black;
+  border-radius: 8px;
+  position: relative;
+  float: left;
+  background-color: #f9e9d9;
+  overflow: hidden;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/hannes\/sites\/p1\/themes\/ptheme\/sass\/scss\/global\.styles\.scss}line{font-family:\000032341}}
+.ds-images h3 {
+  width: 140px;
+  height: 230px;
+  padding: 41px 0px 1px 12px;
+  margin: 2px;
+  float: left;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/hannes\/sites\/p1\/themes\/ptheme\/sass\/scss\/global\.styles\.scss}line{font-family:\000032348}}
+.ds-images .views-row-first {
+  clear: both;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/hannes\/sites\/p1\/themes\/ptheme\/sass\/scss\/global\.styles\.scss}line{font-family:\000032351}}
+.ds-images img {
+  border-radius: 7px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/hannes\/sites\/p1\/themes\/ptheme\/sass\/scss\/global\.styles\.scss}line{font-family:\000032354}}
+.ds-images .views-field-name {
+  margin-top: 1px;
+  clear: both;
+  text-align: center;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/hannes\/sites\/p1\/themes\/ptheme\/sass\/scss\/global\.styles\.scss}line{font-family:\000032359}}
+.ds-images .views-field-field-media-status {
+  font-size: 90%;
+  float: left;
+  margin: 1px 0 0 20px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/hannes\/sites\/p1\/themes\/ptheme\/sass\/scss\/global\.styles\.scss}line{font-family:\000032363}}
+.ds-images .views-field-field-media-status .field-content {
+  padding: 3px 6px;
+  border-radius: 8px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/hannes\/sites\/p1\/themes\/ptheme\/sass\/scss\/global\.styles\.scss}line{font-family:\000032371}}
+.ds-images .views-field-link,
+.ds-images .views-field-download,
+.ds-images .views-field-edit,
+.ds-images .views-field-delete {
+  float: right;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/hannes\/sites\/p1\/themes\/ptheme\/sass\/scss\/global\.styles\.scss}line{font-family:\000032381}}
+.ds-images .views-field-field-create-date {
+  font-style: italic;
+  color: #444444;
+  font-size: 85%;
+  clear: both;
+  text-align: center;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/hannes\/sites\/p1\/themes\/ptheme\/sass\/scss\/global\.styles\.scss}line{font-family:\000032389}}
+.ds-images .views-field-field-image-purpose {
+  font-size: 85%;
+  float: left;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/hannes\/sites\/p1\/themes\/ptheme\/sass\/scss\/global\.styles\.scss}line{font-family:\000032394}}
+.ds-images .views-label {
+  color: #006000;
+  font-weight: bold;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/hannes\/sites\/p1\/themes\/ptheme\/sass\/scss\/global\.styles\.scss}line{font-family:\000032398}}
+.ds-images .views-field-field-image-content {
+  font-size: 85%;
+  float: right;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/hannes\/sites\/p1\/themes\/ptheme\/sass\/scss\/global\.styles\.scss}line{font-family:\000032403}}
+.ds-images .views-field-name {
+  clear: both;
+  margin-bottom: 4px;
+  font-size: 85%;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/hannes\/sites\/p1\/themes\/ptheme\/sass\/scss\/global\.styles\.scss}line{font-family:\000032408}}
+.ds-images .views-field-field-facility {
+  clear: both;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/hannes\/sites\/p1\/themes\/ptheme\/sass\/scss\/global\.styles\.scss}line{font-family:\000032411}}
+.ds-images .views-field-field-vendor-brand {
+  clear: both;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/hannes\/sites\/p1\/themes\/ptheme\/sass\/scss\/global\.styles\.scss}line{font-family:\000032414}}
+.ds-images .views-field-field-product-segment {
+  clear: both;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/hannes\/sites\/p1\/themes\/ptheme\/sass\/scss\/global\.styles\.scss}line{font-family:\000032417}}
+.ds-images .views-field-views-bulk-operations {
+  left: 3px;
+  top: 154px;
+  position: absolute;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/hannes\/sites\/p1\/themes\/ptheme\/sass\/scss\/global\.styles\.scss}line{font-family:\000032421}}
+.ds-images .views-field-views-bulk-operations .form-item {
+  margin: 0;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/hannes\/sites\/p1\/themes\/ptheme\/sass\/scss\/global\.styles\.scss}line{font-family:\000032424}}
+.ds-images .views-field-views-bulk-operations input {
+  padding: 20px;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/hannes\/sites\/p1\/themes\/ptheme\/sass\/scss\/global\.styles\.scss}line{font-family:\000032429}}
+.vbo-fieldset-select-all {
+  box-shadow: 2px 2px 2px 2px black;
+  border-radius: 8px;
+  background-color: #ffcc88;
+  border: 0px;
+  padding: 10px 8px;
+  margin: 0px 2px 8px 4px;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/hannes\/sites\/p1\/themes\/ptheme\/sass\/scss\/global\.styles\.scss}line{font-family:\000032437}}
+.vbo-views-form #edit-select {
+  box-shadow: 2px 2px 2px 2px black;
+  border-radius: 8px;
+  background-color: #ffcc88;
+  margin: 0px 6px 8px 2px;
+  padding: 6px 8px;
+  border: 0px;
+  float: left;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/hannes\/sites\/p1\/themes\/ptheme\/sass\/scss\/global\.styles\.scss}line{font-family:\000032451}}
+.file-document-form .form-wrapper,
+.file-video-form .form-wrapper,
+.file-audio-form .form-wrapper,
+.file-image-form .form-wrapper {
+  padding: 5px;
+  margin: 2px;
+  box-shadow: 2px 2px 2px 2px black;
+  border-radius: 8px;
+  float: left;
+  background-color: #ffffbb;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/hannes\/sites\/p1\/themes\/ptheme\/sass\/scss\/global\.styles\.scss}line{font-family:\000032459}}
+.file-document-form img,
+.file-video-form img,
+.file-audio-form img,
+.file-image-form img {
+  clear: both;
+  float: left;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/hannes\/sites\/p1\/themes\/ptheme\/sass\/scss\/global\.styles\.scss}line{font-family:\000032463}}
+.file-document-form .field-name-field-name,
+.file-video-form .field-name-field-name,
+.file-audio-form .field-name-field-name,
+.file-image-form .field-name-field-name {
+  clear: both;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/hannes\/sites\/p1\/themes\/ptheme\/sass\/scss\/global\.styles\.scss}line{font-family:\000032470}}
+.file-document-form .vertical-tabs,
+.file-document-form .field-name-field-search-field,
+.file-document-form .field-name-field-file-image-alt-text,
+.file-document-form .field-name-field-file-image-title-text,
+.file-document-form .description,
+.file-video-form .vertical-tabs,
+.file-video-form .field-name-field-search-field,
+.file-video-form .field-name-field-file-image-alt-text,
+.file-video-form .field-name-field-file-image-title-text,
+.file-video-form .description,
+.file-audio-form .vertical-tabs,
+.file-audio-form .field-name-field-search-field,
+.file-audio-form .field-name-field-file-image-alt-text,
+.file-audio-form .field-name-field-file-image-title-text,
+.file-audio-form .description,
+.file-image-form .vertical-tabs,
+.file-image-form .field-name-field-search-field,
+.file-image-form .field-name-field-file-image-alt-text,
+.file-image-form .field-name-field-file-image-title-text,
+.file-image-form .description {
+  display: none;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/hannes\/sites\/p1\/themes\/ptheme\/sass\/scss\/global\.styles\.scss}line{font-family:\000032475}}
+.ds-left {
+  float: left;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/hannes\/sites\/p1\/themes\/ptheme\/sass\/scss\/global\.styles\.scss}line{font-family:\000032479}}
+.ds-right {
+  float: right;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/hannes\/sites\/p1\/themes\/ptheme\/sass\/scss\/global\.styles\.scss}line{font-family:\000032483}}
+.ds-bold {
+  font-weight: bold;
+  color: #006000;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/hannes\/sites\/p1\/themes\/ptheme\/sass\/scss\/global\.styles\.scss}line{font-family:\000032488}}
+.ds-clear {
+  clear: both;
+}
+
+/**
+ * People */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/hannes\/sites\/p1\/themes\/ptheme\/sass\/scss\/global\.styles\.scss}line{font-family:\000032495}}
+.ds-people .views-row {
+  font-size: 90%;
+  font-family: "Arial Narrow";
+  line-height: 1.0em;
+  width: 300px;
+  height: 94px;
+  padding: 1px 1px 1px 4px;
+  margin: 2px;
+  box-shadow: 2px 2px 2px 2px black;
+  border-radius: 8px;
+  float: left;
+  background-color: #f9e9d9;
+  overflow: hidden;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/hannes\/sites\/p1\/themes\/ptheme\/sass\/scss\/global\.styles\.scss}line{font-family:\000032509}}
+.ds-people .ds-name {
+  font-size: 120%;
+  font-weight: bold;
+  margin: 2px 0;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/hannes\/sites\/p1\/themes\/ptheme\/sass\/scss\/global\.styles\.scss}line{font-family:\000032514}}
+.ds-people .ds-phones {
+  font-stretch: condensed;
+  font-family: monospace,'Courier New';
+  font-family: "Courier New";
+  font-family: 'Lucida Console',Monaco,monospace;
+  margin: 6px 0 0 5px;
+  font-size: 90%;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/hannes\/sites\/p1\/themes\/ptheme\/sass\/scss\/global\.styles\.scss}line{font-family:\000032522}}
+.ds-people .ds-image {
+  margin: 0;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/hannes\/sites\/p1\/themes\/ptheme\/sass\/scss\/global\.styles\.scss}line{font-family:\000032525}}
+.ds-people .ds-left-column {
+  float: left;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/hannes\/sites\/p1\/themes\/ptheme\/sass\/scss\/global\.styles\.scss}line{font-family:\000032528}}
+.ds-people .ds-mail {
+  font-size: 85%;
+  font-stretch: condensed;
+  font-style: italic;
+  margin-bottom: 3px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/hannes\/sites\/p1\/themes\/ptheme\/sass\/scss\/global\.styles\.scss}line{font-family:\000032534}}
+.ds-people .ds-right-column {
+  line-height: 1.3;
+  margin-right: 5px;
+  float: right;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/hannes\/sites\/p1\/themes\/ptheme\/sass\/scss\/global\.styles\.scss}line{font-family:\000032538}}
+.ds-people .ds-right-column div {
+  clear: both;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/hannes\/sites\/p1\/themes\/ptheme\/sass\/scss\/global\.styles\.scss}line{font-family:\000032541}}
+.ds-people .ds-right-column .ds-department a {
+  padding: 1px 8px;
+  border-radius: 6px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/hannes\/sites\/p1\/themes\/ptheme\/sass\/scss\/global\.styles\.scss}line{font-family:\000032546}}
+.ds-people img {
+  margin: 0;
+  border-radius: 7px;
+}
+
+/**
+ * Facilities */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/hannes\/sites\/p1\/themes\/ptheme\/sass\/scss\/global\.styles\.scss}line{font-family:\000032555}}
+.ds-facilities .views-row {
+  line-height: 1.1em;
+  width: 300px;
+  height: 75px;
+  padding: 3px 5px;
+  margin: 2px;
+  box-shadow: 2px 2px 2px 2px black;
+  border-radius: 8px;
+  float: left;
+  background-color: #f9e9d9;
+  overflow: hidden;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/hannes\/sites\/p1\/themes\/ptheme\/sass\/scss\/global\.styles\.scss}line{font-family:\000032567}}
+.ds-facilities .views-field-title {
+  font-size: 120%;
+  font-style: bold;
+  margin-bottom: 3px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/hannes\/sites\/p1\/themes\/ptheme\/sass\/scss\/global\.styles\.scss}line{font-family:\000032572}}
+.ds-facilities .views-field-field-facility-type {
+  float: right;
+  font-size: 120%;
+  font-style: bold;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/hannes\/sites\/p1\/themes\/ptheme\/sass\/scss\/global\.styles\.scss}line{font-family:\000032586}}
+.fieldset-legend,
+.form-type-select > label,
+.form-type-checkbox-tree > label,
+.form-type-radios > label,
+.form-type-checkboxes > label,
+.form-type-link-field > label,
+.form-type-link-field > label,
+.form-type-textarea > label,
+.form-type-textfield > label {
+  color: #006000;
+  font-size: 120%;
+  font-weight: bold;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/hannes\/sites\/p1\/themes\/ptheme\/sass\/scss\/global\.styles\.scss}line{font-family:\000032592}}
+.block-inner div > .form-item > label.option {
+  font-size: 100%;
+  font-style: normal;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/hannes\/sites\/p1\/themes\/ptheme\/sass\/scss\/global\.styles\.scss}line{font-family:\000032598}}
+.form-phone-number select {
+  width: 13em;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/hannes\/sites\/p1\/themes\/ptheme\/sass\/scss\/global\.styles\.scss}line{font-family:\000032599}}
+.form-phone-number input {
+  width: 10em;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/hannes\/sites\/p1\/themes\/ptheme\/sass\/scss\/global\.styles\.scss}line{font-family:\000032602}}
+#edit-field-barn-configuration-und-0-value {
+  width: 100%;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/hannes\/sites\/p1\/themes\/ptheme\/sass\/scss\/global\.styles\.scss}line{font-family:\000032605}}
+.state {
+  width: 12em;
+}
+
+/**
+ * Issues */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/hannes\/sites\/p1\/themes\/ptheme\/sass\/scss\/global\.styles\.scss}line{font-family:\000032612}}
+.ds-issues .views-row {
+  line-height: 1.1em;
+  width: 98%;
+  max-width: 600px;
+  height: 8em;
+  padding: 3px 5px;
+  margin: 2px;
+  box-shadow: 2px 2px 2px 2px black;
+  border-radius: 8px;
+  float: left;
+  background-color: #f9e9d9;
+  overflow: hidden;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/hannes\/sites\/p1\/themes\/ptheme\/sass\/scss\/global\.styles\.scss}line{font-family:\000032625}}
+.ds-issues .ds-title a {
+  font-size: 115%;
+  font-weight: bold;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/hannes\/sites\/p1\/themes\/ptheme\/sass\/scss\/global\.styles\.scss}line{font-family:\000032629}}
+.ds-issues .ds-submission {
+  font-size: 85%;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/hannes\/sites\/p1\/themes\/ptheme\/sass\/scss\/global\.styles\.scss}line{font-family:\000032632}}
+.ds-issues .ds-author {
+  margin-left: 5px;
+  float: left;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/hannes\/sites\/p1\/themes\/ptheme\/sass\/scss\/global\.styles\.scss}line{font-family:\000032636}}
+.ds-issues .ds-ago {
+  font-style: italic;
+  color: #666666;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/hannes\/sites\/p1\/themes\/ptheme\/sass\/scss\/global\.styles\.scss}line{font-family:\000032640}}
+.ds-issues .ds-right-col {
+  line-height: 1.5;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/hannes\/sites\/p1\/themes\/ptheme\/sass\/scss\/global\.styles\.scss}line{font-family:\000032643}}
+.ds-issues .ds-right {
+  float: right;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/hannes\/sites\/p1\/themes\/ptheme\/sass\/scss\/global\.styles\.scss}line{font-family:\000032646}}
+.ds-issues .ds-left {
+  float: left;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/hannes\/sites\/p1\/themes\/ptheme\/sass\/scss\/global\.styles\.scss}line{font-family:\000032649}}
+.ds-issues .ds-clear {
+  clear: both;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/hannes\/sites\/p1\/themes\/ptheme\/sass\/scss\/global\.styles\.scss}line{font-family:\000032652}}
+.ds-issues .views-field-body {
+  clear: both;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/hannes\/sites\/p1\/themes\/ptheme\/sass\/scss\/global\.styles\.scss}line{font-family:\000032657}}
+.pane-node-form-path {
+  display: none;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/hannes\/sites\/p1\/themes\/ptheme\/sass\/scss\/global\.styles\.scss}line{font-family:\000032673}}
+#ds-issue-short-form .pane-node-field-facility,
+#ds-issue-short-form .pane-node-field-issue-tags,
+#ds-issue-short-form .pane-node-field-page-link,
+#ds-issue-short-form .pane-node-field-department,
+#ds-issue-short-form .pane-node-field-system,
+#ds-issue-short-form .pane-node-field-issue-dates,
+#ds-issue-short-form .pane-node-field-importance,
+#ds-issue-short-form .pane-node-field-personnel,
+#ds-issue-short-form .pane-node-form-publishing,
+#ds-issue-short-form .pane-node-form-path {
+  display: none;
+}
+
+/************* Documents ***********/
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/hannes\/sites\/p1\/themes\/ptheme\/sass\/scss\/global\.styles\.scss}line{font-family:\000032680}}
+.ds-documents .views-row {
+  line-height: 1.1em;
+  width: 94%;
+  max-width: 600px;
+  height: 115px;
+  padding: 3px 10px;
+  margin: 2px;
+  box-shadow: 2px 2px 2px 2px black;
+  border-radius: 8px;
+  float: left;
+  background-color: #f9e9d9;
+  overflow: hidden;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/hannes\/sites\/p1\/themes\/ptheme\/sass\/scss\/global\.styles\.scss}line{font-family:\000032694}}
+.ds-documents .ds-right-col {
+  line-height: 1.4;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/hannes\/sites\/p1\/themes\/ptheme\/sass\/scss\/global\.styles\.scss}line{font-family:\000032697}}
+.ds-documents .views-field-link {
+  font-weight: bold;
+  font-size: 115%;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/hannes\/sites\/p1\/themes\/ptheme\/sass\/scss\/global\.styles\.scss}line{font-family:\000032701}}
+.ds-documents .views-field-field-create-date {
+  font-style: italic;
+  font-size: 85%;
+  color: #444444;
+  margin-left: 10px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/hannes\/sites\/p1\/themes\/ptheme\/sass\/scss\/global\.styles\.scss}line{font-family:\000032707}}
+.ds-documents .views-field-name {
+  margin-bottom: 4px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/hannes\/sites\/p1\/themes\/ptheme\/sass\/scss\/global\.styles\.scss}line{font-family:\000032710}}
+.ds-documents .ds-department a {
+  padding: 0px 4px;
+  border-radius: 6px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/hannes\/sites\/p1\/themes\/ptheme\/sass\/scss\/global\.styles\.scss}line{font-family:\000032714}}
+.ds-documents .buttons {
+  padding-top: 3px;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/hannes\/sites\/p1\/themes\/ptheme\/sass\/scss\/global\.styles\.scss}line{font-family:\000032720}}
+#issue-node-form .form-item-title {
+  margin-right: .5em;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/hannes\/sites\/p1\/themes\/ptheme\/sass\/scss\/global\.styles\.scss}line{font-family:\000032723}}
+#issue-node-form .form-item-title input,
+#issue-node-form .form-item-title textarea {
+  width: 100%;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/hannes\/sites\/p1\/themes\/ptheme\/sass\/scss\/global\.styles\.scss}line{font-family:\000032727}}
+#issue-node-form #edit-field-issue-tags-und {
+  width: 100%;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/hannes\/sites\/p1\/themes\/ptheme\/sass\/scss\/global\.styles\.scss}line{font-family:\000032733}}
+.form-type-date-popup input.form-text {
+  width: 6em;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/hannes\/sites\/p1\/themes\/ptheme\/sass\/scss\/global\.styles\.scss}line{font-family:\000032736}}
+.form-type-date-popup .description {
+  display: hidden;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/hannes\/sites\/p1\/themes\/ptheme\/sass\/scss\/global\.styles\.scss}line{font-family:\000032742}}
+#edit-field-personnel .form-autocomplete {
+  width: 100%;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/hannes\/sites\/p1\/themes\/ptheme\/sass\/scss\/global\.styles\.scss}line{font-family:\000032748}}
+.form-item {
+  margin: .2em .2em;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/hannes\/sites\/p1\/themes\/ptheme\/sass\/scss\/global\.styles\.scss}line{font-family:\000032751}}
+.form-actions {
+  margin: .3em 0;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/hannes\/sites\/p1\/themes\/ptheme\/sass\/scss\/global\.styles\.scss}line{font-family:\000032753}}
+.form-actions input {
+  padding: 13px 25px;
+  margin: 0px 3px;
+  background-color: #c0f0c0;
+  border-radius: 10px;
+  border: 0;
+  box-shadow: 1px 1px 1px 1px black;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/hannes\/sites\/p1\/themes\/ptheme\/sass\/scss\/global\.styles\.scss}line{font-family:\000032762}}
+.ds-Cancel {
+  padding: 12px 23px 13px;
+  margin: 5px 3px 0 10px;
+  background-color: #dddddd;
+  border-radius: 10px;
+  border: 0;
+  box-shadow: 1px 1px 1px 1px black;
+  color: #000;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/hannes\/sites\/p1\/themes\/ptheme\/sass\/scss\/global\.styles\.scss}line{font-family:\000032774}}
+.form-radios .form-item,
+.form-checkboxes .form-item {
+  margin: 0px 0;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/hannes\/sites\/p1\/themes\/ptheme\/sass\/scss\/global\.styles\.scss}line{font-family:\000032778}}
+.form-checkboxes .form-checkbox,
+.form-radios .form-radio {
+  margin: 0 0;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/hannes\/sites\/p1\/themes\/ptheme\/sass\/scss\/global\.styles\.scss}line{font-family:\000032782}}
+#e108 {
+  width: 100px;
+  height: 100px;
+}
+
+/****** Department ***************/
+/*
+.views-field-field-department a {
+  padding: 1px 6px; 
+  margin: 2px 0px;
+  border-radius: 7px;
+} */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/hannes\/sites\/p1\/themes\/ptheme\/sass\/scss\/global\.styles\.scss}line{font-family:\000032799}}
+.view-ds-departments .views-row {
+  padding: 5px 0;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/hannes\/sites\/p1\/themes\/ptheme\/sass\/scss\/global\.styles\.scss}line{font-family:\000032801}}
+.view-ds-departments .views-row a {
+  padding: 3px 10px;
+  margin: 3px;
+  border-radius: 8px;
+  box-shadow: 2px 2px 2px 2px black;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/hannes\/sites\/p1\/themes\/ptheme\/sass\/scss\/global\.styles\.scss}line{font-family:\000032808}}
+#edit-field-department-und {
+  max-width: 15em;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/hannes\/sites\/p1\/themes\/ptheme\/sass\/scss\/global\.styles\.scss}line{font-family:\000032812}}
+.views-field-changed {
+  font-size: 70%;
+  margin-left: 2em;
+  color: #444444;
+  font-style: italic;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/hannes\/sites\/p1\/themes\/ptheme\/sass\/scss\/global\.styles\.scss}line{font-family:\000032819}}
+.article {
+  padding: 3px 8px;
+  margin: 3px;
+  border-radius: 8px;
+  background-color: #fae9ba;
+  box-shadow: 2px 2px 2px 2px black;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/hannes\/sites\/p1\/themes\/ptheme\/sass\/scss\/global\.styles\.scss}line{font-family:\000032828}}
+.ds-article-user-pane .block-inner,
+.ds-article-employee-pane .block-inner {
+  background-color: #ccccff;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/hannes\/sites\/p1\/themes\/ptheme\/sass\/scss\/global\.styles\.scss}line{font-family:\000032835}}
+.ds-documents-facility-pane .block-inner,
+.ds-my-documents-pane .block-inner {
+  background-color: #f0c0ff;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/hannes\/sites\/p1\/themes\/ptheme\/sass\/scss\/global\.styles\.scss}line{font-family:\000032844}}
+.ds-issues-facility-pane .block-inner,
+.ds-issues-user-pane .block-inner,
+.ds-issues-assigned-pane .block-inner,
+.ds-issues-department-pane .block-inner {
+  background-color: #ffc299;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/hannes\/sites\/p1\/themes\/ptheme\/sass\/scss\/global\.styles\.scss}line{font-family:\000032850}}
+.ds-media-pane .block-inner {
+  background-color: #ede0d2;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/hannes\/sites\/p1\/themes\/ptheme\/sass\/scss\/global\.styles\.scss}line{font-family:\000032857}}
+.ds-people-facility-pane .block-inner,
+.ds-people-employees-pane .block-inner {
+  background-color: #ffcccc;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/hannes\/sites\/p1\/themes\/ptheme\/sass\/scss\/global\.styles\.scss}line{font-family:\000032862}}
+.view-ds-article-content-panes {
+  background-color: #ccccff;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/hannes\/sites\/p1\/themes\/ptheme\/sass\/scss\/global\.styles\.scss}line{font-family:\000032864}}
+.view-ds-article-content-panes .header-left {
+  float: left;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/hannes\/sites\/p1\/themes\/ptheme\/sass\/scss\/global\.styles\.scss}line{font-family:\000032866}}
+.view-ds-article-content-panes .header-left .ago {
+  float: left;
+  font-size: 80%;
+  color: #444444;
+  margin-left: 3em;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/hannes\/sites\/p1\/themes\/ptheme\/sass\/scss\/global\.styles\.scss}line{font-family:\000032872}}
+.view-ds-article-content-panes .header-left .header-title a {
+  margin: 0;
+  font-size: 140%;
+  font-weight: bold;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/hannes\/sites\/p1\/themes\/ptheme\/sass\/scss\/global\.styles\.scss}line{font-family:\000032877}}
+.view-ds-article-content-panes .header-left img {
+  border-radius: 6px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/hannes\/sites\/p1\/themes\/ptheme\/sass\/scss\/global\.styles\.scss}line{font-family:\000032881}}
+.view-ds-article-content-panes .header-right {
+  float: right;
+  border-radius: 6px;
+  border: 1px;
+  padding: 3px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/hannes\/sites\/p1\/themes\/ptheme\/sass\/scss\/global\.styles\.scss}line{font-family:\000032886}}
+.view-ds-article-content-panes .header-right .active {
+  float: right;
+  padding: 1px 5px;
+  margin: 0px 0px 13px;
+  border-radius: 6px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/hannes\/sites\/p1\/themes\/ptheme\/sass\/scss\/global\.styles\.scss}line{font-family:\000032893}}
+.view-ds-article-content-panes .views-field-body {
+  clear: both;
+}
+
+/***** Media Status ******/
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/hannes\/sites\/p1\/themes\/ptheme\/sass\/scss\/global\.styles\.scss}line{font-family:\000032901}}
+figure a {
+  padding: 1px 6px;
+  border-radius: 8px;
+}
+
+/***** Migration ******/
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/hannes\/sites\/p1\/themes\/ptheme\/sass\/scss\/global\.styles\.scss}line{font-family:\000032916}}
+.field-name-field-issue-status a,
+.field-name-field-department a,
+.field-name-field-importance a,
+.views-field-field-issue-status > a,
+.views-field-field-department > a,
+.views-field-field-importance > a,
+.ds-highlight-parent a,
+.ds-highlight {
+  padding: 0 6px;
+  border-radius: 8px;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/hannes\/sites\/p1\/themes\/ptheme\/sass\/scss\/global\.styles\.scss}line{font-family:\000032923}}
+.migrate-summary {
+  max-width: 250px;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/hannes\/sites\/p1\/themes\/ptheme\/sass\/scss\/global\.styles\.scss}line{font-family:\000032929}}
+.ds-Showcase,
+.migrate-purple {
+  background-color: #f0c0ff !important;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/hannes\/sites\/p1\/themes\/ptheme\/sass\/scss\/global\.styles\.scss}line{font-family:\000032934}}
+.ds-Active,
+.ds-Archive,
+.ds-Important,
+.migrate-blue {
+  background-color: #ccccff !important;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/hannes\/sites\/p1\/themes\/ptheme\/sass\/scss\/global\.styles\.scss}line{font-family:\000032937}}
+.ds-Critical,
+.migrate-red {
+  background-color: #ffaaaa !important;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/hannes\/sites\/p1\/themes\/ptheme\/sass\/scss\/global\.styles\.scss}line{font-family:\000032940}}
+.ds-Canceled,
+.migrate-ltgrey {
+  background-color: #dddddd !important;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/hannes\/sites\/p1\/themes\/ptheme\/sass\/scss\/global\.styles\.scss}line{font-family:\000032943}}
+.ds-All,
+.migrate-grey {
+  background-color: #aaaaaa !important;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/hannes\/sites\/p1\/themes\/ptheme\/sass\/scss\/global\.styles\.scss}line{font-family:\000032949}}
+.ds-Approval,
+.ds-Waiting-for-Parts,
+.ds-Waiting-for-Customer,
+.ds-Waiting-for-DS,
+.ds-Waiting-for-Other {
+  background-color: #ffaaaa !important;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/hannes\/sites\/p1\/themes\/ptheme\/sass\/scss\/global\.styles\.scss}line{font-family:\000032951}}
+.ds-Duplicate {
+  background-color: #f0c0ff;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/hannes\/sites\/p1\/themes\/ptheme\/sass\/scss\/global\.styles\.scss}line{font-family:\000032953}}
+.migrate-cyan {
+  background-color: #33ffff !important;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/hannes\/sites\/p1\/themes\/ptheme\/sass\/scss\/global\.styles\.scss}line{font-family:\000032955}}
+.migrate-green {
+  background-color: #22ff22 !important;
+  color: black;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/hannes\/sites\/p1\/themes\/ptheme\/sass\/scss\/global\.styles\.scss}line{font-family:\000032959}}
+.ds-Completed,
+.ds-Informative,
+.migrate-ltgreen {
+  background-color: #c0f0c0 !important;
+  color: black;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/hannes\/sites\/p1\/themes\/ptheme\/sass\/scss\/global\.styles\.scss}line{font-family:\000032961}}
+.migrate-white {
+  background-color: white !important;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/hannes\/sites\/p1\/themes\/ptheme\/sass\/scss\/global\.styles\.scss}line{font-family:\000032964}}
+.migrate-yellow,
+.ds-Hold {
+  background-color: #ffffbb !important;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/hannes\/sites\/p1\/themes\/ptheme\/sass\/scss\/global\.styles\.scss}line{font-family:\000032967}}
+.ds-New,
+.ds-Serious,
+.migrate-orange {
+  background-color: #ffc299 !important;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/hannes\/sites\/p1\/themes\/ptheme\/sass\/scss\/global\.styles\.scss}line{font-family:\000032969}}
+.migrate-brown {
+  background-color: #6f3d10 !important;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/hannes\/sites\/p1\/themes\/ptheme\/sass\/scss\/global\.styles\.scss}line{font-family:\000032971}}
+.migrate table {
+  margin: 0;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/hannes\/sites\/p1\/themes\/ptheme\/sass\/scss\/global\.styles\.scss}line{font-family:\000032974}}
+.migrate th {
+  vertical-align: top;
+  background-color: #ffff55;
+  color: #ffff55;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/hannes\/sites\/p1\/themes\/ptheme\/sass\/scss\/global\.styles\.scss}line{font-family:\000032980}}
+.migrate td {
+  vertical-align: top;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/hannes\/sites\/p1\/themes\/ptheme\/sass\/scss\/global\.styles\.scss}line{font-family:\000032983}}
+.migrate ul {
+  padding: 0;
+  list-style: none outside none;
+}
+
+/**** Openlayers maps *******/
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/hannes\/sites\/p1\/themes\/ptheme\/sass\/scss\/global\.styles\.scss}line{font-family:\000032989}}
+.openlayers-popup a {
+  color: #55ffff;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/hannes\/sites\/p1\/themes\/ptheme\/sass\/scss\/global\.styles\.scss}line{font-family:\000032994}}
+.country {
+  display: none;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/hannes\/sites\/p1\/themes\/ptheme\/sass\/scss\/global\.styles\.scss}line{font-family:\000032998}}
+.form-type-link-field .description {
+  display: none;
+}

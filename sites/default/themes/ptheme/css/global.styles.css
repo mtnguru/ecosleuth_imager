@@ -1,0 +1,2383 @@
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/eco\/public_html\/sites\/default\/themes\/ptheme\/sass\/global\.styles\.sass}line{font-family:\000037}}
+body.html {
+  font-family: "Trebuchet MS", "Helvetica Neue", Arial, Helvetica, sans-serif;
+  font-size: 87.5%;
+  background-image: url("http://ecosleuth.com/imager/images/star8.jpg");
+  color: white;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/eco\/public_html\/sites\/default\/themes\/ptheme\/sass\/global\.styles\.sass}line{font-family:\0000314}}
+html .wysiwygeditor {
+  background-image: none;
+}
+
+/* =============================================================================
+ *   HTML Elements
+ * =================================================================2======== */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/eco\/public_html\/sites\/default\/themes\/ptheme\/sass\/global\.styles\.sass}line{font-family:\0000321}}
+h1 {
+  color: #3ff;
+  text-stroke: 1px #353;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/eco\/public_html\/sites\/default\/themes\/ptheme\/sass\/global\.styles\.sass}line{font-family:\0000325}}
+h2 {
+  color: #3ff;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/eco\/public_html\/sites\/default\/themes\/ptheme\/sass\/global\.styles\.sass}line{font-family:\0000328}}
+h3 {
+  color: #3ff;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/eco\/public_html\/sites\/default\/themes\/ptheme\/sass\/global\.styles\.sass}line{font-family:\0000344}}
+li a.active {
+  color: yellow;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/eco\/public_html\/sites\/default\/themes\/ptheme\/sass\/global\.styles\.sass}line{font-family:\0000350}}
+input[type=text] {
+  width: 98%;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/eco\/public_html\/sites\/default\/themes\/ptheme\/sass\/global\.styles\.sass}line{font-family:\0000353}}
+pre,
+code,
+tt,
+samp,
+kbd,
+var {
+  font-family: Consolas, Monaco, "Courier New", Courier, monospace, sans-serif;
+}
+
+/* =============================================================================
+ *   Wrappers
+ * ========================================================================== */
+/* Page wrapper, includes the .container class which sets the overall page or section width
+ * Main wrapper in page.tpl.php, the .container class sets the width of the page, do not add width to it!
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/eco\/public_html\/sites\/default\/themes\/ptheme\/sass\/global\.styles\.sass}line{font-family:\0000369}}
+#page {
+  max-width: 1800px;
+}
+
+/* Wraps all header elements - branding and .region-header
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/eco\/public_html\/sites\/default\/themes\/ptheme\/sass\/global\.styles\.sass}line{font-family:\0000376}}
+#header {
+  margin: 50px 8px 10px;
+  border: solid 1px #b491dd;
+  background-color: #351a55;
+  box-shadow: 0px 0px 4px 3px #aa43c5, 0px 0px 3px 2px #5343c5 inset;
+  border-radius: 8px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/eco\/public_html\/sites\/default\/themes\/ptheme\/sass\/global\.styles\.sass}line{font-family:\0000379}}
+#header h2.block-title {
+  font-size: 130%;
+  margin: 0;
+  padding: 0px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/eco\/public_html\/sites\/default\/themes\/ptheme\/sass\/global\.styles\.sass}line{font-family:\0000384}}
+#header .block-inner {
+  padding: 0 5px;
+}
+
+/* Wraps the sidebars the content column
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/eco\/public_html\/sites\/default\/themes\/ptheme\/sass\/global\.styles\.sass}line{font-family:\0000391}}
+#columns {
+  padding: 0.4em;
+}
+
+/* Main content column wrapper
+ */
+/* Wraps the main-content-header, the content region and feed-icons. Use this wrapper to style the entire main content column
+ */
+/* Wraps the content region, avoid applying styles to this wrapper, its used mainly for position and invisible gutters and can be problematic to style
+ */
+/* Footer wrapper
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/eco\/public_html\/sites\/default\/themes\/ptheme\/sass\/global\.styles\.sass}line{font-family:\00003121}}
+#footer {
+  margin: 0 8px;
+  border: solid 1px #b491dd;
+  background-color: #351a55;
+  box-shadow: 0px 0px 4px 3px #aa43c5, 0px 0px 3px 2px #5343c5 inset;
+  border-radius: 8px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/eco\/public_html\/sites\/default\/themes\/ptheme\/sass\/global\.styles\.sass}line{font-family:\00003124}}
+#footer .block-inner {
+  background-color: inherit;
+  border-radius: 0;
+  border: none;
+  box-shadow: none;
+}
+
+/* Panels may need additional margin wrangling when in the $content region
+ */
+/* Full Width Wrappers
+ * These are used in the optional page--full-width-wrappers.tpl.php template.
+ * All have internal .container classes. In the full width wrapper template the
+ * .container classes set the width or max-width of the contained element - you
+ * can style this but never add any width/margin/padding/borders etc to .container
+ */
+/* Wraps #page
+ */
+/* Wraps the leaderboard
+ */
+/* Wraps the header
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/eco\/public_html\/sites\/default\/themes\/ptheme\/sass\/global\.styles\.sass}line{font-family:\00003158}}
+#header-wrapper {
+  /* Debug styles, is this working */
+  background-color: rgba(255, 192, 203, 0.5);
+}
+
+/* Wraps the nav elements
+ */
+/* Wraps breadcrumb
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/eco\/public_html\/sites\/default\/themes\/ptheme\/sass\/global\.styles\.sass}line{font-family:\00003172}}
+#breadcrumb-wrapper {
+  margin-left: 5px;
+}
+
+/* Wraps messages and help
+ */
+/* Wraps the secondary content/preface region
+ */
+/* Wraps the main content column
+ */
+/* Wraps the tertiary content/postfix region
+ */
+/* Footer wrapper
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/eco\/public_html\/sites\/default\/themes\/ptheme\/sass\/global\.styles\.sass}line{font-family:\00003203}}
+#footer-wrapper {
+  /* Debug styles, is this working? */
+  background: rgba(255, 192, 203, 0.5);
+}
+
+/* =============================================================================
+ *   Branding
+ * ========================================================================== */
+/* Wraps all the branding elements, logo, name and slogan
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/eco\/public_html\/sites\/default\/themes\/ptheme\/sass\/global\.styles\.sass}line{font-family:\00003215}}
+#branding {
+  float: left;
+}
+
+/* Logo
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/eco\/public_html\/sites\/default\/themes\/ptheme\/sass\/global\.styles\.sass}line{font-family:\00003221}}
+#logo {
+  padding: 0;
+  margin: 0.5em 1em 0.5em 0.5em;
+  float: left;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/eco\/public_html\/sites\/default\/themes\/ptheme\/sass\/global\.styles\.sass}line{font-family:\00003225}}
+#logo img {
+  height: 100px;
+  vertical-align: bottom;
+  width: 180px;
+  border-radius: 6px;
+}
+
+/* Wrapper for the site name and slogan (hgroup)
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/eco\/public_html\/sites\/default\/themes\/ptheme\/sass\/global\.styles\.sass}line{font-family:\00003239}}
+#name-and-slogan {
+  float: left;
+  line-height: 1;
+  font-family: garamond;
+  margin-top: 10px;
+}
+
+/* Site name (h1)
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/eco\/public_html\/sites\/default\/themes\/ptheme\/sass\/global\.styles\.sass}line{font-family:\00003248}}
+#site-name {
+  margin: 0;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/eco\/public_html\/sites\/default\/themes\/ptheme\/sass\/global\.styles\.sass}line{font-family:\00003250}}
+#site-name a {
+  color: #cfc;
+  font-size: 130%;
+  text-decoration: none;
+  text-shadow: 0 0 8px #ccf;
+}
+
+/* Site slogan (h2)
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/eco\/public_html\/sites\/default\/themes\/ptheme\/sass\/global\.styles\.sass}line{font-family:\00003259}}
+#site-slogan {
+  margin: 0;
+  margin-left: 20px;
+  padding: 0;
+  font-size: 90%;
+  font-weight: 400;
+  font-style: italic;
+  color: #ffff55;
+  text-shadow: 0 0 8px #ccf;
+}
+
+/* =============================================================================
+ *   Page content header
+ * ========================================================================== */
+/* Main content header wraps the page title, tabs and actions links
+ */
+/* The main page title (h1)
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/eco\/public_html\/sites\/default\/themes\/ptheme\/sass\/global\.styles\.sass}line{font-family:\00003281}}
+#page-title {
+  margin: 0;
+  text-shadow: /text\-shadow;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/eco\/public_html\/sites\/default\/themes\/ptheme\/sass\/global\.styles\.sass}line{font-family:\00003286}}
+ul.tabs li {
+  border-radius: 6px 6px 0 0;
+}
+
+/* =============================================================================
+ *   Misc Global Styles
+ * ========================================================================== */
+/* Feed icons
+ */
+/* Aggregator feed source
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/eco\/public_html\/sites\/default\/themes\/ptheme\/sass\/global\.styles\.sass}line{font-family:\00003301}}
+#aggregator .feed-source .feed-icon {
+  display: inline;
+  float: none;
+  margin-right: 10px;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/eco\/public_html\/sites\/default\/themes\/ptheme\/sass\/global\.styles\.sass}line{font-family:\00003306}}
+.feed-details dt,
+.feed-details dd {
+  display: inline;
+  margin: 0;
+}
+
+/* Generic styles for the more link
+ */
+/* Generic styles for links. See the ul.links declaration in node and comment stylesheets
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/eco\/public_html\/sites\/default\/themes\/ptheme\/sass\/global\.styles\.sass}line{font-family:\00003319}}
+ul.links {
+  margin: 0;
+  padding: 0;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/eco\/public_html\/sites\/default\/themes\/ptheme\/sass\/global\.styles\.sass}line{font-family:\00003322}}
+ul.links.inline {
+  display: block;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/eco\/public_html\/sites\/default\/themes\/ptheme\/sass\/global\.styles\.sass}line{font-family:\00003324}}
+ul.links li {
+  display: inline;
+  list-style: none;
+  padding: 0 10px 0 0;
+}
+
+/* Search results are an ordered list so reset the margin
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/eco\/public_html\/sites\/default\/themes\/ptheme\/sass\/global\.styles\.sass}line{font-family:\00003332}}
+.search-results {
+  margin: 0;
+}
+
+/* =============================================================================
+ *   Regions
+ * ========================================================================== */
+/* Standard region wrapper, don't add width to any regions, you will bork the layout - no margin, padding or borders etc
+ */
+/* Regions have an inner div - perfect for adding margin, padding or borders
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/eco\/public_html\/sites\/default\/themes\/ptheme\/sass\/global\.styles\.sass}line{font-family:\00003349}}
+.region-inner {
+  margin: 2px;
+}
+
+/* Regions can be nested, such as when using Panels
+ */
+/* Header region, embedded in the #header
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/eco\/public_html\/sites\/default\/themes\/ptheme\/sass\/global\.styles\.sass}line{font-family:\00003363}}
+.region-header {
+  float: right;
+  margin: 0;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/eco\/public_html\/sites\/default\/themes\/ptheme\/sass\/global\.styles\.sass}line{font-family:\00003366}}
+.region-header ul {
+  margin: 0;
+}
+
+/* Generally used to output Drupals help block, if the help module is enabled
+ */
+/* Secondary content
+ */
+/* Sits above the main content header, like a content-top region
+ */
+/* Sits below the main content, like a content-bottom region
+ */
+/* Sidebars - targets both
+ */
+/* First sidebar
+ */
+/* Second sidebar
+ */
+/* Tertiary content
+ */
+/* Footer region
+ */
+/* =============================================================================
+ *   Links
+ * ========================================================================== */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/eco\/public_html\/sites\/default\/themes\/ptheme\/sass\/global\.styles\.sass}line{font-family:\00003417}}
+a {
+  text-decoration: none;
+  color: #fff;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/eco\/public_html\/sites\/default\/themes\/ptheme\/sass\/global\.styles\.sass}line{font-family:\00003427}}
+a:hover, a:focus {
+  text-decoration: underline;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/eco\/public_html\/sites\/default\/themes\/ptheme\/sass\/global\.styles\.sass}line{font-family:\00003431}}
+th a {
+  color: #225;
+}
+
+/* =============================================================================
+ *   Primary, Secondary and Menu Bar region menus
+ * ========================================================================== */
+/* Use one of the following id's for granular control:
+ *  - #menu-bar (menu bar region)
+ *  - #primary-menu (main menu)
+ *  - #secondary-menu (secondary/user menu)
+ * You can target all of these with .nav or div[id$="menu-bar"]
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/eco\/public_html\/sites\/default\/themes\/ptheme\/sass\/global\.styles\.sass}line{font-family:\00003446}}
+.nav {
+  clear: both;
+  margin: 2px 5px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/eco\/public_html\/sites\/default\/themes\/ptheme\/sass\/global\.styles\.sass}line{font-family:\00003450}}
+.nav ul,
+.nav ul.menu {
+  margin: 0;
+  padding: 0;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/eco\/public_html\/sites\/default\/themes\/ptheme\/sass\/global\.styles\.sass}line{font-family:\00003455}}
+.nav li,
+.nav ul.menu li {
+  display: inline;
+  float: left;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/eco\/public_html\/sites\/default\/themes\/ptheme\/sass\/global\.styles\.sass}line{font-family:\00003463}}
+.nav li a,
+.nav ul.menu li a {
+  display: block;
+  white-space: nowrap;
+  padding: 0 10px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/eco\/public_html\/sites\/default\/themes\/ptheme\/sass\/global\.styles\.sass}line{font-family:\00003474}}
+.nav .block {
+  margin: 0;
+}
+
+/* =============================================================================
+ *   User Menu in header bar
+ * ========================================================================== */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/eco\/public_html\/sites\/default\/themes\/ptheme\/sass\/global\.styles\.sass}line{font-family:\00003481}}
+#block-system-user-menu {
+  margin: 5px 5px 0 0;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/eco\/public_html\/sites\/default\/themes\/ptheme\/sass\/global\.styles\.sass}line{font-family:\00003483}}
+#block-system-user-menu li {
+  list-style: none outside none;
+  margin: 0 0.2em;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/eco\/public_html\/sites\/default\/themes\/ptheme\/sass\/global\.styles\.sass}line{font-family:\00003486}}
+#block-system-user-menu li a {
+  padding: 0.2em;
+  border-radius: 8px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/eco\/public_html\/sites\/default\/themes\/ptheme\/sass\/global\.styles\.sass}line{font-family:\00003489}}
+#block-system-user-menu li a:hover {
+  color: #ffff55;
+  background-color: #aa3a20;
+  text-decoration: none;
+}
+
+/* =============================================================================
+ *   Superfish
+ * ========================================================================== */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/eco\/public_html\/sites\/default\/themes\/ptheme\/sass\/global\.styles\.sass}line{font-family:\00003498}}
+ul.sf-menu {
+  margin-bottom: 0;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/eco\/public_html\/sites\/default\/themes\/ptheme\/sass\/global\.styles\.sass}line{font-family:\00003500}}
+ul.sf-menu a {
+  border-left: 0;
+  border-top: 0;
+  padding: 0 10px;
+  text-decoration: none;
+  height: 1.8em;
+  line-height: 1.8em;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/eco\/public_html\/sites\/default\/themes\/ptheme\/sass\/global\.styles\.sass}line{font-family:\00003509}}
+ul.sf-menu a > .sf-sub-indicator {
+  top: 0.5em;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/eco\/public_html\/sites\/default\/themes\/ptheme\/sass\/global\.styles\.sass}line{font-family:\00003512}}
+ul.sf-menu li:hover, ul.sf-menu li.sfHover {
+  outline: 0;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/eco\/public_html\/sites\/default\/themes\/ptheme\/sass\/global\.styles\.sass}line{font-family:\00003516}}
+ul.sf-menu a:focus, ul.sf-menu a:hover, ul.sf-menu a:active {
+  outline: 0;
+}
+
+/* Superfish blocks
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/eco\/public_html\/sites\/default\/themes\/ptheme\/sass\/global\.styles\.sass}line{font-family:\00003526}}
+.block-superfish ul {
+  margin: 0 !important;
+  padding: 0 !important;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/eco\/public_html\/sites\/default\/themes\/ptheme\/sass\/global\.styles\.sass}line{font-family:\00003532}}
+.block-superfish li {
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+/* Vertical style
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/eco\/public_html\/sites\/default\/themes\/ptheme\/sass\/global\.styles\.sass}line{font-family:\00003539}}
+.sf-vertical {
+  width: 100%;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/eco\/public_html\/sites\/default\/themes\/ptheme\/sass\/global\.styles\.sass}line{font-family:\00003541}}
+.sf-vertical li {
+  width: 100%;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/eco\/public_html\/sites\/default\/themes\/ptheme\/sass\/global\.styles\.sass}line{font-family:\00003544}}
+.sf-vertical li:hover ul, .sf-vertical li.sfHover ul {
+  left: 100%;
+  top: 0;
+  margin: 0;
+  padding: 0;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/eco\/public_html\/sites\/default\/themes\/ptheme\/sass\/global\.styles\.sass}line{font-family:\00003550}}
+.sf-vertical li a {
+  padding: 0 10px;
+}
+
+/* Navbar style
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/eco\/public_html\/sites\/default\/themes\/ptheme\/sass\/global\.styles\.sass}line{font-family:\00003556}}
+.sf-navbar {
+  padding-bottom: 0 !important;
+}
+
+/* Sensible padding for the default style
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/eco\/public_html\/sites\/default\/themes\/ptheme\/sass\/global\.styles\.sass}line{font-family:\00003562}}
+.sf-menu.sf-style-default a {
+  padding: 0 10px;
+}
+
+/* =============================================================================
+ *   Menus, usually blocks
+ * ========================================================================== */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/eco\/public_html\/sites\/default\/themes\/ptheme\/sass\/global\.styles\.sass}line{font-family:\00003569}}
+ul.menu {
+  padding-left: 15px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/eco\/public_html\/sites\/default\/themes\/ptheme\/sass\/global\.styles\.sass}line{font-family:\00003571}}
+ul.menu ul {
+  padding-left: 15px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/eco\/public_html\/sites\/default\/themes\/ptheme\/sass\/global\.styles\.sass}line{font-family:\00003575}}
+ul.menu li {
+  margin: 0;
+}
+
+/* If li.content exists it's a problem, so reset the padding */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/eco\/public_html\/sites\/default\/themes\/ptheme\/sass\/global\.styles\.sass}line{font-family:\00003596}}
+.block .menu li.content {
+  padding: 0;
+}
+
+/* =============================================================================
+ *   Book navigation menu
+ * ========================================================================== */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/eco\/public_html\/sites\/default\/themes\/ptheme\/sass\/global\.styles\.sass}line{font-family:\00003611}}
+.book-navigation .page-up {
+  /* Prevent text wrapping to a new line, assumes English "up" is used (two characters) */
+  min-width: 2em;
+  white-space: nowrap;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/eco\/public_html\/sites\/default\/themes\/ptheme\/sass\/global\.styles\.sass}line{font-family:\00003615}}
+.book-navigation .menu {
+  margin-left: 0;
+}
+
+/* =============================================================================
+ *   Breadcrumbs
+ * ========================================================================== */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/eco\/public_html\/sites\/default\/themes\/ptheme\/sass\/global\.styles\.sass}line{font-family:\00003622}}
+#breadcrumb {
+  margin: 5px 15px;
+  /* If the label is set to show in theme settings the label class is added */
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/eco\/public_html\/sites\/default\/themes\/ptheme\/sass\/global\.styles\.sass}line{font-family:\00003626}}
+#breadcrumb .breadcrumb-label {
+  font-size: 1em;
+  display: inline;
+  padding-right: 10px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/eco\/public_html\/sites\/default\/themes\/ptheme\/sass\/global\.styles\.sass}line{font-family:\00003631}}
+#breadcrumb .breadcrumb-label:after {
+  content: ":";
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/eco\/public_html\/sites\/default\/themes\/ptheme\/sass\/global\.styles\.sass}line{font-family:\00003633}}
+#breadcrumb ol {
+  margin: 0;
+  padding: 0;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/eco\/public_html\/sites\/default\/themes\/ptheme\/sass\/global\.styles\.sass}line{font-family:\00003638}}
+#breadcrumb .with-breadcrumb-label ol {
+  display: inline;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/eco\/public_html\/sites\/default\/themes\/ptheme\/sass\/global\.styles\.sass}line{font-family:\00003641}}
+#breadcrumb li {
+  list-style: none;
+  display: inline;
+}
+
+/* =============================================================================
+ *   Pagers
+ * ========================================================================== */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/eco\/public_html\/sites\/default\/themes\/ptheme\/sass\/global\.styles\.sass}line{font-family:\00003664}}
+ul.pager {
+  clear: both;
+  margin: 0;
+  text-align: center;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/eco\/public_html\/sites\/default\/themes\/ptheme\/sass\/global\.styles\.sass}line{font-family:\00003669}}
+.item-list ul.pager li {
+  margin: 0;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/eco\/public_html\/sites\/default\/themes\/ptheme\/sass\/global\.styles\.sass}line{font-family:\00003672}}
+ul.pager li {
+  background-image: none;
+  display: inline;
+  list-style-type: none;
+  padding: 0.5em;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/eco\/public_html\/sites\/default\/themes\/ptheme\/sass\/global\.styles\.sass}line{font-family:\00003678}}
+ul.pager li.pager-current {
+  font-weight: 700;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/eco\/public_html\/sites\/default\/themes\/ptheme\/sass\/global\.styles\.sass}line{font-family:\00003681}}
+.block ul.pager li {
+  margin: 0;
+}
+
+/* Theme the various states of pager links
+ */
+/* =============================================================================
+ *   Skip Navigation
+ * ========================================================================== */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/eco\/public_html\/sites\/default\/themes\/ptheme\/sass\/global\.styles\.sass}line{font-family:\00003714}}
+#skip-link {
+  left: 50%;
+  margin-left: -6.5em;
+  margin-top: 0;
+  padding: 0 0.5em;
+  position: absolute;
+  width: 12em;
+  z-index: 50;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/eco\/public_html\/sites\/default\/themes\/ptheme\/sass\/global\.styles\.sass}line{font-family:\00003723}}
+#skip-link a {
+  background: #444;
+  background: rgba(0, 0, 0, 0.6);
+  color: #ffffbb;
+  display: block;
+  line-height: 2;
+  padding: 0;
+  text-align: center;
+  text-decoration: none;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/eco\/public_html\/sites\/default\/themes\/ptheme\/sass\/global\.styles\.sass}line{font-family:\00003733}}
+#skip-link a:link, #skip-link a:visited {
+  background: #444;
+  background: rgba(0, 0, 0, 0.6);
+  color: #ffffbb;
+  display: block;
+  line-height: 2;
+  padding: 0;
+  text-align: center;
+  text-decoration: none;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/eco\/public_html\/sites\/default\/themes\/ptheme\/sass\/global\.styles\.sass}line{font-family:\00003744}}
+#skip-link a:hover, #skip-link a:focus, #skip-link a:active {
+  outline: 0;
+}
+
+/* =============================================================================
+ *   Tabs (local tasks)
+ * ========================================================================== */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/eco\/public_html\/sites\/default\/themes\/ptheme\/sass\/global\.styles\.sass}line{font-family:\00003753}}
+#tasks {
+  margin-bottom: 15px;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/eco\/public_html\/sites\/default\/themes\/ptheme\/sass\/global\.styles\.sass}line{font-family:\00003756}}
+ul.primary {
+  border-bottom-color: #000;
+  margin: 10px 0;
+  padding: 0 0 0 5px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/eco\/public_html\/sites\/default\/themes\/ptheme\/sass\/global\.styles\.sass}line{font-family:\00003761}}
+ul.primary li {
+  display: block;
+  float: left;
+  margin: 0 1px -1px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/eco\/public_html\/sites\/default\/themes\/ptheme\/sass\/global\.styles\.sass}line{font-family:\00003766}}
+ul.primary li a {
+  background-color: #225;
+  border-radius: 8px 8px 0 0;
+  margin-right: 2px;
+  padding: 0 10px;
+  display: block;
+  float: left;
+  height: 1.5em;
+  line-height: 1.5em;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/eco\/public_html\/sites\/default\/themes\/ptheme\/sass\/global\.styles\.sass}line{font-family:\00003776}}
+ul.primary li a:hover, ul.primary li a:focus {
+  background-color: #114;
+  border-color: #000;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/eco\/public_html\/sites\/default\/themes\/ptheme\/sass\/global\.styles\.sass}line{font-family:\00003782}}
+ul.primary li.active a,
+ul.primary li.active a:hover,
+ul.primary li.active a:focus {
+  background-color: #353;
+  border-bottom-color: #353;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/eco\/public_html\/sites\/default\/themes\/ptheme\/sass\/global\.styles\.sass}line{font-family:\00003788}}
+ul.secondary {
+  border-bottom: 1px solid #000;
+  margin: 1em 0 0;
+  padding: 0 0.3em 1em;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/eco\/public_html\/sites\/default\/themes\/ptheme\/sass\/global\.styles\.sass}line{font-family:\00003793}}
+ul.secondary li {
+  border-right: 0;
+  list-style: none;
+  padding: 0 10px 0 0;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/eco\/public_html\/sites\/default\/themes\/ptheme\/sass\/global\.styles\.sass}line{font-family:\00003799}}
+ul.secondary li a:hover, ul.secondary li a.active {
+  border-bottom: none;
+  text-decoration: underline;
+}
+
+/* =============================================================================
+ *   Action links
+ * ========================================================================== */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/eco\/public_html\/sites\/default\/themes\/ptheme\/sass\/global\.styles\.sass}line{font-family:\00003808}}
+ul.action-links {
+  margin: 20px 0 0;
+  list-style: none;
+}
+
+/* =============================================================================
+ *  Field Styling
+ * ========================================================================== */
+/* Wrapper for any field
+ */
+/* Above and inline classes are on the field wrapper
+ */
+/* When labels are set to inline in field display settings the clearfix class is automatically added
+ */
+/* Labels are h2 in Adaptivetheme. Use a strong selector to mitigate unwanted ineritance issues
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/eco\/public_html\/sites\/default\/themes\/ptheme\/sass\/global\.styles\.sass}line{font-family:\00003834}}
+.field-label {
+  color: #3ff;
+  font-size: 1em;
+  font-weight: 700;
+  font-family: inherit;
+  line-height: inherit;
+  margin: 0;
+}
+
+/* Field types (Core)
+ */
+/* Image fields use the <figure> and <figcaption> elements from HTML5
+ */
+/* Taxonomy
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/eco\/public_html\/sites\/default\/themes\/ptheme\/sass\/global\.styles\.sass}line{font-family:\00003860}}
+.field-widget-term-reference-tree .parent-term {
+  font-weight: normal;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/eco\/public_html\/sites\/default\/themes\/ptheme\/sass\/global\.styles\.sass}line{font-family:\00003863}}
+.field-type-taxonomy-term-reference {
+  /* The same bottom margin as p, blockquote, ul, ol and dl */
+}
+
+/* Float left setting
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/eco\/public_html\/sites\/default\/themes\/ptheme\/sass\/global\.styles\.sass}line{font-family:\00003881}}
+.ia-l .field-type-image figure,
+.iat-l .field-type-image figure {
+  margin: 5px 20px 15px 0;
+}
+
+/* Centered setting
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/eco\/public_html\/sites\/default\/themes\/ptheme\/sass\/global\.styles\.sass}line{font-family:\00003889}}
+.ia-c .field-type-image figure,
+.iat-c .field-type-image figure {
+  margin: 5px auto 15px;
+}
+
+/* Float right setting
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/eco\/public_html\/sites\/default\/themes\/ptheme\/sass\/global\.styles\.sass}line{font-family:\00003896}}
+.ia-r .field-type-image figure,
+.iat-r .field-type-image figure {
+  margin: 5px 0 15px 20px;
+}
+
+/* =============================================================================
+ *   Block Styling
+ * ========================================================================== */
+/* Main wrapper for most blocks, block_system_main does not have it
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/eco\/public_html\/sites\/default\/themes\/ptheme\/sass\/global\.styles\.sass}line{font-family:\00003907}}
+.block {
+  margin-bottom: 5px;
+}
+
+/* Inner wrapper for most blocks, good for margin, padding and borders, block_system_main does not have it
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/eco\/public_html\/sites\/default\/themes\/ptheme\/sass\/global\.styles\.sass}line{font-family:\00003913}}
+.block-inner {
+  padding: 5px;
+  border: solid 1px #9e9ed8;
+  background-color: #225;
+  box-shadow: 0px 0px 4px 3px #7755bb, 0px 0px 3px 2px #5577bb inset;
+  border-radius: 8px;
+}
+
+/* Block title
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/eco\/public_html\/sites\/default\/themes\/ptheme\/sass\/global\.styles\.sass}line{font-family:\00003920}}
+.block-title {
+  margin: 0;
+}
+
+/* Match item list and block menu margin and padding
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/eco\/public_html\/sites\/default\/themes\/ptheme\/sass\/global\.styles\.sass}line{font-family:\00003928}}
+.block-content ul,
+.block-content ol {
+  margin: 0 0 0 10px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/eco\/public_html\/sites\/default\/themes\/ptheme\/sass\/global\.styles\.sass}line{font-family:\00003933}}
+.block-content li {
+  margin: 0;
+  padding: 0;
+}
+
+/* =============================================================================
+ *   Node Styling
+ * ========================================================================== */
+/* All nodes are given a node-FOO class that describes the type of content that
+ * it is. If you create a new content type called "my-custom-type", it will
+ * receive a "node-my-custom-type" class.
+ */
+/* =============================================================================
+ *   Comment Styling - Comments, comment wrapper, comment form
+ * ========================================================================== */
+/* Wrapper for the list of comments and its titles
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/eco\/public_html\/sites\/default\/themes\/ptheme\/sass\/global\.styles\.sass}line{font-family:\000031011}}
+#comments {
+  margin: 1.5em 0;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/eco\/public_html\/sites\/default\/themes\/ptheme\/sass\/global\.styles\.sass}line{font-family:\000031015}}
+#comments h2.comment-title {
+  margin: 0;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/eco\/public_html\/sites\/default\/themes\/ptheme\/sass\/global\.styles\.sass}line{font-family:\000031018}}
+#comments h2.comment-form {
+  margin: 0;
+}
+
+/* Wrapper for a single comment
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/eco\/public_html\/sites\/default\/themes\/ptheme\/sass\/global\.styles\.sass}line{font-family:\000031024}}
+.comment {
+  margin-bottom: 20px;
+}
+
+/* Comment title
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/eco\/public_html\/sites\/default\/themes\/ptheme\/sass\/global\.styles\.sass}line{font-family:\000031050}}
+.comment-title {
+  margin: 0;
+}
+
+/* "New" marker for comments that are new for the current user
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/eco\/public_html\/sites\/default\/themes\/ptheme\/sass\/global\.styles\.sass}line{font-family:\000031056}}
+.new {
+  color: #c00;
+}
+
+/* Nested comments are indented
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/eco\/public_html\/sites\/default\/themes\/ptheme\/sass\/global\.styles\.sass}line{font-family:\000031064}}
+.indented {
+  margin-left: 40px;
+}
+
+/* =============================================================================
+ *   Forms
+ * ========================================================================== */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/eco\/public_html\/sites\/default\/themes\/ptheme\/sass\/global\.styles\.sass}line{font-family:\000031074}}
+.view .field-name-field-name,
+.view .field-name-field-media-status,
+.view .field-name-field-image-content,
+.view .field-name-field-issue-status,
+.view .field-name-field-issue-type,
+.view .field-name-field-department,
+.view .field-name-field-facility,
+.view .field-name-field-vendor-brand,
+.view .field-name-field-product-segment,
+.view .field-name-field-system,
+.view .field-name-field-importance,
+.view .field-name-field-image-purpose {
+  float: left;
+  border: solid 1px #a574f0;
+  background-color: #2a0a5a;
+  box-shadow: 0px 0px 4px 3px #ae19e4, 0px 0px 3px 2px #2719e4 inset;
+  border-radius: 8px;
+  margin: 2px 2px 3px;
+  padding: 5px 10px;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/eco\/public_html\/sites\/default\/themes\/ptheme\/sass\/global\.styles\.sass}line{font-family:\000031137}}
+#views-form-ds-media-media-gallery {
+  height: 25em;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/eco\/public_html\/sites\/default\/themes\/ptheme\/sass\/global\.styles\.sass}line{font-family:\000031141}}
+.views-table {
+  clear: left;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/eco\/public_html\/sites\/default\/themes\/ptheme\/sass\/global\.styles\.sass}line{font-family:\000031146}}
+div[class*="show-value"] {
+  float: left;
+  margin-right: 20px;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/eco\/public_html\/sites\/default\/themes\/ptheme\/sass\/global\.styles\.sass}line{font-family:\000031150}}
+#views-exposed-form-ds-document-summary-owner-cp,
+#views-exposed-form-ds-document-summary-document-content-cp,
+#views-exposed-form-ds-document-summary-media-status-cp,
+#views-exposed-form-ds-document-summary-department-cp,
+#views-exposed-form-media-summary-photographer-cp,
+#views-exposed-form-media-summary-media-status-cp,
+#views-exposed-form-media-summary-image-content-cp,
+#views-exposed-form-media-summary-image-purpose-cp {
+  display: none;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/eco\/public_html\/sites\/default\/themes\/ptheme\/sass\/global\.styles\.sass}line{font-family:\000031162}}
+.pane-views-panes ul {
+  padding: 0 0 0 0.5em;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/eco\/public_html\/sites\/default\/themes\/ptheme\/sass\/global\.styles\.sass}line{font-family:\000031165}}
+.pane-views-panes ul.bef-tree {
+  margin: 5px 0 0 0;
+  padding: 0 0 0 0;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/eco\/public_html\/sites\/default\/themes\/ptheme\/sass\/global\.styles\.sass}line{font-family:\000031177}}
+section.pane-ds-document-summary-exposed-filters-cp .block-inner,
+section.pane-media-summary-exposed-filters-cp .block-inner {
+  background-color: #ffc299;
+}
+
+/* Wrapper for a form element (or group of form elements) and its label
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/eco\/public_html\/sites\/default\/themes\/ptheme\/sass\/global\.styles\.sass}line{font-family:\000031185}}
+.form-item input.error,
+.form-item select.error {
+  border: 1px solid #c00;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/eco\/public_html\/sites\/default\/themes\/ptheme\/sass\/global\.styles\.sass}line{font-family:\000031200}}
+.field-name-field-geofield,
+.field-name-field-media-status {
+  clear: both;
+}
+
+/* Highlight marks and form required mark
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/eco\/public_html\/sites\/default\/themes\/ptheme\/sass\/global\.styles\.sass}line{font-family:\000031207}}
+.marker,
+.form-required {
+  color: #c00;
+}
+
+/* The view, edit, download, email, delete links
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/eco\/public_html\/sites\/default\/themes\/ptheme\/sass\/global\.styles\.sass}line{font-family:\000031214}}
+.ds-links {
+  margin-top: 5px;
+}
+
+/* The submit button
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/eco\/public_html\/sites\/default\/themes\/ptheme\/sass\/global\.styles\.sass}line{font-family:\000031230}}
+.container-inline div,
+.container-inline label {
+  display: inline;
+}
+
+/* Define consistent borders
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/eco\/public_html\/sites\/default\/themes\/ptheme\/sass\/global\.styles\.sass}line{font-family:\000031239}}
+fieldset {
+  border: 1px solid #000;
+}
+
+/* Tips for Drupal's input formats
+ */
+/* Buttons used by contrib modules like Media
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/eco\/public_html\/sites\/default\/themes\/ptheme\/sass\/global\.styles\.sass}line{font-family:\000031253}}
+a.button {
+  -moz-appearance: button;
+  -webkit-appearance: button;
+}
+
+/* Password confirmation
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/eco\/public_html\/sites\/default\/themes\/ptheme\/sass\/global\.styles\.sass}line{font-family:\000031261}}
+.password-parent,
+.confirm-parent {
+  margin: 0;
+}
+
+/**
+ * Hierarchical Tree for selecting Taxonomy
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/eco\/public_html\/sites\/default\/themes\/ptheme\/sass\/global\.styles\.sass}line{font-family:\000031269}}
+.no-term-reference-tree-button {
+  background-color: #353;
+}
+
+/* =============================================================================
+ *   Tables
+ * ========================================================================== */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/eco\/public_html\/sites\/default\/themes\/ptheme\/sass\/global\.styles\.sass}line{font-family:\000031278}}
+table {
+  margin: 10px 0;
+  padding: 0;
+  width: 100%;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/eco\/public_html\/sites\/default\/themes\/ptheme\/sass\/global\.styles\.sass}line{font-family:\000031283}}
+table.sticky-header {
+  z-index: 10;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/eco\/public_html\/sites\/default\/themes\/ptheme\/sass\/global\.styles\.sass}line{font-family:\000031286}}
+table,
+thead,
+tbody,
+tr,
+th,
+td {
+  border-color: #000;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/eco\/public_html\/sites\/default\/themes\/ptheme\/sass\/global\.styles\.sass}line{font-family:\000031294}}
+thead {
+  background-color: #ffff55;
+  color: #ffff55;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/eco\/public_html\/sites\/default\/themes\/ptheme\/sass\/global\.styles\.sass}line{font-family:\000031298}}
+table,
+td,
+th {
+  vertical-align: middle;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/eco\/public_html\/sites\/default\/themes\/ptheme\/sass\/global\.styles\.sass}line{font-family:\000031305}}
+caption,
+th,
+td {
+  text-align: left;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/eco\/public_html\/sites\/default\/themes\/ptheme\/sass\/global\.styles\.sass}line{font-family:\000031311}}
+th {
+  background-color: #351a55;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/eco\/public_html\/sites\/default\/themes\/ptheme\/sass\/global\.styles\.sass}line{font-family:\000031316}}
+thead tr {
+  font-weight: 700;
+  background-color: #e5e5e5;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/eco\/public_html\/sites\/default\/themes\/ptheme\/sass\/global\.styles\.sass}line{font-family:\000031322}}
+td,
+th {
+  border-bottom: 0;
+  margin: 0;
+  padding: 2px 4px;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/eco\/public_html\/sites\/default\/themes\/ptheme\/sass\/global\.styles\.sass}line{font-family:\000031333}}
+tbody tr {
+  border-top: 1px solid #000;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/eco\/public_html\/sites\/default\/themes\/ptheme\/sass\/global\.styles\.sass}line{font-family:\000031340}}
+tr.odd {
+  background-color: #558;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/eco\/public_html\/sites\/default\/themes\/ptheme\/sass\/global\.styles\.sass}line{font-family:\000031344}}
+tr.info, tr.even {
+  border-bottom: 0;
+  background-color: #444466;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/eco\/public_html\/sites\/default\/themes\/ptheme\/sass\/global\.styles\.sass}line{font-family:\000031354}}
+tr.odd td.active {
+  background-color: #858;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/eco\/public_html\/sites\/default\/themes\/ptheme\/sass\/global\.styles\.sass}line{font-family:\000031358}}
+tr.even td.active {
+  background-color: #554466;
+}
+
+/* Forum tables
+ * Core sets white-space to nowrap, which makes no sense
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/eco\/public_html\/sites\/default\/themes\/ptheme\/sass\/global\.styles\.sass}line{font-family:\000031383}}
+#forum td .created,
+#forum td .posts,
+#forum td .topics,
+#forum td .last-reply,
+#forum td .replies,
+#forum td .pager {
+  white-space: normal;
+}
+
+/* =============================================================================
+ *   Messages
+ * ========================================================================== */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/eco\/public_html\/sites\/default\/themes\/ptheme\/sass\/global\.styles\.sass}line{font-family:\000031415}}
+div.error,
+tr.error {
+  background-color: #ffcccc;
+}
+
+/* Unpublished nodes
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/eco\/public_html\/sites\/default\/themes\/ptheme\/sass\/global\.styles\.sass}line{font-family:\000031440}}
+.node-unpublished p.unpublished,
+.comment-unpublished p.unpublished {
+  color: pink;
+  color: rgba(239, 170, 170, 0.4);
+  font-family: Impact, Haettenschweiler, "Franklin Gothic Bold", Charcoal, "Helvetica Inserat", "Bitstream Vera Sans Bold", "Arial Black", sans-serif;
+  font-size: 50px;
+  font-weight: 700;
+  line-height: 1.2;
+  height: 0;
+  margin: 0;
+  padding: 0;
+  overflow: visible;
+  text-align: center;
+  text-transform: uppercase;
+  word-wrap: break-word;
+}
+
+/* =============================================================================
+ *    Maintenance pages
+ * ========================================================================== */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/eco\/public_html\/sites\/default\/themes\/ptheme\/sass\/global\.styles\.sass}line{font-family:\000031451}}
+.maintenance-page .container {
+  padding: 40px 0;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/eco\/public_html\/sites\/default\/themes\/ptheme\/sass\/global\.styles\.sass}line{font-family:\000031455}}
+.maintenance-page #site-name,
+.maintenance-page #page-title {
+  margin: 0;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/eco\/public_html\/sites\/default\/themes\/ptheme\/sass\/global\.styles\.sass}line{font-family:\000031463}}
+.db-offline .container {
+  margin: 0 auto;
+  padding: 40px 0;
+  width: 100%;
+  max-width: 960px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/eco\/public_html\/sites\/default\/themes\/ptheme\/sass\/global\.styles\.sass}line{font-family:\000031470}}
+.db-offline div.messages {
+  margin: 20px 0 0;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/eco\/public_html\/sites\/default\/themes\/ptheme\/sass\/global\.styles\.sass}line{font-family:\000031474}}
+.db-offline #content {
+  padding: 20px 0;
+}
+
+/* =============================================================================
+ *   Misc overrides for contrib modules
+ * ========================================================================== */
+/* Admin menu overrides
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/eco\/public_html\/sites\/default\/themes\/ptheme\/sass\/global\.styles\.sass}line{font-family:\000031487}}
+#admin-menu-wrapper {
+  margin: 2px 10px;
+  padding: 4px 10px 2px;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/eco\/public_html\/sites\/default\/themes\/ptheme\/sass\/global\.styles\.sass}line{font-family:\000031490}}
+#admin-menu {
+  margin: 0;
+  padding: 0;
+}
+
+/* Devel Module
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/eco\/public_html\/sites\/default\/themes\/ptheme\/sass\/global\.styles\.sass}line{font-family:\000031499}}
+.dev-query {
+  background: #bbb;
+  padding: 30px;
+}
+
+/* Styleguide module tweaks
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/eco\/public_html\/sites\/default\/themes\/ptheme\/sass\/global\.styles\.sass}line{font-family:\000031508}}
+#styleguide-header {
+  padding: 0 10px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/eco\/public_html\/sites\/default\/themes\/ptheme\/sass\/global\.styles\.sass}line{font-family:\000031511}}
+#styleguide-header .item-list {
+  font-family: inherit;
+  margin: 0 20px 20px 0;
+  min-height: 260px;
+  width: auto;
+}
+
+/***** Views Filters, Sort By, Items per page and Submit button ********* */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/eco\/public_html\/sites\/default\/themes\/ptheme\/sass\/global\.styles\.sass}line{font-family:\000031519}}
+.views-ui-display-tab-bucket .views-display-setting {
+  color: white;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/eco\/public_html\/sites\/default\/themes\/ptheme\/sass\/global\.styles\.sass}line{font-family:\000031521}}
+.views-ui-display-tab-bucket .even {
+  background-color: #333;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/eco\/public_html\/sites\/default\/themes\/ptheme\/sass\/global\.styles\.sass}line{font-family:\000031524}}
+.views-ui-display-tab-bucket .odd {
+  background-color: #222;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/eco\/public_html\/sites\/default\/themes\/ptheme\/sass\/global\.styles\.sass}line{font-family:\000031528}}
+.ctools-button,
+.ctools-dropbutton {
+  color: black;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/eco\/public_html\/sites\/default\/themes\/ptheme\/sass\/global\.styles\.sass}line{font-family:\000031531}}
+.ctools-button a,
+.ctools-dropbutton a {
+  color: black;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/eco\/public_html\/sites\/default\/themes\/ptheme\/sass\/global\.styles\.sass}line{font-family:\000031535}}
+.view-filters .views-exposed-widget {
+  border: solid 1px #9e9ed8;
+  background-color: #225;
+  box-shadow: 0px 0px 4px 3px #7755bb, 0px 0px 3px 2px #5577bb inset;
+  border-radius: 8px;
+  padding: 6px 8px;
+  margin: 2px;
+  min-height: 5.3em;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/eco\/public_html\/sites\/default\/themes\/ptheme\/sass\/global\.styles\.sass}line{font-family:\000031541}}
+.view-filters .views-widget-sort-by {
+  clear: both;
+  border: solid 1px #de8f8f;
+  background-color: #551919;
+  box-shadow: 0px 0px 4px 3px #c76d40, 0px 0px 3px 2px #c7406d inset;
+  border-radius: 8px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/eco\/public_html\/sites\/default\/themes\/ptheme\/sass\/global\.styles\.sass}line{font-family:\000031545}}
+.view-filters .views-widget-sort-order {
+  border: solid 1px #de8f8f;
+  background-color: #551919;
+  box-shadow: 0px 0px 4px 3px #c76d40, 0px 0px 3px 2px #c7406d inset;
+  border-radius: 8px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/eco\/public_html\/sites\/default\/themes\/ptheme\/sass\/global\.styles\.sass}line{font-family:\000031548}}
+.view-filters .views-widget-offset,
+.view-filters .views-widget-per-page {
+  border: solid 1px #b491dd;
+  background-color: #351a55;
+  box-shadow: 0px 0px 4px 3px #aa43c5, 0px 0px 3px 2px #5343c5 inset;
+  border-radius: 8px;
+  clear: both;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/eco\/public_html\/sites\/default\/themes\/ptheme\/sass\/global\.styles\.sass}line{font-family:\000031553}}
+.view-filters .views-submit-button {
+  margin-left: 20px;
+  background-color: #353;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/eco\/public_html\/sites\/default\/themes\/ptheme\/sass\/global\.styles\.sass}line{font-family:\000031556}}
+.view-filters .views-submit-button .form-submit {
+  padding: 24px 16px;
+  margin: 2px;
+  border-radius: 6px;
+  font-weight: bold;
+  font-size: 106%;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/eco\/public_html\/sites\/default\/themes\/ptheme\/sass\/global\.styles\.sass}line{font-family:\000031564}}
+.view-filters .views-reset-button {
+  margin-left: 8px;
+  background-color: #ffff55;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/eco\/public_html\/sites\/default\/themes\/ptheme\/sass\/global\.styles\.sass}line{font-family:\000031567}}
+.view-filters .views-reset-button #edit-reset {
+  padding: 24px 16px;
+  margin: 2px;
+  border-radius: 6px;
+  font-weight: bold;
+  font-size: 106%;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/eco\/public_html\/sites\/default\/themes\/ptheme\/sass\/global\.styles\.sass}line{font-family:\000031576}}
+.view-filters .form-type-textfield input {
+  max-width: 15em;
+}
+
+/******** Images *********************** */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/eco\/public_html\/sites\/default\/themes\/ptheme\/sass\/global\.styles\.sass}line{font-family:\000031585}}
+.ds-images .vbo-row {
+  width: 150px;
+  height: 150px;
+  padding: 1px;
+  margin: 2px;
+  border: solid 1px white;
+  background-color: #ffff55;
+  box-shadow: 0px 0px 4px 3px #f9ffee, 0px 0px 3px 2px #fff9ee inset;
+  border-radius: 8px;
+  float: left;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/eco\/public_html\/sites\/default\/themes\/ptheme\/sass\/global\.styles\.sass}line{font-family:\000031592}}
+.ds-images .vbo-select {
+  display: none;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/eco\/public_html\/sites\/default\/themes\/ptheme\/sass\/global\.styles\.sass}line{font-family:\000031595}}
+.ds-images .views-row.checked {
+  background-color: #353;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/eco\/public_html\/sites\/default\/themes\/ptheme\/sass\/global\.styles\.sass}line{font-family:\000031597}}
+.ds-images .views-row {
+  font-size: 85%;
+  font-stretch: condensed;
+  font-family: "Arial Narrow";
+  line-height: 1;
+  width: 150px;
+  height: 250px;
+  padding: 2px;
+  margin: 2px;
+  border: solid 1px #9e9ed8;
+  background-color: #225;
+  box-shadow: 0px 0px 4px 3px #7755bb, 0px 0px 3px 2px #5577bb inset;
+  border-radius: 8px;
+  position: relative;
+  float: left;
+  overflow: hidden;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/eco\/public_html\/sites\/default\/themes\/ptheme\/sass\/global\.styles\.sass}line{font-family:\000031611}}
+.ds-images .views-field {
+  margin: 0;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/eco\/public_html\/sites\/default\/themes\/ptheme\/sass\/global\.styles\.sass}line{font-family:\000031614}}
+.ds-images h3 {
+  width: 140px;
+  height: 230px;
+  padding: 41px 0px 1px 12px;
+  margin: 2px;
+  float: left;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/eco\/public_html\/sites\/default\/themes\/ptheme\/sass\/global\.styles\.sass}line{font-family:\000031621}}
+.ds-images .views-row-first {
+  clear: both;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/eco\/public_html\/sites\/default\/themes\/ptheme\/sass\/global\.styles\.sass}line{font-family:\000031624}}
+.ds-images img {
+  border-radius: 7px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/eco\/public_html\/sites\/default\/themes\/ptheme\/sass\/global\.styles\.sass}line{font-family:\000031627}}
+.ds-images .views-field-field-file-image-title-text {
+  margin: 1px 0 3px 0;
+  clear: both;
+  text-align: center;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/eco\/public_html\/sites\/default\/themes\/ptheme\/sass\/global\.styles\.sass}line{font-family:\000031632}}
+.ds-images .views-field-field-status {
+  font-size: 90%;
+  float: left;
+  margin: 1px 0 0 5px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/eco\/public_html\/sites\/default\/themes\/ptheme\/sass\/global\.styles\.sass}line{font-family:\000031636}}
+.ds-images .views-field-field-status .field-content {
+  padding: 3px 6px;
+  border-radius: 8px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/eco\/public_html\/sites\/default\/themes\/ptheme\/sass\/global\.styles\.sass}line{font-family:\000031641}}
+.ds-images .views-field-link,
+.ds-images .views-field-download,
+.ds-images .views-field-edit,
+.ds-images .views-field-delete {
+  float: right;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/eco\/public_html\/sites\/default\/themes\/ptheme\/sass\/global\.styles\.sass}line{font-family:\000031647}}
+.ds-images .views-field-field-create-date-1 {
+  font-style: italic;
+  color: #bbb;
+  font-size: 85%;
+  clear: both;
+  text-align: center;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/eco\/public_html\/sites\/default\/themes\/ptheme\/sass\/global\.styles\.sass}line{font-family:\000031654}}
+.ds-images .views-field-field-image-purpose {
+  font-size: 85%;
+  float: left;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/eco\/public_html\/sites\/default\/themes\/ptheme\/sass\/global\.styles\.sass}line{font-family:\000031658}}
+.ds-images .views-label {
+  color: #3ff;
+  font-weight: bold;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/eco\/public_html\/sites\/default\/themes\/ptheme\/sass\/global\.styles\.sass}line{font-family:\000031662}}
+.ds-images .views-field-field-image-content {
+  font-size: 85%;
+  float: right;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/eco\/public_html\/sites\/default\/themes\/ptheme\/sass\/global\.styles\.sass}line{font-family:\000031666}}
+.ds-images .views-field-name {
+  clear: both;
+  margin-bottom: 4px;
+  font-size: 85%;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/eco\/public_html\/sites\/default\/themes\/ptheme\/sass\/global\.styles\.sass}line{font-family:\000031671}}
+.ds-images .views-field-views-bulk-operations {
+  left: 3px;
+  top: 154px;
+  position: absolute;
+  margin: 0;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/eco\/public_html\/sites\/default\/themes\/ptheme\/sass\/global\.styles\.sass}line{font-family:\000031678}}
+.ds-images .views-field-views-bulk-operations input {
+  padding: 20px;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/eco\/public_html\/sites\/default\/themes\/ptheme\/sass\/global\.styles\.sass}line{font-family:\000031681}}
+.vbo-select-all-markup {
+  display: inline;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/eco\/public_html\/sites\/default\/themes\/ptheme\/sass\/global\.styles\.sass}line{font-family:\000031684}}
+.vbo-fieldset-select-all {
+  border: solid 1px #b5d2b5;
+  background-color: #353;
+  box-shadow: 0px 0px 4px 3px #75ac87, 0px 0px 3px 2px #87ac75 inset;
+  border-radius: 8px;
+  border: 0px;
+  padding: 10px 8px;
+  margin: 0px 2px 8px 4px;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/eco\/public_html\/sites\/default\/themes\/ptheme\/sass\/global\.styles\.sass}line{font-family:\000031690}}
+.vbo-views-form #edit-select {
+  border: solid 1px #b5d2b5;
+  background-color: #353;
+  box-shadow: 0px 0px 4px 3px #75ac87, 0px 0px 3px 2px #87ac75 inset;
+  border-radius: 8px;
+  margin: 0px 6px 8px 2px;
+  padding: 6px 8px;
+  border: 0px;
+  float: left;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/eco\/public_html\/sites\/default\/themes\/ptheme\/sass\/global\.styles\.sass}line{font-family:\000031702}}
+.file-document-form .form-wrapper,
+.file-video-form .form-wrapper,
+.file-audio-form .form-wrapper,
+.file-image-form .form-wrapper {
+  padding: 5px;
+  margin: 2px;
+  border: solid 1px #b491dd;
+  background-color: #351a55;
+  box-shadow: 0px 0px 4px 3px #aa43c5, 0px 0px 3px 2px #5343c5 inset;
+  border-radius: 8px;
+  float: left;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/eco\/public_html\/sites\/default\/themes\/ptheme\/sass\/global\.styles\.sass}line{font-family:\000031708}}
+.file-document-form img,
+.file-video-form img,
+.file-audio-form img,
+.file-image-form img {
+  clear: both;
+  float: left;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/eco\/public_html\/sites\/default\/themes\/ptheme\/sass\/global\.styles\.sass}line{font-family:\000031712}}
+.file-document-form .field-name-field-name,
+.file-video-form .field-name-field-name,
+.file-audio-form .field-name-field-name,
+.file-image-form .field-name-field-name {
+  clear: both;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/eco\/public_html\/sites\/default\/themes\/ptheme\/sass\/global\.styles\.sass}line{font-family:\000031715}}
+.file-document-form .vertical-tabs,
+.file-document-form .field-name-field-search-field,
+.file-document-form .field-name-field-file-image-alt-text,
+.file-document-form .field-name-field-file-image-title-text,
+.file-document-form .description,
+.file-video-form .vertical-tabs,
+.file-video-form .field-name-field-search-field,
+.file-video-form .field-name-field-file-image-alt-text,
+.file-video-form .field-name-field-file-image-title-text,
+.file-video-form .description,
+.file-audio-form .vertical-tabs,
+.file-audio-form .field-name-field-search-field,
+.file-audio-form .field-name-field-file-image-alt-text,
+.file-audio-form .field-name-field-file-image-title-text,
+.file-audio-form .description,
+.file-image-form .vertical-tabs,
+.file-image-form .field-name-field-search-field,
+.file-image-form .field-name-field-file-image-alt-text,
+.file-image-form .field-name-field-file-image-title-text,
+.file-image-form .description {
+  display: none;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/eco\/public_html\/sites\/default\/themes\/ptheme\/sass\/global\.styles\.sass}line{font-family:\000031724}}
+.ds-left {
+  float: left;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/eco\/public_html\/sites\/default\/themes\/ptheme\/sass\/global\.styles\.sass}line{font-family:\000031728}}
+.ds-right {
+  float: right;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/eco\/public_html\/sites\/default\/themes\/ptheme\/sass\/global\.styles\.sass}line{font-family:\000031732}}
+.ds-bold {
+  font-weight: bold;
+  color: #353;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/eco\/public_html\/sites\/default\/themes\/ptheme\/sass\/global\.styles\.sass}line{font-family:\000031737}}
+.ds-clear {
+  clear: both;
+}
+
+/**
+ * People */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/eco\/public_html\/sites\/default\/themes\/ptheme\/sass\/global\.styles\.sass}line{font-family:\000031744}}
+.ds-people .views-row {
+  font-size: 90%;
+  font-family: "Arial Narrow";
+  line-height: 1em;
+  width: 300px;
+  height: 94px;
+  padding: 1px 1px 1px 4px;
+  margin: 2px;
+  border: solid 1px #9e9ed8;
+  background-color: #225;
+  box-shadow: 0px 0px 4px 3px #7755bb, 0px 0px 3px 2px #5577bb inset;
+  border-radius: 8px;
+  float: left;
+  overflow: hidden;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/eco\/public_html\/sites\/default\/themes\/ptheme\/sass\/global\.styles\.sass}line{font-family:\000031756}}
+.ds-people .ds-name {
+  font-size: 120%;
+  font-weight: bold;
+  margin: 2px 0;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/eco\/public_html\/sites\/default\/themes\/ptheme\/sass\/global\.styles\.sass}line{font-family:\000031761}}
+.ds-people .ds-phones {
+  font-stretch: condensed;
+  font-family: monospace, "Courier New";
+  font-family: "Courier New";
+  font-family: "Lucida Console", Monaco, monospace;
+  margin: 6px 0 0 5px;
+  font-size: 90%;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/eco\/public_html\/sites\/default\/themes\/ptheme\/sass\/global\.styles\.sass}line{font-family:\000031769}}
+.ds-people .ds-image {
+  margin: 0;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/eco\/public_html\/sites\/default\/themes\/ptheme\/sass\/global\.styles\.sass}line{font-family:\000031772}}
+.ds-people .ds-left-column {
+  float: left;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/eco\/public_html\/sites\/default\/themes\/ptheme\/sass\/global\.styles\.sass}line{font-family:\000031775}}
+.ds-people .ds-mail {
+  font-size: 85%;
+  font-stretch: condensed;
+  font-style: italic;
+  margin-bottom: 3px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/eco\/public_html\/sites\/default\/themes\/ptheme\/sass\/global\.styles\.sass}line{font-family:\000031781}}
+.ds-people .ds-right-column {
+  line-height: 1.3;
+  margin-right: 5px;
+  float: right;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/eco\/public_html\/sites\/default\/themes\/ptheme\/sass\/global\.styles\.sass}line{font-family:\000031785}}
+.ds-people .ds-right-column div {
+  clear: both;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/eco\/public_html\/sites\/default\/themes\/ptheme\/sass\/global\.styles\.sass}line{font-family:\000031788}}
+.ds-people .ds-department a {
+  padding: 1px 8px;
+  border-radius: 6px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/eco\/public_html\/sites\/default\/themes\/ptheme\/sass\/global\.styles\.sass}line{font-family:\000031793}}
+.ds-people img {
+  margin: 0;
+  border-radius: 7px;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/eco\/public_html\/sites\/default\/themes\/ptheme\/sass\/global\.styles\.sass}line{font-family:\000031800}}
+.fieldset-legend,
+.form-type-select > label,
+.form-type-checkbox-tree > label,
+.form-type-radios > label,
+.form-type-checkboxes > label,
+.form-type-link-field > label,
+.form-type-link-field > label,
+.form-type-textarea > label,
+.form-type-textfield > label {
+  color: #cfc;
+  font-size: 120%;
+  font-weight: bold;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/eco\/public_html\/sites\/default\/themes\/ptheme\/sass\/global\.styles\.sass}line{font-family:\000031819}}
+.form-phone-number select {
+  width: 13em;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/eco\/public_html\/sites\/default\/themes\/ptheme\/sass\/global\.styles\.sass}line{font-family:\000031821}}
+.form-phone-number input {
+  width: 13em;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/eco\/public_html\/sites\/default\/themes\/ptheme\/sass\/global\.styles\.sass}line{font-family:\000031824}}
+#edit-field-barn-configuration-und-0-value {
+  width: 100%;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/eco\/public_html\/sites\/default\/themes\/ptheme\/sass\/global\.styles\.sass}line{font-family:\000031827}}
+.state {
+  width: 12em;
+}
+
+/**
+ * Issues */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/eco\/public_html\/sites\/default\/themes\/ptheme\/sass\/global\.styles\.sass}line{font-family:\000031834}}
+.ds-issues .views-row {
+  line-height: 1.1em;
+  width: 98%;
+  max-width: 600px;
+  height: 8em;
+  padding: 3px 5px;
+  margin: 2px;
+  border: solid 1px white;
+  background-color: #ffff55;
+  box-shadow: 0px 0px 4px 3px #f9ffee, 0px 0px 3px 2px #fff9ee inset;
+  border-radius: 8px;
+  float: left;
+  overflow: hidden;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/eco\/public_html\/sites\/default\/themes\/ptheme\/sass\/global\.styles\.sass}line{font-family:\000031845}}
+.ds-issues .ds-title a {
+  font-size: 115%;
+  font-weight: bold;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/eco\/public_html\/sites\/default\/themes\/ptheme\/sass\/global\.styles\.sass}line{font-family:\000031849}}
+.ds-issues .ds-submission {
+  font-size: 85%;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/eco\/public_html\/sites\/default\/themes\/ptheme\/sass\/global\.styles\.sass}line{font-family:\000031852}}
+.ds-issues .ds-author {
+  margin-left: 5px;
+  float: left;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/eco\/public_html\/sites\/default\/themes\/ptheme\/sass\/global\.styles\.sass}line{font-family:\000031856}}
+.ds-issues .ds-ago {
+  font-style: italic;
+  color: #666666;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/eco\/public_html\/sites\/default\/themes\/ptheme\/sass\/global\.styles\.sass}line{font-family:\000031860}}
+.ds-issues .ds-right-col {
+  line-height: 1.5;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/eco\/public_html\/sites\/default\/themes\/ptheme\/sass\/global\.styles\.sass}line{font-family:\000031863}}
+.ds-issues .ds-right {
+  float: right;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/eco\/public_html\/sites\/default\/themes\/ptheme\/sass\/global\.styles\.sass}line{font-family:\000031866}}
+.ds-issues .ds-left {
+  float: left;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/eco\/public_html\/sites\/default\/themes\/ptheme\/sass\/global\.styles\.sass}line{font-family:\000031869}}
+.ds-issues .ds-clear {
+  clear: both;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/eco\/public_html\/sites\/default\/themes\/ptheme\/sass\/global\.styles\.sass}line{font-family:\000031872}}
+.ds-issues .views-field-body {
+  clear: both;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/eco\/public_html\/sites\/default\/themes\/ptheme\/sass\/global\.styles\.sass}line{font-family:\000031877}}
+.pane-node-form-path {
+  display: none;
+}
+
+/************* Documents ********** */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/eco\/public_html\/sites\/default\/themes\/ptheme\/sass\/global\.styles\.sass}line{font-family:\000031899}}
+.ds-documents .views-row {
+  line-height: 1.1em;
+  width: 94%;
+  max-width: 600px;
+  height: 115px;
+  padding: 3px 10px;
+  margin: 2px;
+  border: solid 1px #f7d9d2;
+  background-color: #aa3a20;
+  box-shadow: 0px 0px 4px 3px #e6b47d, 0px 0px 3px 2px #e67d8c inset;
+  border-radius: 8px;
+  float: left;
+  overflow: hidden;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/eco\/public_html\/sites\/default\/themes\/ptheme\/sass\/global\.styles\.sass}line{font-family:\000031910}}
+.ds-documents .views-field {
+  margin: 0;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/eco\/public_html\/sites\/default\/themes\/ptheme\/sass\/global\.styles\.sass}line{font-family:\000031912}}
+.ds-documents .ds-right-col {
+  line-height: 1.4;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/eco\/public_html\/sites\/default\/themes\/ptheme\/sass\/global\.styles\.sass}line{font-family:\000031915}}
+.ds-documents .views-field-link {
+  font-weight: bold;
+  font-size: 115%;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/eco\/public_html\/sites\/default\/themes\/ptheme\/sass\/global\.styles\.sass}line{font-family:\000031919}}
+.ds-documents .views-field-field-create-date {
+  font-style: italic;
+  font-size: 85%;
+  color: #bbb;
+  margin-left: 10px;
+  clear: both;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/eco\/public_html\/sites\/default\/themes\/ptheme\/sass\/global\.styles\.sass}line{font-family:\000031926}}
+.ds-documents .views-field-name {
+  margin-bottom: 4px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/eco\/public_html\/sites\/default\/themes\/ptheme\/sass\/global\.styles\.sass}line{font-family:\000031929}}
+.ds-documents .ds-department a {
+  padding: 0px 4px;
+  border-radius: 6px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/eco\/public_html\/sites\/default\/themes\/ptheme\/sass\/global\.styles\.sass}line{font-family:\000031933}}
+.ds-documents .buttons {
+  padding-top: 3px;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/eco\/public_html\/sites\/default\/themes\/ptheme\/sass\/global\.styles\.sass}line{font-family:\000031939}}
+#issue-node-form .form-item-title {
+  margin-right: 0.5em;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/eco\/public_html\/sites\/default\/themes\/ptheme\/sass\/global\.styles\.sass}line{font-family:\000031941}}
+#issue-node-form .form-item-title input,
+#issue-node-form .form-item-title textarea {
+  width: 100%;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/eco\/public_html\/sites\/default\/themes\/ptheme\/sass\/global\.styles\.sass}line{font-family:\000031946}}
+#issue-node-form #edit-field-issue-tags-und {
+  width: 100%;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/eco\/public_html\/sites\/default\/themes\/ptheme\/sass\/global\.styles\.sass}line{font-family:\000031952}}
+.form-type-date-popup input.form-text {
+  width: 6em;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/eco\/public_html\/sites\/default\/themes\/ptheme\/sass\/global\.styles\.sass}line{font-family:\000031955}}
+.description {
+  display: hidden;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/eco\/public_html\/sites\/default\/themes\/ptheme\/sass\/global\.styles\.sass}line{font-family:\000031961}}
+#edit-field-personnel .form-autocomplete {
+  width: 100%;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/eco\/public_html\/sites\/default\/themes\/ptheme\/sass\/global\.styles\.sass}line{font-family:\000031967}}
+.form-item {
+  margin: 0.2em 0.2em;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/eco\/public_html\/sites\/default\/themes\/ptheme\/sass\/global\.styles\.sass}line{font-family:\000031970}}
+.form-actions {
+  margin: 0.3em 0;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/eco\/public_html\/sites\/default\/themes\/ptheme\/sass\/global\.styles\.sass}line{font-family:\000031972}}
+.form-actions input {
+  padding: 13px 25px;
+  margin: 0px 3px;
+  background-color: #cfc;
+  border-radius: 10px;
+  border: 0;
+  box-shadow: 1px 1px 1px 1px #bb55dd;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/eco\/public_html\/sites\/default\/themes\/ptheme\/sass\/global\.styles\.sass}line{font-family:\000031981}}
+.ds-Cancel {
+  padding: 12px 23px 13px;
+  margin: 5px 3px 0 10px;
+  background-color: #bbb;
+  border-radius: 10px;
+  border: 0;
+  box-shadow: 1px 1px 1px 1px #bb55dd;
+  color: #000;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/eco\/public_html\/sites\/default\/themes\/ptheme\/sass\/global\.styles\.sass}line{font-family:\000031992}}
+.form-radios .form-item,
+.form-checkboxes .form-item {
+  margin: 0px 0;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/eco\/public_html\/sites\/default\/themes\/ptheme\/sass\/global\.styles\.sass}line{font-family:\000031996}}
+.form-checkboxes .form-checkbox,
+.form-radios .form-radio {
+  margin: 0 0;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/eco\/public_html\/sites\/default\/themes\/ptheme\/sass\/global\.styles\.sass}line{font-family:\000032001}}
+#e108 {
+  width: 100px;
+  height: 100px;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/eco\/public_html\/sites\/default\/themes\/ptheme\/sass\/global\.styles\.sass}line{font-family:\000032005}}
+.view-ds-departments .views-row {
+  padding: 5px 0;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/eco\/public_html\/sites\/default\/themes\/ptheme\/sass\/global\.styles\.sass}line{font-family:\000032007}}
+.view-ds-departments .views-row a {
+  padding: 3px 10px;
+  margin: 3px;
+  border-radius: 8px;
+  box-shadow: 2px 2px 2px 2px #bb55dd;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/eco\/public_html\/sites\/default\/themes\/ptheme\/sass\/global\.styles\.sass}line{font-family:\000032014}}
+#edit-field-department-und {
+  max-width: 15em;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/eco\/public_html\/sites\/default\/themes\/ptheme\/sass\/global\.styles\.sass}line{font-family:\000032018}}
+.views-field-changed {
+  font-size: 70%;
+  margin-left: 2em;
+  color: #bbb;
+  font-style: italic;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/eco\/public_html\/sites\/default\/themes\/ptheme\/sass\/global\.styles\.sass}line{font-family:\000032025}}
+.article {
+  padding: 3px 8px;
+  margin: 6px 4px;
+  border-radius: 8px;
+  border: solid 1px #58d058;
+  background-color: #092009;
+  box-shadow: 0px 0px 4px 3px #2b974f, 0px 0px 3px 2px #4f972b inset;
+  border-radius: 12px;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/eco\/public_html\/sites\/default\/themes\/ptheme\/sass\/global\.styles\.sass}line{font-family:\000032033}}
+.ds-article-user-pane .block-inner,
+.ds-article-employee-pane .block-inner {
+  background-color: #ccf;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/eco\/public_html\/sites\/default\/themes\/ptheme\/sass\/global\.styles\.sass}line{font-family:\000032039}}
+.ds-my-documents-pane .block-inner {
+  background-color: #f0c0ff;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/eco\/public_html\/sites\/default\/themes\/ptheme\/sass\/global\.styles\.sass}line{font-family:\000032047}}
+.ds-issues-user-pane .block-inner,
+.ds-issues-assigned-pane .block-inner,
+.ds-issues-department-pane .block-inner {
+  background-color: #ffc299;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/eco\/public_html\/sites\/default\/themes\/ptheme\/sass\/global\.styles\.sass}line{font-family:\000032051}}
+.ds-media-pane .block-inner {
+  background-color: #ede0d2;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/eco\/public_html\/sites\/default\/themes\/ptheme\/sass\/global\.styles\.sass}line{font-family:\000032055}}
+.ds-people-employees-pane .block-inner {
+  background-color: #ffcccc;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/eco\/public_html\/sites\/default\/themes\/ptheme\/sass\/global\.styles\.sass}line{font-family:\000032058}}
+.view-ds-article-content-panes {
+  background-color: #ccf;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/eco\/public_html\/sites\/default\/themes\/ptheme\/sass\/global\.styles\.sass}line{font-family:\000032060}}
+.view-ds-article-content-panes .header-left {
+  float: left;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/eco\/public_html\/sites\/default\/themes\/ptheme\/sass\/global\.styles\.sass}line{font-family:\000032062}}
+.view-ds-article-content-panes .header-left .ago {
+  float: left;
+  font-size: 80%;
+  color: #bbb;
+  margin-left: 3em;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/eco\/public_html\/sites\/default\/themes\/ptheme\/sass\/global\.styles\.sass}line{font-family:\000032067}}
+.view-ds-article-content-panes .header-left .header-title a {
+  margin: 0;
+  font-size: 140%;
+  font-weight: bold;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/eco\/public_html\/sites\/default\/themes\/ptheme\/sass\/global\.styles\.sass}line{font-family:\000032071}}
+.view-ds-article-content-panes .header-left img {
+  border-radius: 6px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/eco\/public_html\/sites\/default\/themes\/ptheme\/sass\/global\.styles\.sass}line{font-family:\000032073}}
+.view-ds-article-content-panes .header-right {
+  float: right;
+  border-radius: 6px;
+  border: 1px;
+  padding: 3px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/eco\/public_html\/sites\/default\/themes\/ptheme\/sass\/global\.styles\.sass}line{font-family:\000032078}}
+.view-ds-article-content-panes .header-right .active {
+  float: right;
+  padding: 1px 5px;
+  margin: 0px 0px 13px;
+  border-radius: 6px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/eco\/public_html\/sites\/default\/themes\/ptheme\/sass\/global\.styles\.sass}line{font-family:\000032083}}
+.view-ds-article-content-panes .views-field-body {
+  clear: both;
+}
+
+/***** Media Status ***** */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/eco\/public_html\/sites\/default\/themes\/ptheme\/sass\/global\.styles\.sass}line{font-family:\000032091}}
+figure a {
+  padding: 1px 6px;
+  border-radius: 8px;
+}
+
+/***** Migration ***** */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/eco\/public_html\/sites\/default\/themes\/ptheme\/sass\/global\.styles\.sass}line{font-family:\000032099}}
+.field-name-field-issue-status a,
+.field-name-field-department a,
+.field-name-field-importance a,
+.views-field-field-issue-status > a,
+.views-field-field-department > a,
+.views-field-field-importance > a,
+.ds-highlight-parent a,
+.ds-highlight {
+  padding: 0 6px;
+  border-radius: 8px;
+}
+
+/**** Openlayers maps ****** */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/eco\/public_html\/sites\/default\/themes\/ptheme\/sass\/global\.styles\.sass}line{font-family:\000032114}}
+.openlayers-popup a {
+  color: #55ffff;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/eco\/public_html\/sites\/default\/themes\/ptheme\/sass\/global\.styles\.sass}line{font-family:\000032117}}
+.country {
+  display: none;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/eco\/public_html\/sites\/default\/themes\/ptheme\/sass\/global\.styles\.sass}line{font-family:\000032120}}
+.country .form-type-link-field .description {
+  display: none;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/eco\/public_html\/sites\/default\/themes\/ptheme\/sass\/global\.styles\.sass}line{font-family:\000032123}}
+.migrate {
+  background-color: #bbb;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/eco\/public_html\/sites\/default\/themes\/ptheme\/sass\/global\.styles\.sass}line{font-family:\000032126}}
+.migrate table {
+  margin: 0;
+  color: black;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/eco\/public_html\/sites\/default\/themes\/ptheme\/sass\/global\.styles\.sass}line{font-family:\000032130}}
+.migrate th {
+  vertical-align: top;
+  background-color: #f0c0ff;
+  color: #2a0a5a;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/eco\/public_html\/sites\/default\/themes\/ptheme\/sass\/global\.styles\.sass}line{font-family:\000032134}}
+.migrate td {
+  color: black;
+  vertical-align: top;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/eco\/public_html\/sites\/default\/themes\/ptheme\/sass\/global\.styles\.sass}line{font-family:\000032137}}
+.migrate td a {
+  color: blue;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/eco\/public_html\/sites\/default\/themes\/ptheme\/sass\/global\.styles\.sass}line{font-family:\000032140}}
+.migrate-summary {
+  max-width: 250px;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/eco\/public_html\/sites\/default\/themes\/ptheme\/sass\/global\.styles\.sass}line{font-family:\000032142}}
+.migrate-purple {
+  background-color: #f0c0ff !important;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/eco\/public_html\/sites\/default\/themes\/ptheme\/sass\/global\.styles\.sass}line{font-family:\000032144}}
+.migrate-blue {
+  background-color: #225 !important;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/eco\/public_html\/sites\/default\/themes\/ptheme\/sass\/global\.styles\.sass}line{font-family:\000032146}}
+.migrate-red {
+  background-color: #ffaaaa !important;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/eco\/public_html\/sites\/default\/themes\/ptheme\/sass\/global\.styles\.sass}line{font-family:\000032148}}
+.migrate-ltgrey {
+  background-color: #bbb !important;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/eco\/public_html\/sites\/default\/themes\/ptheme\/sass\/global\.styles\.sass}line{font-family:\000032150}}
+.migrate-grey {
+  background-color: #888 !important;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/eco\/public_html\/sites\/default\/themes\/ptheme\/sass\/global\.styles\.sass}line{font-family:\000032152}}
+.migrate-cyan {
+  background-color: #3ff !important;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/eco\/public_html\/sites\/default\/themes\/ptheme\/sass\/global\.styles\.sass}line{font-family:\000032154}}
+.migrate-green {
+  background-color: #cfc !important;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/eco\/public_html\/sites\/default\/themes\/ptheme\/sass\/global\.styles\.sass}line{font-family:\000032156}}
+.migrate-ltgreen {
+  background-color: #cfc !important;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/eco\/public_html\/sites\/default\/themes\/ptheme\/sass\/global\.styles\.sass}line{font-family:\000032158}}
+.migrate-white {
+  background-color: #fff !important;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/eco\/public_html\/sites\/default\/themes\/ptheme\/sass\/global\.styles\.sass}line{font-family:\000032160}}
+.migrate-yellow,
+.migrate-orange {
+  background-color: #ffc299 !important;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/eco\/public_html\/sites\/default\/themes\/ptheme\/sass\/global\.styles\.sass}line{font-family:\000032163}}
+.migrate-brown {
+  background-color: #6f3d10 !important;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/eco\/public_html\/sites\/default\/themes\/ptheme\/sass\/global\.styles\.sass}line{font-family:\000032165}}
+.migrate ul {
+  padding: 0;
+  list-style: none outside none;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/eco\/public_html\/sites\/default\/themes\/ptheme\/sass\/global\.styles\.sass}line{font-family:\000032169}}
+#module-filter-tabs li {
+  background-color: #092009;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/eco\/public_html\/sites\/default\/themes\/ptheme\/sass\/global\.styles\.sass}line{font-family:\000032172}}
+#module-filter-tabs li li.selected a:hover,
+#module-filter-tabs li li.selected a:focus,
+#module-filter-tabs li li.selected a:active,
+#module-filter-tabs li li.selected a {
+  background-color: #353;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/eco\/public_html\/sites\/default\/themes\/ptheme\/sass\/global\.styles\.sass}line{font-family:\000032178}}
+.rendered,
+div.krumo-root {
+  color: black;
+}
+
+/* @file
+ * imager.sass
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/eco\/public_html\/sites\/default\/themes\/ptheme\/sass\/_imager\.sass}line{font-family:\0000311}}
+#imager-wrapper table {
+  background-color: #558;
+  margin-top: 0;
+  border: 0px;
+  border-radius: 12px;
+  border-collapse: separate;
+  border-spacing: 3px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/eco\/public_html\/sites\/default\/themes\/ptheme\/sass\/_imager\.sass}line{font-family:\0000318}}
+#imager-wrapper table tr {
+  background-color: #558;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/eco\/public_html\/sites\/default\/themes\/ptheme\/sass\/_imager\.sass}line{font-family:\0000320}}
+#imager-wrapper table th:first-child {
+  border-radius: 10px 0 0 0;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/eco\/public_html\/sites\/default\/themes\/ptheme\/sass\/_imager\.sass}line{font-family:\0000322}}
+#imager-wrapper table th:last-child {
+  border-radius: 0 10px 0 0;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/eco\/public_html\/sites\/default\/themes\/ptheme\/sass\/_imager\.sass}line{font-family:\0000324}}
+#imager-wrapper table th:only-child {
+  border-radius: 10px 10px 0 0;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/eco\/public_html\/sites\/default\/themes\/ptheme\/sass\/_imager\.sass}line{font-family:\0000326}}
+#imager-wrapper table th {
+  text-align: center;
+  color: #ffffbb;
+  background-color: #444466;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/eco\/public_html\/sites\/default\/themes\/ptheme\/sass\/_imager\.sass}line{font-family:\0000330}}
+#imager-overlay.fullscreen {
+  margin: 0;
+  box-shadow: none;
+  width: 100%;
+  padding: 100px;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/eco\/public_html\/sites\/default\/themes\/ptheme\/sass\/_imager\.sass}line{font-family:\0000335}}
+#imager-overlay {
+  background: #555;
+  overflow: auto;
+  border: solid 1px #a574f0;
+  background-color: #2a0a5a;
+  box-shadow: 0px 0px 4px 3px #ae19e4, 0px 0px 3px 2px #2719e4 inset;
+  border-radius: 15px;
+  margin: 0px;
+  padding: 0px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/eco\/public_html\/sites\/default\/themes\/ptheme\/sass\/_imager\.sass}line{font-family:\0000341}}
+#imager-overlay button {
+  border-radius: 8px;
+  background-color: #f0e0ff;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/eco\/public_html\/sites\/default\/themes\/ptheme\/sass\/_imager\.sass}line{font-family:\0000344}}
+#imager-overlay #imager-canvas-wrapper {
+  margin: 3px 3px 0px 1px;
+  padding: 0;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/eco\/public_html\/sites\/default\/themes\/ptheme\/sass\/_imager\.sass}line{font-family:\0000347}}
+#imager-overlay #imager-canvas-wrapper #imager-canvas-org {
+  display: hidden;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/eco\/public_html\/sites\/default\/themes\/ptheme\/sass\/_imager\.sass}line{font-family:\0000349}}
+#imager-overlay #imager-canvas-wrapper #imager-canvas {
+  padding: 0;
+  margin: 0;
+  border: solid 1px gray;
+  background-color: #000;
+  box-shadow: 0px 0px 4px 3px #4d4d4d, 0px 0px 3px 2px #4d4d4d inset;
+  border-radius: 12px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/eco\/public_html\/sites\/default\/themes\/ptheme\/sass\/_imager\.sass}line{font-family:\0000354}}
+#imager-overlay #button-wrapper div {
+  font-size: 80%;
+  text-align: center;
+  margin: 2px 0;
+  padding: 0;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/eco\/public_html\/sites\/default\/themes\/ptheme\/sass\/_imager\.sass}line{font-family:\0000359}}
+#imager-overlay #button-wrapper .buttons {
+  margin: 3px 3px 0;
+  color: #000;
+  border: solid 1px #000099;
+  background-color: #ccf;
+  box-shadow: 0px 0px 4px 3px #4400cc, 0px 0px 3px 2px #3377ff inset;
+  border-radius: 12px;
+  padding: 5px 2px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/eco\/public_html\/sites\/default\/themes\/ptheme\/sass\/_imager\.sass}line{font-family:\0000364}}
+#imager-overlay #button-wrapper .buttons img {
+  display: block;
+  margin: 0;
+  padding: 2px 4px;
+  border-radius: 0;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/eco\/public_html\/sites\/default\/themes\/ptheme\/sass\/_imager\.sass}line{font-family:\0000369}}
+#imager-overlay #button-wrapper .buttons .checked {
+  background-color: #ffffbb;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/eco\/public_html\/sites\/default\/themes\/ptheme\/sass\/_imager\.sass}line{font-family:\0000371}}
+#imager-overlay #button-wrapper .buttons .disabled {
+  background-color: #888;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/eco\/public_html\/sites\/default\/themes\/ptheme\/sass\/_imager\.sass}line{font-family:\0000373}}
+#imager-overlay #button-wrapper .buttons .specific {
+  background-color: #ccf;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/eco\/public_html\/sites\/default\/themes\/ptheme\/sass\/_imager\.sass}line{font-family:\0000375}}
+#imager-overlay #button-wrapper #debug-buttons {
+  font-size: 70%;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/eco\/public_html\/sites\/default\/themes\/ptheme\/sass\/_imager\.sass}line{font-family:\0000380}}
+.imager-buttons {
+  border: solid 1px #000099;
+  background-color: #ccf;
+  box-shadow: 0px 0px 4px 3px #4400cc, 0px 0px 3px 2px #3377ff inset;
+  border-radius: 12px;
+  padding: 0 5px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/eco\/public_html\/sites\/default\/themes\/ptheme\/sass\/_imager\.sass}line{font-family:\0000383}}
+.imager-buttons img {
+  padding: 5px 5px 1px;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/eco\/public_html\/sites\/default\/themes\/ptheme\/sass\/_imager\.sass}line{font-family:\0000386}}
+#imager-status {
+  border: solid 1px #ff9560;
+  background-color: #602000;
+  box-shadow: 0px 0px 4px 3px #f9a600, 0px 0px 3px 2px #f90000 inset;
+  border-radius: 15px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/eco\/public_html\/sites\/default\/themes\/ptheme\/sass\/_imager\.sass}line{font-family:\0000388}}
+#imager-status #imager-status-content {
+  padding: 5px;
+  text-align: center;
+  font-weight: bold;
+  font-style: 120%;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/eco\/public_html\/sites\/default\/themes\/ptheme\/sass\/_imager\.sass}line{font-family:\0000393}}
+#imager-status span {
+  padding: 5px;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/eco\/public_html\/sites\/default\/themes\/ptheme\/sass\/_imager\.sass}line{font-family:\0000396}}
+#imager-info {
+  border: solid 1px #a574f0;
+  background-color: #2a0a5a;
+  box-shadow: 0px 0px 4px 3px #ae19e4, 0px 0px 3px 2px #2719e4 inset;
+  border-radius: 15px;
+  padding: 5px 10px;
+  max-width: 600px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/eco\/public_html\/sites\/default\/themes\/ptheme\/sass\/_imager\.sass}line{font-family:\00003100}}
+#imager-info .title {
+  color: #6f3d10;
+  text-align: center;
+  font-size: 120%;
+  font-weight: bold;
+  word-wrap: break-word;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/eco\/public_html\/sites\/default\/themes\/ptheme\/sass\/_imager\.sass}line{font-family:\00003106}}
+#imager-info .filename {
+  color: #050;
+  font-style: italic;
+  font-size: 70%;
+  text-align: center;
+  margin-bottom: 5px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/eco\/public_html\/sites\/default\/themes\/ptheme\/sass\/_imager\.sass}line{font-family:\00003112}}
+#imager-info .error {
+  background-color: #551919;
+  color: white;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/eco\/public_html\/sites\/default\/themes\/ptheme\/sass\/_imager\.sass}line{font-family:\00003116}}
+#imager-info #imager-info-content img.imager-info-edit {
+  margin: 0 5px 3px 0;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/eco\/public_html\/sites\/default\/themes\/ptheme\/sass\/_imager\.sass}line{font-family:\00003119}}
+#imager-info .imager-buttons img {
+  padding: 5px;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/eco\/public_html\/sites\/default\/themes\/ptheme\/sass\/_imager\.sass}line{font-family:\00003122}}
+#imager-edit {
+  border: solid 1px #58d058;
+  background-color: #092009;
+  box-shadow: 0px 0px 4px 3px #2b974f, 0px 0px 3px 2px #4f972b inset;
+  border-radius: 15px;
+  padding: 5px 5px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/eco\/public_html\/sites\/default\/themes\/ptheme\/sass\/_imager\.sass}line{font-family:\00003126}}
+#imager-edit .form-text {
+  max-width: 300px;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/eco\/public_html\/sites\/default\/themes\/ptheme\/sass\/_imager\.sass}line{font-family:\00003129}}
+#imager-confirm {
+  border: solid 1px #58d058;
+  background-color: #092009;
+  box-shadow: 0px 0px 4px 3px #2b974f, 0px 0px 3px 2px #4f972b inset;
+  border-radius: 15px;
+  padding: 5px 10px;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/eco\/public_html\/sites\/default\/themes\/ptheme\/sass\/_imager\.sass}line{font-family:\00003133}}
+#imager-map {
+  border: solid 1px #ff3333;
+  background-color: #330000;
+  box-shadow: 0px 0px 4px 3px #cc4400, 0px 0px 3px 2px #cc0044 inset;
+  border-radius: 15px;
+  max-width: 700px;
+  padding: 5px 5px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/eco\/public_html\/sites\/default\/themes\/ptheme\/sass\/_imager\.sass}line{font-family:\00003137}}
+#imager-map .description {
+  max-width: 300px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/eco\/public_html\/sites\/default\/themes\/ptheme\/sass\/_imager\.sass}line{font-family:\00003140}}
+#imager-map .form-text {
+  max-width: 300px;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/eco\/public_html\/sites\/default\/themes\/ptheme\/sass\/_imager\.sass}line{font-family:\00003143}}
+#imager-messages.error {
+  color: white;
+  font-size: 140%;
+  background-color: #551919;
+  background-image: none;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/eco\/public_html\/sites\/default\/themes\/ptheme\/sass\/_imager\.sass}line{font-family:\00003148}}
+#imager-messages {
+  border: solid 1px #de8f8f;
+  background-color: #551919;
+  box-shadow: 0px 0px 4px 3px #c76d40, 0px 0px 3px 2px #c7406d inset;
+  border-radius: 15px;
+  padding: 10px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/eco\/public_html\/sites\/default\/themes\/ptheme\/sass\/_imager\.sass}line{font-family:\00003150}}
+#imager-messages .info {
+  font-size: 110%;
+  font-weight: bold;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/eco\/public_html\/sites\/default\/themes\/ptheme\/sass\/_imager\.sass}line{font-family:\00003153}}
+#imager-messages h2 {
+  margin: 5px 0;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/eco\/public_html\/sites\/default\/themes\/ptheme\/sass\/_imager\.sass}line{font-family:\00003156}}
+#imager-messages .error {
+  background-color: #551919;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/eco\/public_html\/sites\/default\/themes\/ptheme\/sass\/_imager\.sass}line{font-family:\00003160}}
+#imager-filesave {
+  border: solid 1px #f7d9d2;
+  background-color: #aa3a20;
+  box-shadow: 0px 0px 4px 3px #e6b47d, 0px 0px 3px 2px #e67d8c inset;
+  border-radius: 15px;
+  padding: 10px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/eco\/public_html\/sites\/default\/themes\/ptheme\/sass\/_imager\.sass}line{font-family:\00003163}}
+#imager-filesave #resolution {
+  margin: 0 auto 10px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/eco\/public_html\/sites\/default\/themes\/ptheme\/sass\/_imager\.sass}line{font-family:\00003165}}
+#imager-filesave #imager-filesave-messages {
+  font-style: italic;
+  font-size: 80%;
+  word-wrap: break-word;
+  text-align: center;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/eco\/public_html\/sites\/default\/themes\/ptheme\/sass\/_imager\.sass}line{font-family:\00003170}}
+#imager-filesave #imager-filesave-filename-container {
+  margin: 10px 0;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/eco\/public_html\/sites\/default\/themes\/ptheme\/sass\/_imager\.sass}line{font-family:\00003172}}
+#imager-filesave #save-file-title {
+  font-size: 140%;
+  font-weight: bold;
+  margin: 10px;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/eco\/public_html\/sites\/default\/themes\/ptheme\/sass\/_imager\.sass}line{font-family:\00003176}}
+#imager-brightness,
+#imager-color {
+  border: solid 1px #58d058;
+  background-color: #092009;
+  box-shadow: 0px 0px 4px 3px #2b974f, 0px 0px 3px 2px #4f972b inset;
+  border-radius: 15px;
+  padding: 5px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/eco\/public_html\/sites\/default\/themes\/ptheme\/sass\/_imager\.sass}line{font-family:\00003181}}
+#imager-brightness .error,
+#imager-color .error {
+  background-color: #330000;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/eco\/public_html\/sites\/default\/themes\/ptheme\/sass\/_imager\.sass}line{font-family:\00003183}}
+#imager-brightness .slider,
+#imager-color .slider {
+  -webkit-appearance: none;
+  border-radius: 8px;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/eco\/public_html\/sites\/default\/themes\/ptheme\/sass\/_imager\.sass}line{font-family:\00003187}}
+.clicktoexit {
+  margin-top: 10px;
+  font-size: 70%;
+  font-style: italic;
+  color: #bbb;
+}

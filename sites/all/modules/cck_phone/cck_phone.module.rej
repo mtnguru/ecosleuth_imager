@@ -1,0 +1,20 @@
+--- cck_phone.module
++++ cck_phone.module
+@@ -309,14 +310,14 @@
+       }
+     }
+ 
+-    // Output a raw value if no custom formatter or formatter return empty
++    // Output a raw value if no custom formatter or formatter return empty.
+     if (empty($phone)) {
+       $phone = $element['number'];
+     }
+ 
+-    // Extension
++    // Extension.
+     if (!empty($element['extension'])) {
+-      $phone = $phone . theme('phone_number_extension', $element['extension']);
++      $phone = $phone . theme('phone_number_extension', $element);
+     }
+   }
+ 

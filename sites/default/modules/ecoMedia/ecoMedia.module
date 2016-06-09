@@ -1,0 +1,394 @@
+<?php
+
+/**
+ * @file
+ * Module for the Ticket Entity - a starting point to create your own Entity
+ * and associated administration interface
+ */  
+
+
+/**
+ * Implement hook_init
+ */
+function ecoMedia_init( ) {
+  drupal_add_js (drupal_get_path('module', 'ecomedia') . '/js/stats.js',        array('weight' => 1010));
+  drupal_add_js ('http://www.statcounter.com/counter/counter.js',  array('weight' => 1011));
+//  $name = "dude";
+  return;
+}
+
+
+/**
+ * Implement hook_menu
+ */
+//function ecoMedia_menu( ) {
+//  $name = "dude";
+//  return;
+/*$items = array();
+  // autocomplete for facility field - Can this be moved to the TicketUIController?
+  $items['facility/autocomplete/dairy'] = array(
+    'title' => 'Autocomplete for Dairies (and DS)',
+    'page callback' => '_ecoMedia_dairy_autocomplete',
+    'access arguments' => array ('use autocomplete'),
+    'type' => MENU_CALLBACK,
+  );
+  $items['people/autocomplete/employee'] = array(
+    'title' => 'Autocomplete for Employee names',
+    'page callback' => '_ecoMedia_employee_autocomplete',
+    'access arguments' => array ('use autocomplete'),
+    'type' => MENU_CALLBACK,
+  );
+  return $items; */
+//}
+
+
+/** 
+ * Implement hook_form_FORMID_alter - Views Media Gallery VBO form 
+ * @param type $form
+ * @param type $form_state
+ * @param type $form_id
+ * @return type
+ */
+function ecoMedia_form_views_form_ds_media_media_gallery_user_new_alter(&$form, &$form_state, $form_id) {
+  $form['#submit'][] = 'ecoMedia_form_vbo1_submit';
+   return;
+}
+
+//function ecoMedia_form_views_form_ds_media_media_gallery_alter(&$form, &$form_state, $form_id) {
+//}
+
+//function ecoMedia_form_alter(&$form, &$form_state, $form_id) {
+//  return;
+//}
+//function ecoMedia_form_submit($form, &$form_state) {
+//   return;
+//}
+function ecoMedia_form_views_exposed_form_alter(&$form, &$form_state, $form_id) {
+  $form['field_create_date_value']['value']['#date_format'] = "m/d/Y";
+//$form['#validate'][] = '_ecoMedia_views_exposed_form_validate';
+  return;
+}
+
+//function _ecoMedia_views_exposed_form_validate($form, &$form_state) {
+//  $form_state['values']['field_create_date_value']['value']['time'] = "00:00";
+//  return;
+//}
+
+/**
+ * Perform alterations on the VBO form before it is rendered.
+ *
+ * Usually, if a module wanted to alter the VBO form through hook_form_alter(),
+ * it would need to duplicate the views form checks from
+ * views_bulk_operations_form_alter(), while making sure that the hook
+ * runs after VBO's hook (by increasing the weight of the altering module's
+ * system entry). In order to reduce that complexity, VBO provides this hook.
+ *
+ * @param $form
+ *  A step of the VBO form to be altered.
+ * @param $form_state
+ *  Form state. Contains the name of the current step in $form_state['step'].
+ * @param $vbo
+ *   The VBO views field. Contains a reference to the view in $vbo->view.
+ */
+function ecoMedia_views_bulk_operations_form_alter(&$form, &$form_state, $vbo) {
+//  dpm($form,'form - enter');
+//  dpm($form_state,'form_state - enter');
+//  dpm($vbo,'vbo - enter');
+  if ($form_state['step'] == 'views_form_views_form') {
+    $form['select']['operation']['#default_value'] = 'action::views_bulk_operations_modify_action';
+    $form['select']['operation']['#options']['action::views_bulk_operations_modify_action'] = 'Modify Categorization Data';
+    unset($form['select']['operation']['#options'][0]);
+  }
+  elseif ($form_state['step'] == 'views_bulk_operations_config_form') {     // second step, vbo form
+    // Do not display "tokens" and "Add" buttons to add to existing selections
+    unset($form['tokens']);
+    unset($form['bundle_image']['_append::field_vendor_brand']);
+    unset($form['bundle_image']['_append::field_product_segment']);
+    unset($form['bundle_image']['_append::field_image_purpose']);
+    unset($form['bundle_image']['field_media_status']['und']['#options']['_none']);
+
+    // Add a DIV to group field select buttons
+    $form['bundle_image']['show_value']['#type']       = 'container';
+    $form['bundle_image']['show_value']['#class'][]    = 'show_value';
+
+    // Move Actions2 to between show_value and left_col
+    $form['actions2'] = $form['actions'];
+    $form['actions2']['#weight'] = -1;
+
+/*  // Create the left-col container - DIV
+    $form['bundle_image']['left_col']['#type'] = 'container';
+    $form['bundle_image']['left_col']['#class'][] = 'left-col';
+
+    // Move the Name field to the left column - change it to a 'textarea' with 5 rows
+    $form['bundle_image']['left_col']['field_name'] = $form['bundle_image']['field_name'];
+    $form['bundle_image']['left_col']['field_name']['und'][0]['value']['#type'] = 'textarea';
+    $form['bundle_image']['left_col']['field_name']['und'][0]['value']['#rows'] = '5';
+    unset($form['bundle_image']['field_name']);
+
+    // Move Facility field to left column
+    $form['bundle_image']['left_col']['field_facility'] = $form['bundle_image']['field_facility'];
+    unset($form['bundle_image']['field_facility']);
+
+    // Move Media Status field to left column
+    $form['bundle_image']['left_col']['field_media_status'] = $form['bundle_image']['field_media_status'];
+    unset($form['bundle_image']['field_media_status']);
+
+    // Move Actions - Submit/Cancel to left column
+    $form['bundle_image']['left_col']['actions'] = $form['actions'];
+    unset($form['actions']);
+
+    // Move Image Purpose field to left column
+    $form['bundle_image']['left_col']['field_image_purpose'] = $form['bundle_image']['field_image_purpose'];
+    unset($form['bundle_image']['field_image_purpose']);
+
+    // Create the center-col container - DIV
+    $form['bundle_image']['center_col']['#type'] = 'container';
+    $form['bundle_image']['center_col']['#class'][] = 'center-col';
+
+    // Move Image Content Segment to the center_col
+    $form['bundle_image']['center_col']['field_image_content'] = $form['bundle_image']['field_image_content'];
+    unset($form['bundle_image']['field_image_content']);
+
+    // Move Product Segment to the center_col
+    $form['bundle_image']['center_col']['field_product_segment'] = $form['bundle_image']['field_product_segment'];
+    unset($form['bundle_image']['field_product_segment']); */
+
+    // Set hierachical taxonomy lists to be minimized
+    $form['bundle_image']['field_product_segment']['und']['#start_minimized'] = 1;
+    $form['bundle_image']['field_vendor_brand']['und']['#start_minimized'] = 1;
+    $form['bundle_image']['field_image_content']['und']['#start_minimized'] = 1;
+
+    // Build an array of selected images
+    foreach ($form_state['values']['views_bulk_operations'] as $ind => $fid) {
+      if ($fid) $fids[] = $fid;
+    }
+
+    // Query the db with selected images and get their media_status
+    $results = db_query('SELECT fid,uri,ms.field_media_status_tid
+         
+                         FROM {file_managed} 
+                         LEFT JOIN {field_data_field_media_status} ms ON fid = ms.entity_id
+                         WHERE fid IN (:fids)', array(':fids' => $fids));
+
+    // Check to see if all images have MediaStatus = New
+    foreach ($results as $item) {
+      if (preg_match('|public://(.*)$|',$item->uri,$matches)) {
+        
+        $fulldir  = $GLOBALS['base_url'] . "/sites" . $GLOBALS['base_path'] . "files";
+        $thumbdir = $GLOBALS['base_url'] . "/sites" . $GLOBALS['base_path'] . "files/styles/thumbnail/public";
+
+        $full  = $fulldir  . '/' . $matches[1];
+        $thumb = $thumbdir . '/' . $matches[1];
+//      $thumb = $GLOBALS['base_url'] . "/sites/c16/files/styles/thumbnail/public/pictures/$matches[1]";
+        $token = "ZvDj675c";
+//      $pictures .= "<div class=\"vbo-row\"><a href=\"$full\"><img typeof=\"foaf:Image\" class=\"image-style-ds-thumbnail\" src=\"$thumb?itok=$token\" alt=\"\" title=\"\"></a></div>";
+        $pictures .= "<div class=\"vbo-row\"><a href=\"$full\"><img typeof=\"foaf:Image\" class=\"image-style-ds-thumbnail\" src=\"$thumb\" alt=\"\" title=\"\"></a></div>";
+      }
+      $tids[$item->field_media_status_tid]++;
+    }
+    $form['summary'] = array (
+      '#type' => 'item',
+      '#weight' => -3,
+    );
+        
+    foreach ($tids as $ind => $count) {
+      $output .= "<li>" . $form['bundle_image']['field_media_status']['und']['#options'][$ind] . " - $count</li>\n";
+    }
+    $output = "<ul>" . $output . "</ul>";
+
+    // if all selected images are new then pre-select all edit elements
+    // Set Media Status to Active
+    $new_tid = reset(taxonomy_get_term_by_name('New','media_status'))->tid;
+    if (count($tids[$new_tid]) == count($tids)) {
+      // Set Media Status to "Active"
+      $output = "<div class=\"ds-clear\">All images have a status of <i>New</i>, all edit fields have been enabled:" . $output . "</div>";
+//    foreach ($form['bundle_image']['left_col']['field_media_status']['und']['#options'] as $atid => $termname ) {
+      foreach ($form['bundle_image']['field_media_status']['und']['#options'] as $atid => $termname ) {
+        if ($termname == "Active") {
+          $form['bundle_image']['field_media_status']['und']['#default_value'] = $atid;
+          break;
+        }
+      }
+      // Initialize field select buttons to true and automatically open their fieldsets
+      $form['bundle_image']['show_value']['field_media_status']['#default_value']    = 1;
+      $form['bundle_image']['show_value']['field_image_content']['#default_value']   = 1;
+      $form['bundle_image']['show_value']['field_image_purpose']['#default_value']   = 1;
+      $form['bundle_image']['show_value']['field_facility']['#default_value']        = 1;
+      $form['bundle_image']['show_value']['field_vendor_brand']['#default_value']    = 1;
+      $form['bundle_image']['show_value']['field_name']['#default_value']            = 1;
+      $form['bundle_image']['show_value']['field_product_segment']['#default_value'] = 1;
+
+    } else {
+      $output = "<div class=\"ds-clear\">Not all images have a Media Status of 'New', select the fields to edit." . $output . "</div>";
+    }
+    $form['summary']['#markup'] = "$pictures\n$output\n";
+//  dpm($form,'form');
+//  dpm($form_state,'form_state');
+  }
+  elseif ($form_state['step'] == 'views_bulk_operations_confirm_form') {
+    // Alter the confirmation step of the VBO form.
+  }
+//  dpm($form,'form - exit');
+//  dpm($form_state,'form_state - exit');
+}
+function ecoMedia_views_bulk_operations_form_submit(&$form, &$form_state, $vbo) {
+  return;
+}
+
+function ecoMedia_load_js_css() {
+  drupal_add_js (drupal_get_path('module', 'ecomedia') . '/js/ecoMedia.js',     array('weight' => 1009));
+}
+
+function ecoMedia_views_pre_view(&$view, &$display_id, &$args) {
+  if (preg_match('/media_gallery/',$view->name)) {
+    ecoMedia_load_js_css();
+  }
+  return;
+}
+
+/**
+ * Implement hook_file_view_alter
+ */
+function ecoMedia_file_view_alter(&$build,$type) {
+  $file = $build['#file'];
+  $geometry = $file->metadata['width'] . ' x ' . $geometry = $file->metadata['height'];
+
+  if ($file->filesize > 1000000) {
+    $filesize = (round($file->filesize / 100000) / 10) . ' MB';
+  } else {
+    $filesize = (round($file->filesize / 100) / 10) . ' KB';
+  }
+
+  $build['sfield_owner'] = array(
+    '#access' => 1,
+    '#bundle' => 'image',
+    '#entity_type' => 'file',
+    '#field_name' => 'sfield_owner',
+    '#field_type' => 'text',
+    '#formatter' => 'text_default',
+    '#items' => array ('anything'),
+    '#attributes' => array('class' => array('imager-clear')),
+    '#label_display' => 'inline',
+    '#theme' => 'field',
+    '#title' => 'File Owner',
+    '#weight' => 20,
+    0 => array(
+      '#markup' => user_load($file->uid)->name,
+    ),
+  );
+  $build['sfield_filename'] = array(
+    '#access' => 1,
+    '#bundle' => 'image',
+    '#entity_type' => 'file',
+    '#field_name' => 'sfield_filename',
+    '#field_type' => 'text',
+    '#formatter' => 'text_default',
+    '#items' => array ('anything'),
+    '#attributes' => array('class' => array('imager-clear')),
+    '#label_display' => 'inline',
+    '#theme' => 'field',
+    '#title' => 'File Name',
+    '#weight' => 21,
+    0 => array(
+      '#markup' => $file->filename,
+    ),
+  );
+  $build['sfield_filesize'] = array(
+    '#access' => 1,
+    '#bundle' => 'image',
+    '#entity_type' => 'file',
+    '#field_name' => 'sfield_filesize',
+    '#field_type' => 'text',
+    '#formatter' => 'text_default',
+    '#items' => array ('anything'),
+    '#attributes' => array('class' => array('imager-clear')),
+    '#label_display' => 'inline',
+    '#theme' => 'field',
+    '#title' => 'File Size',
+    '#weight' => 22,
+    0 => array(
+      '#markup' => $filesize,
+    ),
+  );
+  $build['sfield_geometry'] = array(
+    '#access' => 1,
+    '#bundle' => 'image',
+    '#entity_type' => 'file',
+    '#field_name' => 'sfield_geometry',
+    '#field_type' => 'text',
+    '#formatter' => 'text_default',
+    '#items' => array ('anything'),
+    '#attributes' => array('class' => array('imager-clear')),
+    '#label_display' => 'inline',
+    '#theme' => 'field',
+    '#title' => 'Geometry',
+    '#weight' => 23,
+    0 => array(
+      '#markup' => $geometry,
+    ),
+  );
+  return;
+}
+
+/**
+ * Implement hook_page_alter
+ */
+function ecoMedia_page_alter(&$page) {
+  return;
+}
+
+/**
+ * Implement hook_field_views_data_alter
+ */
+function ecoMedia_field_views_data_alter(&$result, $field, $module) {
+  return;
+}
+
+/**
+ * Implement hook_views_pre_render
+ */
+function ecoMedia_views_pre_render(&$view) {
+//view->field['geometry'] = array(
+//  'base_table' => 'file_managed',
+//  'field' => 'geometry',
+//  'type'  => 'text'
+//);
+//dpm($view);
+
+  $text = $view->field['edit']->options['alter']['text'];
+//$view->field['edit']->options['alter']['text'] = preg_replace('/base_path\//',$GLOBALS['base_path'], $view->field['edit']->options['alter']['text']);
+//$view->field['link']->options['alter']['text'] = preg_replace('/base_path\//',$GLOBALS['base_path'], $view->field['link']->options['alter']['text']);
+//$view->field['download']->options['alter']['text'] = preg_replace('/base_path\//',$GLOBALS['base_path'], $view->field['download']->options['alter']['text']);
+//$view->field['delete']->options['alter']['text'] = preg_replace('/base_path\//',$GLOBALS['base_path'], $view->field['delete']->options['alter']['text']);
+  foreach ($view->result as $row) {
+    if (isset($row->_field_data)) {
+      $geometry = $row->_field_data['fid']['entity']->metadata['width'] . 'x' . 
+                  $row->_field_data['fid']['entity']->metadata['height'];
+      $row->_field_data['fid']['entity']->geometry = $geometry;
+    }
+  }
+  return;
+}
+
+/**
+ * Implement hook_views_post_render
+ */
+function ecoMedia_views_post_render(&$view, &$output, &$cache) {
+//dpm($output);
+  return; 
+}
+
+/**
+ * Implement hook_field_views_data_views_data_alter
+ */
+function ecoMedia_field_views_data_views_data_alter(&$data, $field) {
+  return;
+}
+
+
+function ecoMedia_views_api() {
+  return array(
+    'api' => 3,
+    'path' => drupal_get_path('module', 'ecoMedia') . '/views',
+  );
+}
